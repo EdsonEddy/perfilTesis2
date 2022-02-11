@@ -1,0 +1,44 @@
+\chapter{Marco Teorico}
+
+\section{Código fuente}
+El código fuente de un programa es un conjunto de líneas de texto, donde en cada línea contiene instrucciones del programa.
+
+El código fuente de un programa está escrito por un programador en algún lenguaje de programación, pero en este primer estado no es directamente ejecutable por la computadora, sino que debe ser traducido a otro lenguaje o código binario, así será más fácil para la máquina interpretarlo (lenguaje máquina o código objeto que sí pueda ser ejecutado por el hardware de la computadora). Para esta traducción se usan los llamados compiladores, ensambladores, intérpretes y otros sistemas de traducción \cite{wiki:Source_Code}.
+\section{Plagio de código fuente}
+\cite{wiki:Plagiarism} La Real Academia Española define como plagio a la acción de copiar en lo sustancial obras ajenas, dándolas como propias.
+
+El plagio de código fuente consiste en utilizar el código fuente de otra persona y adjudicarse como propio.
+\section{Ofuscación de código fuente}
+La ofuscación se refiere a encubrir el significado de una comunicación haciéndola más confusa y complicada de interpretar. En computación, la ofuscación se refiere al acto deliberado de realizar un cambio no destructivo, ya sea en el código fuente de un programa informático, en el código intermedio (bytecodes) o en el código máquina cuando el programa está en forma compilada o binaria. Es decir, se cambia el código se "en revesa" manteniendo el funcionamiento original, para dificultar su entendimiento. De esta forma se dificultan los intentos de ingeniería inversa y desensamblado que tienen la intención de obtener una forma de código fuente cercana a la forma original \cite{wiki:Obfuscation_(software)}.
+
+\section{Métodos de ofuscación}
+Existen muchos métodos de ofuscación utilizados por estudiantes para ocultar la similitud a continuación se mencionan algunos:
+\begin{itemize}
+    \item \cite{article3} Mencionan cambios visuales en el formato del código, por lo que parece diferente a primera vista, esto generalmente incluye la modificación de espacios en blanco como sangrías, espacios, nuevas líneas, etc.
+    \item \cite{article3} Mencionan cambios en los comentarios del código.
+    \item \cite{donaldson1981plagiarism} Mencionan el cambio de los nombres de los identificadores. como nombres de variables, nombres de constantes, nombres de funciones, nombres de clases, etc.
+    \item \cite{donaldson1981plagiarism} Mencionan re ordenar las líneas del código para las que el pedido no marca ninguna diferencia. Estos incluyen cambiar el orden de las declaraciones de variables, cambiando el orden de las declaraciones dentro de bloques de código como funciones, re ordenación de bloques de código o funciones, re ordenación de clases internas, etc.
+\end{itemize}
+
+\section{Representación de código fuente}
+\subsection{Árboles de sintaxis abstracta}
+Los árboles de sintaxis abstracta  es un modelo que representa el código fuente, por lo cual son utilizados por diferentes algoritmos para analizar el código fuente. Los árboles de sintaxis abstracta son árboles donde cada nodo es una construcción del código fuente.
+\subsection{Tokens}
+Es un enfoque basado en cadenas con la diferencia de que utiliza un analizador léxico, para convertir el programa a tokens, existen muchos algoritmos para medir la similitud entre secuencias de tokens.
+\subsection{Grafo de control de flujo}
+En ciencias de la computación, un grafo de control de flujo (CFG) es una representación, en forma de grafo dirigido, de todos los caminos que pueden ser atravesados a través de un programa durante su ejecución \cite{wiki:Control-flow_graph}.
+\section{Detección de plagio en código fuente}
+\subsection{Algoritmos utilizados para la detección de similitud entre códigos fuente}
+\cite{10.1145/3313290} Identificó diferentes algoritmos a continuación se mencionan algunos de ellos: Recuento de atributos, huella digital, coincidencia de cadena, texto base, estructura base, estilo, semántico, n-gramas, árboles, grafos, etc. Algunos de estos fueron inventados en la década de 1980. También hace mención a que los enfoques basados en estructuras son mucho mejores y que la mayoría de las herramientas de detección de similitud combinan más de un tipo de algoritmo.
+
+A continuación se mencionan algunos métodos para la detección de similitud:
+\begin{itemize}
+    \item Métodos que utilizan flujo del código fuente.
+    \item Métodos que utilizan alineación de cadenas y tokens.
+    \item Métodos que utilizan técnicas de programación dinámica.
+    \item Métodos que utilizan técnicas codiciosas.
+\end{itemize}
+
+\section{Medidas de comparación}
+\cite{10.1145/3313290} Explica que las métricas de comparación más utilizadas son: Selectividad, detección de exceso, índice de rendimiento, sensibilidad, velocidad, precisión. En el presente trabajo de tesis se consideran las métricas de velocidad y precisión.
+
