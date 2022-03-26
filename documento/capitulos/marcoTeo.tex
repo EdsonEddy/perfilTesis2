@@ -1,30 +1,36 @@
 \chapter{MARCO TEÓRICO}
 
-\section{Conceptos de código fuente}
-
+\section{Conceptos de lenguajes de programación}
 \subsection{Lenguaje de programación}
 Los lenguajes de programación son notaciones que describen los cálculos a las personas y las máquinas. Nuestra percepción del mundo en que vivimos depende de los lenguajes de programación, ya que todo el software que se ejecuta en todas las computadoras se escribió en algún lenguaje de programación \cite{aho2008compiladores}.
 
 Un lenguaje de programación es un lenguaje formal, que mediante un conjunto de instrucciones permite a un programador crear programas. El lenguaje de programación es un sistema estructurado de comunicación conformado por conjuntos de símbolos, palabras clave, reglas semánticas y sintácticas, las cuales sirven para el entendimiento entre un programador y una maquina.
 
+
+\section{Conceptos de código fuente}
 \subsection{Código fuente}
 En informática, se denomina código fuente a la conjunto de lineas de texto que escritas por un programador. Estas lineas de texto representan instrucciones en un lenguaje de programación. Las instrucciones representan los pasos que debe seguir la computadora para la ejecución de un programa específico.
 
 El código fuente no es directamente ejecutable por la computadora, este debe ser traducido a otro lenguaje de modo que la computadora pueda interpretarlo. En la traducción se usan compiladores, ensambladores, interpretes y otros.
 
 \subsection{Ofuscación de código fuente}
-Según \cite{wiki:Plagiarism} la Real Academia Española define como plagio a la acción de copiar en lo sustancial obras ajenas, dándolas como propias. El plagio de código fuente consiste en utilizar el código fuente de otra persona y adjudicarse como propio.
-La ofuscación se refiere a encubrir el significado de una comunicación haciéndola más confusa y complicada de interpretar \cite{wiki:Obfuscation_(software)}.
-
-En computación, la ofuscación se refiere al acto deliberado de realizar un cambio no destructivo, ya sea en el código fuente de un programa informático, en el código intermedio (bytecodes) o en el código máquina cuando el programa está en forma compilada o binaria. Es decir, se cambia el código se enrevesa manteniendo el funcionamiento original, para dificultar su entendimiento. De esta forma se dificultan los intentos de ingeniería inversa y desensamblado que tienen la intención de obtener una forma de código fuente cercana a la forma original \cite{wiki:Obfuscation_(software)}.
+En computación, la ofuscación se refiere al acto deliberado de realizar un cambio no destructivo, ya sea en el código fuente de un programa informático, en el código intermedio o en el código máquina cuando el programa está en forma compilada o binaria. Es decir, se cambia el código se enrevesa manteniendo el funcionamiento original, para dificultar su entendimiento. De esta forma se dificultan los intentos de ingeniería inversa y desensamblado que tienen la intención de obtener una forma de código fuente cercana a la forma original \cite{wiki:Obfuscation_(software)}.
 
 \subsection{Métodos de ofuscación de código fuente}
-Existen muchos métodos de ofuscación utilizados por estudiantes para ocultar la similitud a continuación se mencionan algunos:
+\cite{10.1145/3313290} Explica que existen muchos métodos de ofuscación utilizados por estudiantes para ocultar la similitud, a su vez menciona que en un estudio de 72 articulos se identificaron 25 metodos de ofuscacion, y de estos se especificaron 16 metodos distintos.
+
+\noindent A continuación se mencionan algunos metodos de ofuscacion de codigo fuente:
 \begin{itemize}
-    \item \cite{article3} Mencionan cambios visuales en el formato del código, por lo que parece diferente a primera vista, esto generalmente incluye la modificación de espacios en blanco como sangrías, espacios, nuevas líneas, etc.
+    \item \cite{article3} Mencionan cambios en el formato del código, como la modificación de espacios en blanco como sangrías, espacios, nuevas líneas, etc.
     \item \cite{article3} Mencionan cambios en los comentarios del código.
-    \item \cite{donaldson1981plagiarism} Mencionan el cambio de los nombres de los identificadores. como nombres de variables, nombres de constantes, nombres de funciones, nombres de clases, etc.
-    \item \cite{donaldson1981plagiarism} Mencionan reordenar las líneas del código para las que el pedido no marca ninguna diferencia. Estos incluyen cambiar el orden de las declaraciones de variables, cambiando el orden de las declaraciones dentro de bloques de código como funciones, re ordenación de bloques de código o funciones, re ordenación de clases internas, etc.
+    \item \cite{10.1093/comjnl/bxs018} y \cite{donaldson1981plagiarism} Mencionan el cambio de los nombres de los identificadores. como nombres de variables, nombres de constantes, nombres de funciones, nombres de clases, etc.
+    \item \cite{donaldson1981plagiarism} Menciona cambios en el orden de las declaraciones de la variables.
+    \item \cite{10.1145/800037.800954} Menciona agregar lineas de codigo redundantes, lineas de codigo que no hacen nada.
+    \item \cite{donaldson1981plagiarism} Menciona dividir una linea de codigo en varias lineas.
+    \item \cite{WHALE1990131} Menciona el reemplazo de la llamada de un procedimiento por el procedimiento.
+    \item \cite{WHALE1990131} Menciona el cambio de la especificacion de una declaracion como el cambio de los operaciones y el operando, alternando modificadores cambio de tipos de datos.
+    \item \cite{article3} Mencionan el cambio de estructuras de control equivalentes, como el reemplazo de estructuras repetitivas y condicionales.
+    \item \cite{10.1093/comjnl/bxs018} Mencionan la simplicacion de codigo, eliminar lineas de codigo no necesarias.
 \end{itemize}
 
 \section{Conceptos de compiladores}
