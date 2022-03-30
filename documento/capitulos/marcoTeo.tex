@@ -113,7 +113,15 @@ Ahora que el código fuente se representa como un árbol, se puede analizar de u
 \section{Conceptos de algorítmica}
 
 \subsection{Programación dinámica}
-La programación dinámica es una técnica matemática que se utiliza para la solución de problemas matemáticos seleccionados, en los cuales se toma un serie de decisiones en forma secuencial.
+\cite{Cormen2009} Explica que la programación dinámica es un método para la resolución de problemas, el cual resuelve problemas combinando las soluciones de los subproblemas. La programación dinámica se aplica cuando los problemas se superponen, cuando los subproblemas comparten subproblemas, donde un algoritmo de programación dinámica resuelve un subproblemas solo una vez y guarda la respuesta en una tabla, de esta forma evita el trabajo de volver a calcular la respuesta. La programación dinámica se aplica a problema de optimización dichos problemas pueden tener mas de una solución posible, en el cual se desea encontrar el máximo o mínimo, a estas soluciones se llaman solución optima.\\
+
+\noindent Para desarrollar un algoritmo de programación de dinámica se sigue la siguiente secuencia de pasos:
+\begin{enumerate}
+    \item Caracterizar la estructura de solución optima.
+    \item Definir recursivamente el valor de una solución optima.
+    \item Calcular el valor de una solución optima, normalmente en forma ascendente.
+    \item Construir una solución optima a partir de la información calculada.
+\end{enumerate}
 
 \subsection{Distancia de edición de árbol}
 La distancia edición o distancia entre palabras es el número mínimo de operaciones requeridas para transformar una cadena de caracteres en otra, se usa ampliamente en teoría de la información y ciencias de la computación. Se entiende por operación, bien una inserción, eliminación o la sustitución de un carácter. Esta distancia recibe ese nombre en honor al científico ruso Vladimir Levenshtein, quien se ocupó de esta distancia en 1965. Es útil en programas que determinan cuán similares son dos cadenas de caracteres, como es el caso de los correctores ortográficos.\\
