@@ -1,11 +1,9 @@
 \chapter{MARCO TEÓRICO}
+%\section{Conceptos de lenguajes de programación}
+%\subsection{Lenguaje de programación}
+%Los lenguajes de programación son notaciones que describen los cálculos a las personas y las máquinas. Nuestra percepción del mundo en que vivimos depende de los lenguajes de programación, ya que todo el software que se ejecuta en todas las computadoras se escribió en algún lenguaje de programación \cite{aho2008compiladores}.
 
-\section{Conceptos de lenguajes de programación}
-\subsection{Lenguaje de programación}
-Los lenguajes de programación son notaciones que describen los cálculos a las personas y las máquinas. Nuestra percepción del mundo en que vivimos depende de los lenguajes de programación, ya que todo el software que se ejecuta en todas las computadoras se escribió en algún lenguaje de programación \cite{aho2008compiladores}.
-
-Un lenguaje de programación es un lenguaje formal, que mediante un conjunto de instrucciones permite a un programador crear programas. El lenguaje de programación es un sistema estructurado de comunicación conformado por conjuntos de símbolos, palabras clave, reglas semánticas y sintácticas, las cuales sirven para el entendimiento entre un programador y una maquina.
-
+%Un lenguaje de programación es un lenguaje formal, que mediante un conjunto de instrucciones permite a un programador crear programas. El lenguaje de programación es un sistema estructurado de comunicación conformado por conjuntos de símbolos, palabras clave, reglas semánticas y sintácticas, las cuales sirven para el entendimiento entre un programador y una maquina.
 
 \section{Conceptos de código fuente}
 \subsection{Código fuente}
@@ -17,27 +15,27 @@ El código fuente no es directamente ejecutable por la computadora, este debe se
 En computación, la ofuscación se refiere al acto deliberado de realizar un cambio no destructivo, ya sea en el código fuente de un programa informático, en el código intermedio o en el código máquina cuando el programa está en forma compilada o binaria. Es decir, se cambia el código se enrevesa manteniendo el funcionamiento original, para dificultar su entendimiento. De esta forma se dificultan los intentos de ingeniería inversa y desensamblado que tienen la intención de obtener una forma de código fuente cercana a la forma original \cite{wiki:Obfuscation_(software)}.
 
 \subsection{Métodos de ofuscación de código fuente}
-\cite{10.1145/3313290} Explica que existen muchos métodos de ofuscación utilizados por estudiantes para ocultar la similitud, a su vez menciona que en un estudio de 72 articulos se identificaron 25 metodos de ofuscacion, y de estos se especificaron 16 metodos distintos.
+\cite{Novak2019} Explica que existen muchos métodos de ofuscación utilizados por estudiantes para ocultar la similitud, a su vez menciona que en un estudio de 72 articulos se identificaron 25 metodos de ofuscacion, y de estos se especificaron 16 metodos distintos.
 
 \noindent A continuación se mencionan algunos metodos de ofuscacion de codigo fuente:
 \begin{itemize}
     \item \cite{article3} Mencionan cambios en el formato del código, como la modificación de espacios en blanco como sangrías, espacios, nuevas líneas, etc.
     \item \cite{article3} Mencionan cambios en los comentarios del código.
-    \item \cite{10.1093/comjnl/bxs018} y \cite{donaldson1981plagiarism} Mencionan el cambio de los nombres de los identificadores. como nombres de variables, nombres de constantes, nombres de funciones, nombres de clases, etc.
+    \item \cite{Zoran2012} y \cite{donaldson1981plagiarism} Mencionan el cambio de los nombres de los identificadores. como nombres de variables, nombres de constantes, nombres de funciones, nombres de clases, etc.
     \item \cite{donaldson1981plagiarism} Menciona cambios en el orden de las declaraciones de la variables.
-    \item \cite{10.1145/800037.800954} Menciona agregar lineas de codigo redundantes, lineas de codigo que no hacen nada.
+    \item \cite{Grier1981} Menciona agregar lineas de codigo redundantes, lineas de codigo que no hacen nada.
     \item \cite{donaldson1981plagiarism} Menciona dividir una linea de codigo en varias lineas.
     \item \cite{WHALE1990131} Menciona el reemplazo de la llamada de un procedimiento por el procedimiento.
     \item \cite{WHALE1990131} Menciona el cambio de la especificacion de una declaracion como el cambio de los operaciones y el operando, alternando modificadores cambio de tipos de datos.
     \item \cite{article3} Mencionan el cambio de estructuras de control equivalentes, como el reemplazo de estructuras repetitivas y condicionales.
-    \item \cite{10.1093/comjnl/bxs018} Mencionan la simplicacion de codigo, eliminar lineas de codigo no necesarias.
+    \item \cite{Zoran2012} Mencionan la simplicacion de codigo, eliminar lineas de codigo no necesarias.
 \end{itemize}
 
 \section{Conceptos de compiladores}
 
 \subsection{Procesador de lenguaje}
 Un procesador de lenguaje se muestra en la figura \ref{compilador1}. También llamado compilador es un programa que puede leer un programa en un lenguaje y traducirlo en un programa equivalente en otro lenguaje. Una función importante del compilador es reportar cualquier error en el programa fuente que detecte durante el proceso de traducción \cite{aho2008compiladores}.
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.6]{imagenes/compilador1}
 \caption{Un compilador}
@@ -46,7 +44,7 @@ Nota: Figura tomada de \cite{aho2008compiladores}.
 \end{figure}
 
 El proceso de compilación opera como una secuencia de fases con las cuales transforma un programa fuente en otro, se muestra en la figura \ref{fasesCompilador1}.
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=1]{imagenes/fasesCompilador1}
 \caption{Fases de un compilador}
@@ -76,7 +74,7 @@ Una parte importante del análisis semántico es la comprobación de tipos, en d
 Esta fase es quizás la más compleja. Hay que revisar que los operadores trabajan sobre tipos compatibles, si los operadores obtienen como resultado elementos con tipos adecuados, si las llamadas a subprogramas tienen los parámetros adecuados tanto en
 número como en tipo, etc. Esta fase debe preparar el terreno para atajar las fases de generación de código y debe lanzar los mensajes de error que encuentre. En resumen, su tarea es revisar el significado de lo que se va leyendo para ver si tiene sentido.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.9]{imagenes/traduccionDeAsignacion1}
 \caption{Traducción de una asignación}
@@ -96,7 +94,7 @@ Ademas para que un grafo sea considerado un árbol deben cumplirse las siguiente
     \item G es acíclico, y $|E| = |V|-1$.
     \item G es acíclico, pero si cualquier vértice es agregado a E, el grafo resultante contendrá un ciclo.
 \end{itemize}
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.8]{imagenes/arbol1}
 \caption{Árbol}
@@ -106,14 +104,12 @@ Nota: Figura tomada de \cite{Cormen2009}.
 
 En resumen un árbol es un grafo no direccionado, conexo, acíclico, y que dos vértices cualesquiera están conectados por un camino único, como se muestra en la figura \ref{arbol1}.
 
-Las estructuras de datos basadas en árboles se hicieron muy populares en el campo del desarrollo de compiladores: cada vez que se envía un archivo que contiene el código fuente al compilador, se realizan varios pasos antes de que se puedan generar las instrucciones de la máquina. El código tiene que ser tokenizado por un Lexer primero: separa el flujo de entrada en tokens individuales y los pasa al analizador, que utiliza una gramática libre de contexto del lenguaje de programación para construir una representación de código intermedio, un llamado árbol de análisis.
-Cada token encontrado por el lexer está representado por un nodo en el árbol de análisis. No todos los tokens (nodos) tienen un valor semántico: algunos tokens, por ejemplo, paréntesis y punto y coma, son puramente sintácticos. Por lo tanto, puede omitirse. La estructura de datos resultante se denomina árbol de sintaxis abstracta (AST).
-Ahora que el código fuente se representa como un árbol, se puede analizar de una forma más sofisticada manera que al analizar el flujo de token plano: el árbol se puede recorrer o buscar de varias maneras por ejemplo, pos-orden, pre-orden, búsqueda profundidad, etc. \cite{ChangeDistiller}.
+Las estructuras de datos basadas en árboles se hicieron muy populares en el campo del desarrollo de compiladores. Cada vez que se envía un archivo que contiene el código fuente al compilador, se realizan varios pasos antes de que se puedan generar las instrucciones de la máquina. El código tiene que ser tokenizado por un Lexer primero, separa el flujo de entrada en tokens individuales y los pasa al analizador, que utiliza una gramática libre de contexto del lenguaje de programación para construir una representación de código intermedio, llamado árbol de análisis. Cada token encontrado por el lexer está representado por un nodo en el árbol de análisis. No todos los tokens tienen un valor semántico. Algunos tokens, por ejemplo, paréntesis y punto y coma, son puramente sintácticos. Por lo tanto, puede omitirse. La estructura de datos resultante se denomina árbol de sintaxis abstracta (AST). Ahora que el código fuente se representa como un árbol, se puede analizar de una forma más sofisticada manera que al analizar el flujo de token plano: el árbol se puede recorrer o buscar de varias maneras por ejemplo, pos-orden, pre-orden, búsqueda profundidad, etc. \cite{ChangeDistiller}.
 
 \section{Conceptos de algorítmica}
 
 \subsection{Programación dinámica}
-\cite{Cormen2009} Explica que la programación dinámica es un método para la resolución de problemas, el cual resuelve problemas combinando las soluciones de los subproblemas. La programación dinámica se aplica cuando los problemas se superponen, cuando los subproblemas comparten subproblemas, donde un algoritmo de programación dinámica resuelve un subproblemas solo una vez y guarda la respuesta en una tabla, de esta forma evita el trabajo de volver a calcular la respuesta. La programación dinámica se aplica a problema de optimización dichos problemas pueden tener mas de una solución posible, en el cual se desea encontrar el máximo o mínimo, a estas soluciones se llaman solución optima.\\
+\cite{Cormen2009} Explica que la programación dinámica es un método para la resolución de problemas, el cual resuelve un problema combinando las soluciones de los subproblemas. La programación dinámica se aplica cuando los problemas se superponen, cuando los subproblemas comparten subproblemas, donde un algoritmo de programación dinámica resuelve un subproblemas solo una vez y guarda la respuesta en una tabla, de esta forma evita el trabajo de volver a calcular la respuesta. La programación dinámica se aplica a problema de optimización dichos problemas pueden tener mas de una solución posible, en el cual se desea encontrar el máximo o mínimo, a estas soluciones se llaman solución optima.\\
 
 \noindent Para desarrollar un algoritmo de programación de dinámica se sigue la siguiente secuencia de pasos:
 \begin{enumerate}
@@ -123,10 +119,10 @@ Ahora que el código fuente se representa como un árbol, se puede analizar de u
     \item Construir una solución optima a partir de la información calculada.
 \end{enumerate}
 
-\subsection{Distancia de edición de árbol}
-La distancia edición o distancia entre palabras es el número mínimo de operaciones requeridas para transformar una cadena de caracteres en otra, se usa ampliamente en teoría de la información y ciencias de la computación. Se entiende por operación, bien una inserción, eliminación o la sustitución de un carácter. Esta distancia recibe ese nombre en honor al científico ruso Vladimir Levenshtein, quien se ocupó de esta distancia en 1965. Es útil en programas que determinan cuán similares son dos cadenas de caracteres, como es el caso de los correctores ortográficos.\\
+\subsection{Distancia de edición del árbol}
+\cite{Schwarz2017} Define a la distancia de edicion del arbol (TED) como la secuencia de operaciones de nodo de costo minimo que transforma un árbol en otro, este algoritmo tiene varias aplicaciones en ingenieria de software, procesamiento del lenguaje natural y la bioinformática. Los algoritmos de ultima generacion TED descomponen recursivamente arboles de entrada en subproblemas mas pequeños y usan programacion dinamica para construir el resultado de forma ascendente. Dentro de las implementaciones de una solucion recursiva mas eficientes estan la de \cite{Zhang1989} y \cite{Chen2001}, ambos son una extension del algoritmo basico de la distancia de edicion de cadenas.\\
 
-La distancia de edición del árbol se define como la secuencia de costos mínimos de operaciones de edición de nodos que transforman un árbol en otro. Las operaciones consisten en eliminar, agregar y modificar nodos del árbol.
+\noindent De \cite{Benjamin2018} podemos obtener las siguientes definiciones:
 
 \subsection{Conjuntos Disjuntos}
 En \cite{Cormen2009} obtenemos una la definición de conjuntos disjuntos y la estructura de datos para conjuntos disjuntos.
@@ -144,7 +140,7 @@ La estructura de datos para conjuntos disjuntos soporta eficientemente las opera
 
 \section{Herramientas para la detección de similitud de código}
 \subsection{Algoritmos utilizados para la detección de similitud}
-\cite{10.1145/3313290} Identificó diferentes algoritmos a continuación se mencionan algunos de ellos:
+\cite{Novak2019} Identificó diferentes algoritmos a continuación se mencionan algunos de ellos:
 \begin{itemize}
     \item Recuento de atributos
     \item Huella digital

@@ -3,13 +3,14 @@
 \section{Introducción}
 \cite{unknown1} Explica que la identificación de similitud entre códigos fuente puede servir para varios propósitos, entre ellos están el estudio de la evolución de código fuente de un proyecto, detección de prácticas de plagio, detección de prácticas de reutilización, extracción de código para “refactorización” del mismo y seguimiento de defectos para su corrección.
 
-Los estudiantes durante su proceso de formación elaboran trabajos, proyectos, tareas y ejercicios de programación escritos en un lenguaje de programación, estas actividades se realiza de forma individual o grupal, cuando estas actividades se desarrollan de forma individual los estudiantes deben ser conscientes de que todo trabajo entregado debe ser de su creación, pues tiene como función medir la capacidad de resolución de problemas y el enfoque lógico y otros. Por ello encontrar similitud en trabajos de programación presentados por los estudiantes, puede ser identificado como plagio.
+Un estudiante de programacion durante su proceso de formacion, realiza trabajos, proyectos, tareas y  ejercicios de programacion, estas actividades ayudan a desarrollar la capacidad de resolucion de problemas, enfoque logico y otros. Cuando la presentacion de estas actividades es individual, encontrar trabajos similares presentados por estudiantes puede ser considerado como plagio. Una de las formas para detectar la similitud en trabajos de programación consiste en realizar la comparación entre los trabajos entregados por los estudiantes de la materia. De a modo de obtener una lista de estudiantes que tienen trabajos similares. Realizar la comparación de los trabajos manualmente puede llegar a ser un trabajo moroso.
 
-Una de las formas para detectar el plagio en los trabajos de programación consiste en realizar la comparación entre los trabajos entregados por los estudiantes de la materia. De a modo de obtener una lista de estudiantes que tienen trabajos similares. Realizar la comparación de los trabajos manualmente puede llegar a ser un trabajo moroso, por lo cual contar con una herramienta de software que realice las comparaciones de trabajos de forma automática es de gran utilidad.
+En la actualidad existen diferentes herramientas de software que aplican metodos para la deteccion de similitud entre codigos fuente, apartir de las caracteristicas de estas herramientas se puede evidenciar que presentan deficiencias como la obsolescencia, sistemas sin codigo abierto, procesos complejos de evaluacion de similitud, sistemas incapaces que detectar similitud en un grupo grande de archivos de codigo fuente.
 
-En la actualidad existen diferentes herramientas de software que aplican métodos para detección de similitud entre códigos fuente, a partir de las características se pudo evidenciar que estas presentan deficiencias como ser la obsolescencia, sistemas cerrados (sin código abierto), un proceso complejo de evaluación de similitud, la incapacidad para utilizar o no una gran base de información. Esto se debe a que fueron diseñadas para detectar plagio entre un grupo pequeño de archivos de código fuente.
+Ademas \cite{Novak2019} hace mención a que los enfoques basados en estructuras son mucho mejores, ademas que la mayoría de las herramientas de detección de similitud combinan más de un tipo de algoritmo. El diseño del algoritmo propuesto contara con tres fases, la primera fase consiste en la conversion de codigo fuente en arbol de sintaxis abstracta AST, esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de arboles obtenidos mediante conceptos de distancia de edicion de arboles TED, la fase final consiste en la agrupacion de codigos similires mediante conceptos de estructuras para conjuntos disjuntos DSU.
 
-Por lo cual contar con un sistema para la detección de similitud entre códigos fuente llega a ser útil para detectar plagio en trabajos de cátedra presentados por estudiantes. El presente trabajo de tesis se centra en el diseño e implementación de un algoritmo para la detección de similitud entre códigos fuente que tenga un buen desempeño, en términos de tiempo de ejecución, espacio de memoria ocupado y precisión.
+En el presente trabajo de tesis se centra en el diseño e implementacion de un algoritmo para la deteccion de similitud entre codigos fuente que tenga buen desempeño, en terminos de tiempo de ejecucion, espacio de memoria ocupado y precision.
+
 \section{Problema}
 \subsection{Antecedentes del problema}
 Se analizaron herramientas para la detección de similitud entre código fuente más populares, a continuación se dará breve explicación de las características que tienen estas.
@@ -81,7 +82,7 @@ Con la utilización de trabajos de programación presentados por estudiantes se 
 \end{itemize}
 \section{Metodología}
 \subsection{Metodología Experimental}
-Para el desarrollo del trabajo de investigación se utilizara la metodología científica experimental, esta investigación 
+Para el desarrollo del trabajo de investigación se utilizara la metodología científica experimental, esta investigación
 nos permite la manipulación de una o mas variables. De modo que al seguir las siguientes etapas ayudara a cumplir con los objetivos propuestos.
 \begin{enumerate}
   \item \textbf{Recopilación de la información.} En esta etapa se recopilara información necesaria y estudiara los temas.

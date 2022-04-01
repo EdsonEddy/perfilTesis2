@@ -2,4 +2,5 @@
 *.bbl
 *.blg
 *.log
+*.toc
 main.synctex.gz
