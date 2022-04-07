@@ -1,0 +1,139 @@
+\chapter{MARCO REFERENCIAL}
+
+\section{Introducción}
+\cite{unknown1} Explica que la identificación de similitud entre códigos fuente puede servir para varios propósitos, entre ellos están el estudio de la evolución de código fuente de un proyecto, detección de prácticas de plagio, detección de prácticas de reutilización, extracción de código para “refactorización” del mismo y seguimiento de defectos para su corrección.
+
+Un estudiante de programacion durante su proceso de formacion, realiza trabajos, proyectos, tareas y  ejercicios de programacion, estas actividades ayudan a desarrollar la capacidad de resolucion de problemas, enfoque logico y otros. Cuando la presentacion de estas actividades es individual, encontrar trabajos similares presentados por estudiantes puede ser considerado como plagio. Una de las formas para detectar la similitud en trabajos de programación consiste en realizar la comparación entre los trabajos entregados por los estudiantes de la materia. De a modo de obtener una lista de estudiantes que tienen trabajos similares. Realizar la comparación de los trabajos manualmente puede llegar a ser un trabajo moroso.
+
+En la actualidad existen diferentes herramientas de software que aplican metodos para la deteccion de similitud entre codigos fuente, apartir de las caracteristicas de estas herramientas se puede evidenciar que presentan deficiencias como la obsolescencia, sistemas sin codigo abierto, procesos complejos de evaluacion de similitud, sistemas incapaces que detectar similitud en un grupo grande de archivos de codigo fuente.
+
+Ademas \cite{Novak2019} hace mención a que los enfoques basados en estructuras son mucho mejores, ademas que la mayoría de las herramientas de detección de similitud combinan más de un tipo de algoritmo. El diseño del algoritmo propuesto contara con tres fases, la primera fase consiste en la conversion de codigo fuente en arbol de sintaxis abstracta AST, esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de arboles obtenidos mediante conceptos de distancia de edicion de arboles TED, la fase final consiste en la agrupacion de codigos similires mediante conceptos de estructuras para conjuntos disjuntos DSU.
+
+En el presente trabajo de tesis se centra en el diseño e implementacion de un algoritmo para la deteccion de similitud entre codigos fuente que tenga buen desempeño, en terminos de tiempo de ejecucion, espacio de memoria ocupado y precision.
+
+\section{Problema}
+\subsection{Antecedentes del problema}
+\subsubsection{Algoritmos utilizados por las herramientas}
+\cite{Novak2019} Realizo un estudio sistematico campo de la deteccion de plagio de codigo fuente, describe definiciones de plagio, herramientas para la deteccion de plagio, metricas de comparacion, metodos de ofuscacion, conjunto de datos para la comparacion y algoritmos que utilizan las herramientas. En el estudio de los algoritmos realizo un analisis en 120 articulos de los cuales identifica algoritmos basados en estilo, basado en semantica, basado en texto, huellas dactilares, recuento de atributos, basado en estructura, coincidencia de cadenas, marca de agua, basado en historial, basado en XML, codigo compilado, basado en compresión, basado en grafos, basado en agrupamiento, basado en N-gramas y basado en árboles.  También hace menciona que los enfoques basados en estructuras son mucho mejores y que la mayoría de las herramientas combinan más de un tipo de algoritmo. En el cuadro \ref{tiposDeAlgoritmos} se muestra detalles de estos como el primer y ultimo año de publicacion de un algoritmo, el numero de articulos en los que aparecen y si utilizan la tokenización.
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|lllll|}
+\hline
+\multicolumn{1}{|l|}{Tipo de algoritmo}       & \multicolumn{1}{l|}{Ultimo año} & \multicolumn{1}{l|}{Primer año} & \multicolumn{1}{l|}{Nro. de artículos} & Tokenizados \\ \hline
+\multicolumn{1}{|l|}{Basado en estilo}        & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2011}       & \multicolumn{1}{l|}{5}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en semántica}     & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{7}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Basado en texto}         & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1996}       & \multicolumn{1}{l|}{9}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Huellas dactilares}      & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{11}                & 4           \\ \hline
+\multicolumn{1}{|l|}{Recuento de atributos}   & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{1980}       & \multicolumn{1}{l|}{25}                & 6           \\ \hline
+\multicolumn{1}{|l|}{Basado en estructura}    & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1980}       & \multicolumn{1}{l|}{25}                & 13          \\ \hline
+\multicolumn{1}{|l|}{Coincidencia de cadenas} & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1981}       & \multicolumn{1}{l|}{26}                & 17          \\ \hline
+\multicolumn{5}{|c|}{Nuevas categorías identificadas}                                                                                                                    \\ \hline
+\multicolumn{1}{|l|}{Marca de agua}           & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{2}                 & 0           \\ \hline
+\multicolumn{1}{|l|}{Basado en historial}     & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2}                 & 0           \\ \hline
+\multicolumn{1}{|l|}{Basado en XML}           & \multicolumn{1}{l|}{2012}       & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{3}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Código compilado}        & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2006}       & \multicolumn{1}{l|}{5}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en compresión}    & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{2004}       & \multicolumn{1}{l|}{6}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Basado en grafos}        & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{10}                & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en agrupamiento}  & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{11}                & 7           \\ \hline
+\multicolumn{1}{|l|}{Basado en N-gramas}      & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2006}       & \multicolumn{1}{l|}{15}                & 9           \\ \hline
+\multicolumn{1}{|l|}{Basado en árboles}       & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{1988}       & \multicolumn{1}{l|}{24}                & 8           \\ \hline
+\end{tabular}
+\caption{Descripción general de los tipos de algoritmos}
+Nota: Cuadro tomado de \cite{Novak2019}.
+\label{tiposDeAlgoritmos}
+\end{table}
+\subsubsection{Herramientas para la detección de similitud de código}
+\cite{Novak2019} describe cuatro caracteristicas de cinco herramientas que son consideradas las más importantes, en el cuadro \ref{descripcionHerramientas} se muestran las caracteristicas como: las menciones en articulos, codigo abierto, interfaz grafica (GUI), sin conexion a internet y el sitio web.
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Herramienta      & Menciones & Código abierto & GUI & offline & Sitio web \\ \hline
+JPLAG        & 43                & Si             & Si  & Si                      & \href{https://jplag.ipd.kit.edu}{jplag.ipd.kit.edu} \\ \hline
+MOSS          & 38                & No             & Si  & No                      & \href{https://theory.stanford.edu/~aiken/moss/}{theory.stanford.edu} \\ \hline
+Sherlock & 9                 & Si             & Si  & Si                      & \href{http://warwick.ac.uk/iasgroup/software/sherlock}{warwick.ac.uk}  \\ \hline
+Plaggie             & 7                 & Si             & Si  & Si                      &  \href{https://www.cs.hut.fi/Software/Plaggie}{www.cs.hut.fi} \\ \hline
+SIM            & 6                 & Si             & No  & Si                      &  \href{https://dickgrune.com/Programs/similary_tester}{dickgrune.com} \\ \hline
+\end{tabular}
+\caption{ Descripción general de las caracteristticas de las herramientas}
+Nota: Cuadro tomado de \cite{Novak2019}.
+\label{descripcionHerramientas}
+\end{table}
+
+\begin{itemize}
+  \item \textbf{JPLAG} \cite{Banchoff2007} explica que la arquitectura de esta herramienta es de cliente servidor, solo  permite la programacion del cliente, dado que es el servidor quien realiza las operaciones de comparacion, fue desarrollada por la universidad de Karlsruhe de Alemania, se puede analizar codigo de los lenguajes C, C++, Java, Scheme y texto natural. La herramienta analiza la estructura y sintaxis del código, este sistema trabaja con archivos locales.
+  \item \textbf{MOSS} Software creado por el profesor Alex Aiken en la universidad de Stanford, es el primer servicio que inició en la web, siendo una referencia a nivel mundial. Este, permite comparar hasta 250 archivos en 25 lenguajes de programación \cite{Hage2010ACO}. Aunque no tiene licencia como software libre, su uso dentro del ambiente académico es gratuito y ofrecido desde un servidor de Stanford. Es de difícil su configuración y tiene poca documentación \cite{book1}.
+  \item \textbf{Sherlock} \cite{Banchoff2007} explica que la herramienta es de codigo abierto, que trabaja con codigo fuente escrito en JAVA, C y texto natural, Los resultados obtenidos en la comparacion por la herramienta se muestran en porcentajes, solo trabaja con archivos locales.
+  \item \textbf{Plaggie} Es una aplicación Java independiente que se puede utilizar para comprobar ejercicios de programación Java. La funcionalidad de Plaggie es similar al servicio web JPlag publicado anteriormente, pero a diferencia de JPlag, Plaggie debe instalarse localmente y su código fuente está abierto. Aparentemente, Plaggie es el único motor de detección de plagio de código abierto para ejercicios de Java \cite{Ahtiainen2006}.
+  \item \textbf{SIM} \cite{Banchoff2007} explica que la herramienta es de codigo abierto, trabaja con lenguajes C, JAVA, Lisp, Modula2, Pascal y texto natural, fue desarrollado por la universidad de Amsterdam. No cuenta con una interfaz grafica, se la utiliza mediante linea de comandos, los resultados obtenidos en la comparacion obtenidos por la herramienta aparecen separados por columnas, mostrando porciones de codigos iguales, solo trabaja con archivos locales.
+\end{itemize}
+
+\subsection{Planteamiento del problema}
+Los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. Estas actividades deben realizarse de forma individual dado que sirven para medir la capacidad de resolución de problemas y el enfoque lógico de los estudiantes. Por ello encontrar similitud en trabajos de programación presentados por estudiantes puede ser identificado como plagio de código fuente.
+
+La forma mas simple para detectar plagio en trabajos de programación, consiste en realizar la comparación de forma manual entre todos los trabajos presentados, de modo de obtener una lista de estudiantes que tienen trabajos similares. Realizar esta comparación llega a ser una trabajo moroso, por lo cual contar con una herramienta de software que realice las comparaciones de forma automática y genere la una lista de trabajos similares es de gran utilidad.
+
+En la actualidad existen herramientas de software para detectar similitud entre códigos fuente. Según sus características se observo que estas presentan deficiencias como la obsolescencia, sin código abierto, incapacidad de utilizar gran base de información.
+\subsection{Formulación del problema}
+¿El algoritmo JTEL tiene mejor desempeño frente a otras herramientas en la detección de similitud de códigos fuente en trabajos de cátedra?
+
+\section{Objetivos}
+\subsection{Objetivo general}
+Diseñar e implementar el algoritmo JTEL para la detección de similitud entre códigos fuente.
+\subsection{Objetivos específicos}
+\begin{itemize}
+    \item Estudiar los métodos para la detección de similitud entre códigos fuente existentes.
+    \item Estudiar los algoritmos utilizados en los métodos para la detección de similitud de código fuente.
+    \item Redactar las especificaciones para el algoritmo JTEL.
+    \item Evaluar el desempeño del algoritmo JTEL realizando las pruebas en trabajos de programación presentado por estudiantes.
+\end{itemize}
+
+\section{Hipótesis}
+El algoritmo JTEL implementado para la detección de similitud entre códigos fuente obtiene mejores resultados frente a otras herramientas para la detección de similitud.
+\subsection{Variables Independientes}
+\begin{itemize}
+    \item El algoritmo JTEL para la detección de similitud entre códigos fuente.
+\end{itemize}
+\subsection{Variables Dependientes}
+\begin{itemize}
+    \item Resultados más precisos respecto a la detección de similitud entre códigos fuente de trabajos de cátedra frente a otras herramientas.
+\end{itemize}
+\section{Justificaciones}
+\subsection{Justificación Social}
+El algoritmo JTEL ahorrará el tiempo de docentes de instituciones académicas en la detección de plagio en trabajos de programación presentados por estudiantes, evitando que los docentes realicen la comparación de trabajos de programación de forma manual.
+\subsection{Justificación Económica}
+El algoritmo JTEL para la detección de similitud entre códigos fuente sera de código abierto, por lo cual permitirá que se desarrollen otros software a bajo costo.
+\subsection{Justificación Tecnológica}
+El algoritmo JTEL para la detección de similitud entre códigos fuente, se puede implementar en jueces de programación para identificar los envíos similares de los usuarios del juez.
+\subsection{Justificación Científica}
+Con la utilización de trabajos de programación presentados por estudiantes se medirá el desempeño de los métodos existentes para la detección de similitud entre códigos fuente. Con los resultados obtenidos se determinará cuál es el método más eficiente en términos de tiempo de ejecución, espacio de memoria ocupado y precisión.
+\section{Alcances y Limites}
+\subsection{Alcance Sustancial}
+\begin{itemize}
+    \item Se diseñará e implementará en Python un algoritmo JTEL para la detección de similitud entre códigos fuente.
+    \item Se realizaran las pruebas de trabajos de cátedra de código fuente en Python.
+    \item Se dejará de lado la comprobación de correctitud de los códigos fuente.
+    \item Se realizarán pruebas para medir el tiempo, espacio de memoria ocupado y eficiencia del algoritmo.
+    \item Se dejará de lado el estudio de métodos para la detección de similitud que aplican técnicas de Inteligencia Artificial.
+\end{itemize}
+\subsection{Alcance Espacial}
+\begin{itemize}
+    \item Se realizaran las pruebas del algoritmo en una computadora intel i3 de Décima generación con 8GB de RAM y 512GB de Disco Duro.
+\end{itemize}
+\subsection{Alcance Temporal}
+\begin{itemize}
+    \item El tiempo de ejecución que el algoritmo estará limitado a un minuto. Por cada conjunto de trabajos evaluados.
+\end{itemize}
+\section{Metodología}
+\subsection{Metodología Experimental}
+Para el desarrollo del trabajo de investigación se utilizara la metodología científica experimental, esta investigación
+nos permite la manipulación de una o mas variables. De modo que al seguir las siguientes etapas ayudara a cumplir con los objetivos propuestos.
+\begin{enumerate}
+  \item \textbf{Recopilación de la información.} En esta etapa se recopilara información necesaria y estudiara los temas.
+  \item \textbf{Diseño del algoritmo.} En esta etapa se diseñara el algoritmo tomando en cuenta los alcances y limites.
+  \item \textbf{Pruebas de funcionamiento del algoritmo en trabajos de cátedra.} En esta etapa se Realizara pruebas en trabajos de cátedra presentados por estudiantes.
+  \item \textbf{Análisis de los resultados obtenidos.} En esta etapa se analizaran los datos y se los comparara frente a otras herramientas.
+  \item \textbf{Conclusiones.} En esta etapa se realizara las conclusiones, se presentaran los resultados finales, y recomendaciones respecto a la investigación.
+\end{enumerate}
