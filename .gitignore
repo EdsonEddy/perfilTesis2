@@ -3,4 +3,7 @@
 *.blg
 *.log
 *.toc
+*.lof
+*.lot
+*.out
 main.synctex.gz

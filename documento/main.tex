@@ -1,43 +1,11 @@
-%% -----------------------------------------
-\documentclass{main}
-%%%
-%%
-% =======================================
-\input{Preambulo/packages}
-
-%%%%%%%%%
-\thesisUniversity{UNIVERSIDAD  MAYOR DE SAN ANDRES}
-\thesisFacultad{FACULTAD DE CIENCIAS PURAS Y NATURALES}
-\thesisCarrera{CARRERA DE INFORMÁTICA}
-\thesisGrado{TESIS DE GRADO}
-\thesisMencion{Mención: Ciencias de la Computación}
-\title{DISEÑO DE UN ALGORITMO PARA LA DETECCIÓN DE SIMILITUD ENTRE CÓDIGOS FUENTE}
-\thesisMencion{PARA OPTAR AL TÍTULO DE LICENCIATURA EN INFORMÁTICA MENCIÓN: CIENCIAS DE LA COMPUTACIÓN}
-\author{Univ. Edson Eddy Lecoña Zarate}
-\tutor{M.Sc. Jorge Humberto Terán Pomier}
-\date{2021}
-
+\documentclass[letterpaper,12pt,openany,oneside]{book}
+\input{packages}
 \begin{document}
-
-\maketitle
-%\input{Capitulos/Agradecimientos}
-%\input{Capitulos/Dedicatoria}
-%\input{Capitulos/Resumen}
-%% Indice General, Figuras y Cuadros
-\thesisTables
-\thesisBodyStart
-%% Capitulos
-\input{Capitulos/MarcoRef}
-\input{Capitulos/MarcoTeo}
-%% Bibliografia formato APA
-\addcontentsline{toc}{chapter}{BIBLIOGRAFÍA}
-\bibliographystyle{apalike}
-\bibliography{biblioapa}
-
-%% Anexo
-%\renewcommand{\appendixname}{ANEXO}
-%\renewcommand{\appendixtocname}{ANEXO}
-%\renewcommand{\appendixpagename}{ANEXO}
-%\input{Capitulos/Anexo}
-
+    \include{capitulos/caratula}
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    \include{capitulos/marcoRef}
+    \include{capitulos/marcoTeo}
+    \input{bibliografia/biblio}
 \end{document}
