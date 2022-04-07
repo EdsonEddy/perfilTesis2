@@ -13,17 +13,63 @@ En el presente trabajo de tesis se centra en el diseño e implementacion de un a
 
 \section{Problema}
 \subsection{Antecedentes del problema}
-Se analizaron herramientas para la detección de similitud entre código fuente más populares, a continuación se dará breve explicación de las características que tienen estas.
-\subsubsection{Sherlock}
-Es una herramienta de código abierto, que trabaja con código escrito en los lenguajes Java, C y texto natural. Esta herramienta no cuenta con una interfaz gráfica. Fue desarrollada por la Universidad de Sydney. Los resultados arrojados se basan en un porcentaje que se corresponde con las similitudes encontradas. El porcentaje 0\% significa que no hay similitudes, y 100\% significa que hay muchas posibilidades de que tengan partes iguales. Al no utilizar el documento en su totalidad, no se puede afirmar que sean completamente iguales. Sólo trabaja con archivos locales, no busca similitudes en Internet \cite{article1}.
-\subsubsection{Simian}
-Esta herramienta no es de código abierto. Identifica la duplicación de códigos escritos en JAVA, C, C++, COBOL, Ruby, JSP, ASP, HTML, XML, Visual Basic y texto natural. Fue desarrollada por una consultora de Australia llamada REDHILL. No cuenta con una interfaz gráfica, por lo tanto, el ingreso de los parámetros es a través de línea de comando. Sólo trabaja con archivos locales, no busca similitudes en Internet \cite{article1}.
-\subsubsection{Jplag}
-Esta herramienta no es de código abierto, sólo permite la programación del cliente, pero el servidor es el que realiza las operaciones de comparación; se encuentra en la Universidad de Karlsruhe de Alemania, en la cual fue desarrollada. Trabaja con los siguientes lenguajes C, C++, Java, Scheme y texto natural. Fue desarrollada por la Universidad de Karlsruhe de Alemania. Analiza la estructura y sintaxis del código, no comparando texto. Este sistema sólo trabaja con archivos locales, no busca similitudes en Internet. Su arquitectura de trabajo es Cliente/Servidor. La interfaz es a través de línea de comando, o, puede implementarse un cliente propio. Para el manejo de los archivos enviados, puede utilizarse el cliente brindado por la universidad que lo desarrolló o bien crear un cliente propio, como mencionamos anteriormente \cite{article1}.
-\subsubsection{Tester SIM}
-Es una herramienta de código abierto. Trabaja con los lenguajes C, JAVA, Lisp, Modula 2, Pascal y texto natural. Está desarrollada por la Universidad de Amsterdam. No cuenta con una interfaz gráfica, se ingresan los distintos parámetros por línea de comando. Los resultados brindados por la misma aparecen separados en dos columnas, mostrando en cada una las porciones de código iguales. Sólo trabaja con búsquedas de similitudes en archivos locales. También se puede procesar un conjunto de archivos viejos contra un conjunto de archivos nuevos  \cite{article1}.
-\subsubsection{MOSS}
-Software creado por el profesor Alex Aiken en la universidad de Stanford, es el primer servicio que inició en la web, siendo una referencia a nivel mundial. Este, permite comparar hasta 250 archivos en 25 lenguajes de programación \cite{Hage2010ACO}. Aunque no tiene licencia como software libre, su uso dentro del ambiente académico es gratuito y ofrecido desde un servidor de Stanford. Es de difícil su configuración y tiene poca documentación \cite{book1}.
+\subsubsection{Algoritmos utilizados por las herramientas}
+\cite{Novak2019} Realizo un estudio sistematico campo de la deteccion de plagio de codigo fuente, describe definiciones de plagio, herramientas para la deteccion de plagio, metricas de comparacion, metodos de ofuscacion, conjunto de datos para la comparacion y algoritmos que utilizan las herramientas. En el estudio de los algoritmos realizo un analisis en 120 articulos de los cuales identifica algoritmos basados en estilo, basado en semantica, basado en texto, huellas dactilares, recuento de atributos, basado en estructura, coincidencia de cadenas, marca de agua, basado en historial, basado en XML, codigo compilado, basado en compresión, basado en grafos, basado en agrupamiento, basado en N-gramas y basado en árboles.  También hace menciona que los enfoques basados en estructuras son mucho mejores y que la mayoría de las herramientas combinan más de un tipo de algoritmo. En el cuadro \ref{tiposDeAlgoritmos} se muestra detalles de estos como el primer y ultimo año de publicacion de un algoritmo, el numero de articulos en los que aparecen y si utilizan la tokenización.
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|lllll|}
+\hline
+\multicolumn{1}{|l|}{Tipo de algoritmo}       & \multicolumn{1}{l|}{Ultimo año} & \multicolumn{1}{l|}{Primer año} & \multicolumn{1}{l|}{Nro. de artículos} & Tokenizados \\ \hline
+\multicolumn{1}{|l|}{Basado en estilo}        & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2011}       & \multicolumn{1}{l|}{5}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en semántica}     & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{7}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Basado en texto}         & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1996}       & \multicolumn{1}{l|}{9}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Huellas dactilares}      & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{11}                & 4           \\ \hline
+\multicolumn{1}{|l|}{Recuento de atributos}   & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{1980}       & \multicolumn{1}{l|}{25}                & 6           \\ \hline
+\multicolumn{1}{|l|}{Basado en estructura}    & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1980}       & \multicolumn{1}{l|}{25}                & 13          \\ \hline
+\multicolumn{1}{|l|}{Coincidencia de cadenas} & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{1981}       & \multicolumn{1}{l|}{26}                & 17          \\ \hline
+\multicolumn{5}{|c|}{Nuevas categorías identificadas}                                                                                                                    \\ \hline
+\multicolumn{1}{|l|}{Marca de agua}           & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{2}                 & 0           \\ \hline
+\multicolumn{1}{|l|}{Basado en historial}     & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2013}       & \multicolumn{1}{l|}{2}                 & 0           \\ \hline
+\multicolumn{1}{|l|}{Basado en XML}           & \multicolumn{1}{l|}{2012}       & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{3}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Código compilado}        & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2006}       & \multicolumn{1}{l|}{5}                 & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en compresión}    & \multicolumn{1}{l|}{2010}       & \multicolumn{1}{l|}{2004}       & \multicolumn{1}{l|}{6}                 & 5           \\ \hline
+\multicolumn{1}{|l|}{Basado en grafos}        & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{10}                & 2           \\ \hline
+\multicolumn{1}{|l|}{Basado en agrupamiento}  & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{2005}       & \multicolumn{1}{l|}{11}                & 7           \\ \hline
+\multicolumn{1}{|l|}{Basado en N-gramas}      & \multicolumn{1}{l|}{2016}       & \multicolumn{1}{l|}{2006}       & \multicolumn{1}{l|}{15}                & 9           \\ \hline
+\multicolumn{1}{|l|}{Basado en árboles}       & \multicolumn{1}{l|}{2015}       & \multicolumn{1}{l|}{1988}       & \multicolumn{1}{l|}{24}                & 8           \\ \hline
+\end{tabular}
+\caption{Descripción general de los tipos de algoritmos}
+Nota: Cuadro tomado de \cite{Novak2019}.
+\label{tiposDeAlgoritmos}
+\end{table}
+\subsubsection{Herramientas para la detección de similitud de código}
+\cite{Novak2019} describe cuatro caracteristicas de cinco herramientas que son consideradas las más importantes, en el cuadro \ref{descripcionHerramientas} se muestran las caracteristicas como: las menciones en articulos, codigo abierto, interfaz grafica (GUI), sin conexion a internet y el sitio web.
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Herramienta      & Menciones & Código abierto & GUI & offline & Sitio web \\ \hline
+JPLAG        & 43                & Si             & Si  & Si                      & \href{https://jplag.ipd.kit.edu}{jplag.ipd.kit.edu} \\ \hline
+MOSS          & 38                & No             & Si  & No                      & \href{https://theory.stanford.edu/~aiken/moss/}{theory.stanford.edu} \\ \hline
+Sherlock & 9                 & Si             & Si  & Si                      & \href{http://warwick.ac.uk/iasgroup/software/sherlock}{warwick.ac.uk}  \\ \hline
+Plaggie             & 7                 & Si             & Si  & Si                      &  \href{https://www.cs.hut.fi/Software/Plaggie}{www.cs.hut.fi} \\ \hline
+SIM            & 6                 & Si             & No  & Si                      &  \href{https://dickgrune.com/Programs/similary_tester}{dickgrune.com} \\ \hline
+\end{tabular}
+\caption{ Descripción general de las caracteristticas de las herramientas}
+Nota: Cuadro tomado de \cite{Novak2019}.
+\label{descripcionHerramientas}
+\end{table}
+
+\begin{itemize}
+  \item \textbf{JPLAG} \cite{Banchoff2007} explica que la arquitectura de esta herramienta es de cliente servidor, solo  permite la programacion del cliente, dado que es el servidor quien realiza las operaciones de comparacion, fue desarrollada por la universidad de Karlsruhe de Alemania, se puede analizar codigo de los lenguajes C, C++, Java, Scheme y texto natural. La herramienta analiza la estructura y sintaxis del código, este sistema trabaja con archivos locales.
+  \item \textbf{MOSS} Software creado por el profesor Alex Aiken en la universidad de Stanford, es el primer servicio que inició en la web, siendo una referencia a nivel mundial. Este, permite comparar hasta 250 archivos en 25 lenguajes de programación \cite{Hage2010ACO}. Aunque no tiene licencia como software libre, su uso dentro del ambiente académico es gratuito y ofrecido desde un servidor de Stanford. Es de difícil su configuración y tiene poca documentación \cite{book1}.
+  \item \textbf{Sherlock} \cite{Banchoff2007} explica que la herramienta es de codigo abierto, que trabaja con codigo fuente escrito en JAVA, C y texto natural, Los resultados obtenidos en la comparacion por la herramienta se muestran en porcentajes, solo trabaja con archivos locales.
+  \item \textbf{Plaggie} Es una aplicación Java independiente que se puede utilizar para comprobar ejercicios de programación Java. La funcionalidad de Plaggie es similar al servicio web JPlag publicado anteriormente, pero a diferencia de JPlag, Plaggie debe instalarse localmente y su código fuente está abierto. Aparentemente, Plaggie es el único motor de detección de plagio de código abierto para ejercicios de Java \cite{Ahtiainen2006}.
+  \item \textbf{SIM} \cite{Banchoff2007} explica que la herramienta es de codigo abierto, trabaja con lenguajes C, JAVA, Lisp, Modula2, Pascal y texto natural, fue desarrollado por la universidad de Amsterdam. No cuenta con una interfaz grafica, se la utiliza mediante linea de comandos, los resultados obtenidos en la comparacion obtenidos por la herramienta aparecen separados por columnas, mostrando porciones de codigos iguales, solo trabaja con archivos locales.
+\end{itemize}
+
 \subsection{Planteamiento del problema}
 Los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. Estas actividades deben realizarse de forma individual dado que sirven para medir la capacidad de resolución de problemas y el enfoque lógico de los estudiantes. Por ello encontrar similitud en trabajos de programación presentados por estudiantes puede ser identificado como plagio de código fuente.
 
