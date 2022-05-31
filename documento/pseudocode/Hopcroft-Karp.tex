@@ -1,0 +1,10 @@
+\begin{codebox}
+\Procname{$\proc{Hopcroft-Karp}(G)$}
+\li $M \gets \emptyset$
+\li \Repeat
+\li let $\mathcal{P} \gets \{P_1,P_2, \twodots ,P_k\}$ be a maximal set of vertex-disjoint
+\zi shortest augmenting paths with respect to M
+\li $M \gets M \oplus (P_1 \cup P_2 \cup  \twodots  P_k)$
+\li \Until $\mathcal{P} \isequal \emptyset$
+\li \Return $M$
+\end{codebox}

@@ -1,11 +1,17 @@
-\documentclass[letterpaper,12pt,openany,oneside]{book}
+\documentclass[letterpaper,11pt,openany,oneside]{book}
 \input{packages}
+\lstset{style=myStyle}
 \begin{document}
-    \include{capitulos/caratula}
+    \include{chapters/cover_page}
     \tableofcontents
     \listoffigures
     \listoftables
-    \include{capitulos/marcoRef}
-    \include{capitulos/marcoTeo}
-    \input{bibliografia/biblio}
+    \lstlistoflistings
+    \include{chapters/referential_framework}
+    \include{chapters/theoretical_framework}
+    \include{chapters/design_methodology}
+    \include{chapters/evaluation_results}
+    \include{chapters/conclusions}
+    \input{bibliography/biblio}
+    \addcontentsline{toc}{chapter}{BIBLIOGRAFÍA}
 \end{document}

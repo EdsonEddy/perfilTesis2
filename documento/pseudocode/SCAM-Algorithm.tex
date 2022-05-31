@@ -1,0 +1,21 @@
+\begin{codebox}
+\Procname{$\proc{SCAM-Algorithm}(\id{file-A}, \id{file-B}, \id{tolerance})$}
+\li $\id{arr-sequences-A} \gets \proc{Lexer}(\id{file-A})$
+\li $\id{arr-sequences-B} \gets \proc{Lexer}(\id{file-B})$
+\li let $G$ be a graph bipartite $G=((L \cup R), E)$
+\li $G.L \gets \emptyset$, $G.R \gets \emptyset$, $G.E \gets \emptyset$
+\li \For $\id{i}$ to $\id{arr-sequences-A.length}$ \Do
+\li $\proc{add-vertex}(G.L, i)$ \End
+\li \For $\id{i}$ to $\id{arr-sequences-B.length}$ \Do
+\li $\proc{add-vertex}(G.R, i)$ \End
+\li \For $\id{i}$ to $\id{arr-sequences-A.length}$ \Do
+\li \For $\id{j}$ to $\id{arr-sequences-B.length}$ \Do
+\li $\id{arr-A} \gets \id{arr-sequences-A[i]}$
+\li $\id{arr-B} \gets \id{arr-sequences-B[i]}$
+\li \If $\proc{Token-Sequence-Alignment}(\id{arr-A}, \id{arr-B}) > \id{tolerance}$ \Then
+\li $\proc{add-edge}(G.E, i, j)$ \End \End \End
+\li $c \gets \proc{Hopcroft-Karp-Extended}(G)$
+\li $a = \id{arr-sequences-A.length}$
+\li $b = \id{arr-sequences-B.length}$
+\li \Return $(2 * c) / (a + b)$
+\end{codebox}

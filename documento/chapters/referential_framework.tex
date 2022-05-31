@@ -1,0 +1,86 @@
+\chapter{MARCO REFERENCIAL}
+\section{Introducción}
+\cite{Cheers2021} Explica que la identificación de similitud entre códigos fuente puede servir para varios propósitos, entre ellos están el estudio de la evolución de código fuente de un proyecto, detección de prácticas de plagio, detección de prácticas de reutilización, extracción de código para refactorización del mismo y seguimiento de defectos para su corrección.
+
+En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. Cuando estas actividades se realizan de forma individual, sirven para medir la capacidad de resolución de problemas y el enfoque lógico de los estudiantes. Por ello encontrar similitud en trabajos de programación presentados por estudiantes puede ser identificado como plagio.
+
+En la actualidad existen herramientas de software para detectar la similitud entre códigos fuente, en las cuales se aplican diferentes métodos para la detección de similitud, a partir de las características de las herramientas, se pudo evidenciar que presentan deficiencias como: sistemas obsoletos, sistemas sin código abierto, procesos complejos para la evaluación de similitud, sistemas incapaces que procesar un grupo grande de archivos, sistemas de difícil configuración e instalación, sistemas que requieren conexión a internet.
+
+En el presente trabajo de tesis se centra en el diseño e implementación de un algoritmo para la detección de similitud entre códigos fuente que tenga buen desempeño, en términos de tiempo de ejecución y precisión.
+
+%El diseño del algoritmo propuesto contara con tres fases, la primera fase consiste en la conversion de código fuente en arbol de sintaxis abstracta (AST), esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de arboles obtenidos mediante conceptos de distancia de edicion de arboles (TED), la fase final consiste en la agrupacion de códigos similires mediante conceptos de estructuras para conjuntos disjuntos (DSU).
+
+\section{Problema}
+\subsection{Antecedentes del problema}
+Un trabajo similar al propuesto es realizado por \cite{Anzai2019} en el que presenta un algoritmo para la detección de similitud llamado ``Algoritmo para determinar la distancia de edición ampliada entre códigos de programa''. El algoritmo consiste en tres fases, en la primera fase el código dado es dividido en funciones, en la segunda fase cada función es dividida en bloques, en la tercera fase cada bloque es dividido en tokens y otras tareas de preprocesamiento. La distancia entre dos bloques, es calculado por un algoritmo de programación dinámica, la relación entre bloques y funciones de dos códigos fuente es tratado como el problema de Minimum-Cost-Flow. Para la evaluación del algoritmo, realiza varios experimentos utilizando recursos de un juez de programación en linea. Respecto a la complejidad temporal del algoritmo, se emplea el algoritmo de Bellman-Ford para el calculo de Minimum-Cost-Flow. La complejidad temporal de Bellman-Ford es de $O(V*E)$, donde $V$ es el numero de vértices y $E$ es el numero de aristas, $E$ es igual a $V^{2}$ por que el grafo es bipartito y completo, entonces la complejidad temporal de Minimum-Cost-Flow es $O(V^{3})$. La complejidad temporal para calcular la distancia de edición extendida entre bloques es $O(L^{2})$ donde $L$ es el numero de tokens. La complejidad temporal de dividir las funciones en bloques y realizar el calculo de la distancia entre bloques es $O(M^{2}*L^{2}+M^{4})$ donde $M$ es el numero de bloques. La complejidad temporal para dividir el bloque en funciones y realizar calculo de la distancia entre códigos fuente es $O(N^{2}*M^{2}+N^{2}*M^{4}+N^{2})$ donde $N$ es el numero de funciones.
+
+Otro trabajo similar es realizado por \cite{Popescu2016}, el cual presenta un método para medir la similitud entre paginas web, el método utiliza un algoritmo para calcular la distancia de edición, el valor calculado es usado como métrica de similitud. El algoritmo utiliza las etiquetas HTML de las paginas web para realizar en las operaciones de edición, las operaciones en las etiquetas consisten en eliminar, insertar y reemplazar. Es decir, dados dos archivos HTML la forma de calcular que tan diferentes es contando el numero mínimo de operaciones en las etiquetas, para transformar un archivo en otro.
+
+\subsection{Planteamiento del problema}
+\cite{Cheers2021} Explica que la identificación de similitud entre códigos fuente, puede servir para varios propósitos como: El estudio de la evolución de código fuente de un proyecto, la detección de prácticas de plagio en el ámbito académico, la detección de prácticas de reutilización, la extracción de código para refactorización del mismo y el seguimiento de defectos para su corrección.
+
+Una manera de ocultar la similitud entre códigos fuente, es mediante la aplicación de métodos de ofuscación. Estos métodos consisten en aplicar cambios léxicos o estructurales al código fuente, con el propósito de que no sean identificados como similares.
+
+Por lo cual contar un algoritmo que calcule de forma eficiente la similitud entre códigos fuente, tomando en cuenta los métodos de ofuscación, es de gran utilidad.
+
+\subsection{Formulación del problema}
+¿El algoritmo SCAM tiene mejor desempeño frente a los algoritmos de Winnowing-Fingerprint y Greedy-String-Tiling en la detección de similitud entre códigos fuente?
+\section{Objetivos}
+\subsection{Objetivo general}
+Diseñar e implementar el algoritmo SCAM para la detección de similitud entre códigos fuente.
+\subsection{Objetivos específicos}
+\begin{itemize}
+    \item Estudiar las técnicas para la detección de similitud entre códigos fuente existentes.
+    \item Estudiar los algoritmos utilizados en las herramientas para la detección de similitud de código fuente.
+    \item Redactar las especificaciones para el algoritmo SCAM.
+    \item Evaluar el desempeño del algoritmo SCAM realizando las pruebas en trabajos de programación presentado por estudiantes.
+\end{itemize}
+
+\section{Hipótesis}
+El algoritmo SCAM para la detección de similitud entre códigos fuente obtiene mejores resultados frente a otros algoritmos en la detección de similitud.
+\subsection{Variables Independientes}
+\begin{itemize}
+    \item El diseño del algoritmo SCAM para la detección de similitud entre códigos fuente.
+\end{itemize}
+\subsection{Variables Dependientes}
+\begin{itemize}
+    \item Resultados más precisos frente a otros algoritmos para la detección de similitud entre códigos fuente.
+\end{itemize}
+\section{Justificaciones}
+\subsection{Justificación Social}
+En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. El algoritmo SCAM ayudara a docentes de instituciones académicas, en la detección de trabajos similares de programación presentados por estudiantes.
+\subsection{Justificación Económica}
+El algoritmo SCAM para la detección de similitud entre códigos fuente sera de código abierto, por lo cual permitirá que se desarrollen software a bajo costo.
+\subsection{Justificación Tecnológica}
+El algoritmo SCAM para la detección de similitud entre códigos fuente, se puede implementar en jueces de programación para identificar los envíos similares de los usuarios.
+\subsection{Justificación Científica}
+Con la utilización de trabajos de programación presentados por estudiantes se medirá el desempeño de los algoritmos para la detección de similitud entre códigos fuente. Con los resultados obtenidos se determinará cuál algoritmo es más eficiente en términos de tiempo de ejecución y precisión.
+\section{Alcances y Limites}
+\subsection{Alcance Sustancial}
+\begin{itemize}
+    \item Se diseñará e implementará en Python el algoritmo SCAM para la detección de similitud entre códigos fuente.
+    \item Se realizaran las pruebas de similitud con trabajos de programación presentados por estudiantes.
+    \item Se realizarán pruebas para medir el tiempo, espacio de memoria ocupado y eficiencia del algoritmo.
+    \item Se dejará de lado el estudio de métodos para la detección de similitud que aplican técnicas de inteligencia artificial.
+\end{itemize}
+\subsection{Alcance Espacial}
+\begin{itemize}
+  \item La implementación y las pruebas del algoritmo, se realizaran en una computadora intel i3 de décima generación con 8GB de RAM y 512GB de disco duro.
+  \item La procedencia de los trabajos de programación para las pruebas, son archivos de código fuente enviados por usuarios de un juez de programación.
+\end{itemize}
+\subsection{Alcance Temporal}
+\begin{itemize}
+  \item En la presente investigación se realizaran las pruebas con archivos de código fuente que fueron presentados al juez desde su despliegue hasta la fecha.
+\end{itemize}
+\section{Metodología}
+\subsection{Metodología Experimental}
+Para el desarrollo del trabajo de investigación se utilizara la metodología científica experimental, esta investigación
+nos permite la manipulación de una o mas variables. Las siguientes etapas ayudaran a cumplir con los objetivos propuestos.
+\begin{enumerate}
+  \item \textbf{Recopilación de la información.} En esta etapa se recopilara información necesaria y se estudiara los temas relacionados al diseño del algoritmo.
+  \item \textbf{Diseño del algoritmo.} En esta etapa se diseñara el algoritmo tomando en cuenta los alcances.
+  \item \textbf{Implementación del algoritmo.} En esta etapa se implementara el algoritmo.
+  \item \textbf{Pruebas de funcionamiento del algoritmo en trabajos de cátedra.} En esta etapa se realizara pruebas en trabajos de cátedra presentados por estudiantes.
+  \item \textbf{Análisis de los resultados obtenidos.} En esta etapa se analizaran los datos obtenidos y se realizara la comparación con los datos obtenidos por otros algoritmos.
+  \item \textbf{Conclusiones.} En esta etapa se realizara las conclusiones, se presentaran los resultados finales, y recomendaciones respecto a la investigación.
+\end{enumerate}

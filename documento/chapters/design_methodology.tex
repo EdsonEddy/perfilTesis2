@@ -1,0 +1,147 @@
+\chapter{DISEÑO METODOLOGICO}
+En el capitulo anterior se presentó la teoría necesaria para el diseño del algoritmo, en este capitulo se realizara: La especificación no formal, el diseño del algoritmo, el análisis de complejidad y finalmente la implementación en Python.
+
+\section{Especificación no formal del algoritmo}
+El algoritmo SCAM, tiene como entrada: Dos archivos de código fuente A y B, un numero en el rango $[0 \twodots 100]$ que representa la tolerancia para la alineacion entre fragmentos de codigo. Como salida un numero en el rango de $[0 \twodots 100]$, que representa el porcentaje del indice de similitud entre los dos archivos.
+
+\section{Diseño del algoritmo}
+Para el diseño del algoritmo se toma en cuenta las transformaciones o métodos de ofuscacion de código de fuente que se presentaron en el capitulo anterior. Una transformación consiste en la modificación en las instrucciones del código con el fin de ocultar la similitud con otro. Estas transformaciones son tratados como problemas a resolverse.
+
+\begin{itemize}
+  \item \textbf{Problema 1.} Cambios en el formato del código. Es decir agregar o eliminar, saltos de linea, sangrías o espacios.
+  \item \textbf{Problema 2.} Cambios en los comentarios del código. Es decir agregar, eliminar y modificar comentarios.
+  \item \textbf{Problema 3.} Cambios en los nombres de los identificadores. Es decir cambiar los nombres de las varibales, constantes, nombres de funciones, nombres de clases, etc.
+  \item \textbf{Problema 4.} Cambios en el orden de las declaraciones de las variables.
+  \item \textbf{Problema 5.} Agregar instrucciones innecesarias. Es decir agregar declaraciones de variables que no se utilizan en el programa.
+  \item \textbf{Problema 6.} Dividir una instrucción en varias otras.
+  \item \textbf{Problema 7.} Reemplazo de la llamada de un procedimiento por el procedimiento. Es decir el reemplazo de la llamada del procedimiento por el cuerpo de un procedimiento.
+  \item \textbf{Problema 8.} Cambios en el orden de los operadores u operandos.
+  \item \textbf{Problema 9.} Reemplazo en las estructuras de control por equivalentes. Es decir cambiar un FOR por un WHILE.
+\end{itemize}
+
+El algoritmo propuesto es una composición de algoritmos clásicos. En la figura \ref{diseñoAlg} se muestra el diagrama de funcionamiento del algoritmo, en el cual se muestra las fases del algoritmo. Las fases consisten en: La fragmentación y tokenización de los códigos fuente, mediante un Lexer. Calculo del maximo emparejamiento de fragmentos, mediante el algoritmo de Hopcroft-Karp. Calculo de la subsecuencia comun mas larga entre fragmentos, mediante el algoritmo de LCS. Calculo del porcentaje del indice de similitud, mediante el indice de Sorencen-Dice.
+
+\input{figures/diseñoAlg}
+
+Resumiendo el funcionamiento del algoritmo, el lexer tiene como funcion fragmentar y convertir el codigo fuente en secuencias de tokens. Es decir para cada fragmento se obtiene su secuencia de tokens. Seguido con todas las secuencias de tokens del primer archivo, se realizara el calculo de la subsecuencia comun mas larga con las secuencias de tokens del segundo archivo, obteniendo asi los puntajes de similitud para cada par de secuencias. Despues con los puntajes que superen el valor de la tolerancia, se calcula el maximo emparejamiento entre fragmentos. Finalmente se con el numero de fragmentos similiares se calcula el porcentaje del indice de similitud entre los codigos fuente. En la tabla \ref{algorithms_problems} se muestra un descripción general de la solucion a los problemas mediante los algoritmos presentados en el capitulo anterior.
+\input{tables/algorithms_problems}
+
+\subsection{Fragmentación y tokenización}
+En esta fase se eliminan los elementos innecesarios que tenga el código fuente como: Los comentarios, saltos de linea que no contengan instrucciones, espacios en blanco, etc. Esto se debe a que estas lineas no serán utilizadas para la comparación de similitud. Al mismo tiempo se realizara la tokenización y clasificacion de los tokens, los tokens generados son tuplas que contienen dos valores: El tipo de token, la cadena del token. A continuacion se muestra la clasificacion de tipos de tokens:
+\begin{itemize}
+  \item \textbf{Token.separator} para separadores como: Saltos de linea ó puntos y coma.
+  \item \textbf{Token.text} para datos de tipo texto como: Espacios en blanco y  tabulaciones.
+  \item \textbf{Token.keyword} para cualquier palabra clave o reservada.
+  \item \textbf{Token.name.function} para nombres de funciones.
+  \item \textbf{Token.name.variable} para nombres de variables.
+  \item \textbf{Token.literal.string} para cualquier cadena.
+  \item \textbf{Token.literal.number} para cualquier numero entero o flotante.
+  \item \textbf{Token.operator} para cualquier operador.
+  \item \textbf{Token.punctuation} para cualquier simbolo de puntuacion.
+  \item \textbf{Token.comment} para cualquier comentario.
+  \item \textbf{Token.other} para tokens no clasificados.
+\end{itemize}
+
+\input{figures/classToken}
+
+La implementación en pseudocódigo se encuentra en $\proc{Lexer}$. El procedimiento tiene como entrada un archivo de código fuente \id{file}, y de salida un arreglo de tokens clasificados.
+
+\input{pseudocode/Lexer}
+
+%\subsection{Calculo de fragmentos candidatos}
+%En esta fase se obtiene los fragmentos de codigo candidatos para la realizar la comparacion, dos fragmentos son candidatos para ser comparados si tienen tokens en comun, descartando asi los fragmentos que no tengan nada en comun con otros fragmentos. Es decir dadas dos secuencias de tokens, se quiere obtener los indices de los fragmentos de la subsecuencia de tokens comun mas larga.
+
+%Apartir de la definición de la \id{LCS}, podemos definir la subsecuencia de tokens comun mas larga como: Sean las secuencias de tokens $X=[x_1,x_2, \twodots, x_m]$ y $Y=[y_1,y_2, \twodots, y_n]$, se desea encontrar la subsecuencia de tokens comun de longitud maxima entre \id{X} y \id{Y}.
+
+%La implementación en pseudocódigo se encuentra en $\proc{Get-LCS}$. El procedimiento tiene como entrada dos secuencias de tokens \id{X} y \id{Y}, y de salida un conjunto tiene como elementos pares de indices de los fragmentos candidatos de \id{X} y \id{Y}.
+
+%\input{pseudocode/Get-LCS}
+
+%\subsection{Cálculo de la alineación de secuencias de tokens}
+%A partir de la definición de la distancia de edición, podemos definir la alineación de secuencias de tokens. Dadas dos secuencias de tokens $A[1 \twodots n]$ y $B[1 \twodots m]$ y operaciones de transformación y sus costos. La distancia de edición entre las secuencias $A$ y $B$ es el costo mínimo de operaciones que transforma $A$ en $B$. Las operaciones de transformación y sus costos son los siguientes:
+%\begin{enumerate}
+  %\item Si los tokens $A[i]$ y $B[i]$ coinciden, puntuá $+2$, se dice que coinciden cuando son tokens del mismo tipo.
+  %\item Si los tokens $A[i]$ y $B[i]$ no coinciden, puntuá $-1$, se dice que no coinciden cuando no son del mismo tipo.
+  %\item Si se inserta un nuevo token en $A[i]$, la operación puntuá $-1$.
+  %\item Si se elimina un token en $A[i]$, la operación puntuá $-1$.
+%\end{enumerate}
+
+%Para el calculo de la alineación de secuencias de tokens utilizaremos el algoritmo de Needleman-Wunsch, el algoritmo sera adaptado a la alineación de secuencias de tokens. El valor calculado por este modulo es la medida de similitud que se utilizara para determinar si dos fragmentos de código son similares. El valor se encuentra en el rango de $[0 \twodots 1]$. Donde cero representa que se utilizaron el maximo numero de operaciones de transformación, lo que significa que las dos secuencias son muy diferentes, y uno representa que no necesitaron operaciones de transformación, lo que significa que las dos secuencias son exactamente iguales.
+%La medida se utilizara para la construcción de aristas durante el modelamiento de un grafo para hallar el máximo emparejamiento de fragmentos entre archivos de códigos fuente.
+
+%\input{pseudocode/Token-Sequence-Alignment}
+
+%En este modulo se resuelve los problemas 3, 8 y 9 cambios en los identificadores, declaraciones, sentencias equivalentes, etc.
+
+\subsection{Cálculo de la subsecuencia comun mas larga}
+A partir de las definiciones de la LCS, podemos definir la \id{LCS} de fragmentos. Dadas dos secuencias de tokens $A[1 \twodots n]$ y $B[1 \twodots m]$ se desea encontrar la subsecuencia comun de longitud maxima de $A$ y $B$.
+
+Para el calculo de la subsecuencia comun mas larga, utilizaremos el algoritmo de programacion dinamica que resuelve la \id{LCS}, el algoritmo sera adaptado a la \id{LCS} de secuencias de tokens. El valor calculado por este modulo es la medida de similitud que se utilizara para determinar si dos fragmentos de código son similares. El valor se encuentra en el rango de $[0 \twodots 1]$. Donde cero representa que se utilizaron el maximo numero de inserciones o eliminaciones, lo que significa que las dos secuencias son muy diferentes, y uno representa que no necesitaron dichas operaciones, lo que significa que las dos secuencias son exactamente iguales.
+
+La medida se utilizara para la construcción de aristas durante el modelamiento de un grafo para hallar el máximo emparejamiento de fragmentos entre archivos de códigos fuente.
+
+\input{pseudocode/Get-LCS}
+
+\subsection{Calculo del maximo emparejamiento de fragmentos}
+A partir de los conceptos de grafos y el máximo emparejamiento bipartito, podemos calcular el máximo emparejamiento de fragmentos. Dados arreglos de secuencias de tokens $L[1 \twodots n]$ y $R[1 \twodots m]$, podemos modelar un grafo bipartito no direccionado $G=(V,E)$ donde $V=L \cup R$. Los vértices del grafo son las secuencias de tokens $L[i]$ y $R[j]$, y el conjunto de aristas $E$, esta compuesto por la relación de similitud que existe entre dos secuencias de tokens $L[i]$ y $R[j]$. En este modulo se calcula el numero máximo de fragmentos similares. Dado un grafo no direccionado y bipartito $G=(V,E)$, donde $V=L \cup R$. Para encontrar la máxima cardinalidad de emparejamiento bipartito de $G$, se utiliza el algoritmo de Hopcroft-Karp. Para encontrar los caminos de aumento, se utilizan algoritmos para recorridos de grafos como: La búsqueda en anchura y búsqueda en profundidad.  La implementación en pseudocódigo del algoritmo se encuentra en $\proc{Hopcroft-Karp-Extended}(G)$.
+
+\input{pseudocode/Hopcroft-Karp-Extended}
+
+Para cada vértice no emparejado de $L$ podemos realizar una búsqueda en anchura modificada, para encontrar la longitud del camino mas corto hacia un vértice no emparejado de $R$. La búsqueda en anchura modificada asegurará que solo se atraviesa una arista, si hace que el camino se alterne entre una arista de $M$ y una arista de $E-M$. Cuando se alcanza por primera vez un vértice no emparejado de $R$, se obtiene la longitud k de un camino de aumento mas corto. Realizar estos pasos tiene como complejidad temporal $O(|E|)$. La implementación en pseudocódigo del algoritmo se encuentra en $\proc{BFS-Modified}(G)$.
+
+\input{pseudocode/BFS-Modified}
+
+Para encontrar caminos disjuntos, se realiza un búsqueda en profundidad en los vértices de $R$ que se encontraron a una distancia k, manteniendo la propiedad de que el siguiente vértice por visitar tiene una distancia menor, y las aristas se alternan entre estar en $M$ y $E-M$. Durante el recorrido se debe marcar los vértices como usados para no volverlos a atravesar. Realizar estos pasos tiene como complejidad temporal $O(|E|)$. La implementación en pseudocódigo del algoritmo se encuentra en $\proc{Dfs-Modified}(G, s)$.
+
+\input{pseudocode/Dfs-Modified}
+
+\subsection{Calculo del indice de similitud}
+A partir de la definición del coeficiente de Sorensen-Dice, podemos definir la similitud entre dos códigos fuente. Dados dos archivos de código fuente \id{fileA} y \id{fileB}, la similitud entre los códigos se define de la siguiente forma:
+\begin{itemize}
+\item[] $a = |\proc{Lexer}(\id{file-A})|$
+\item[] $b = |\proc{Lexer}(\id{file-B})|$
+\item[] $c = |\proc{SCAM-Algorithm}(\id{file-A},\id{file-B})|$
+\end{itemize}
+\begin{equation}
+S=\frac{2 * c}{a + b} * 100
+label{sorencen2}
+\end{equation}
+
+En la ecuacion \ref{sorencen2} se muestra el procentaje del indice de similitud, el cual determina la similitud entre dos archivos de codigo fuente.
+
+\subsection{Algoritmo SCAM}
+En este modulo se realiza el modelamiento del grafo y apatir de los modulos $\proc{Lexer}$, $\proc{Get-LCS}$ y $\proc{Hopcroft-Karp-Extended}$ podemos calcular el porcentaje del indice de similitud entre dos archivos, el indice varia entre $[0 \twodots 100]$. A continuación la implementación en pseudocódigo del algoritmo propuesto.
+
+\input{pseudocode/SCAM-Algorithm}
+
+%En este modulo se resuelve el todos los problemas planteados al comienzo del capitulo.
+
+\section{Análisis del algoritmo}
+A continuación el análisis de la complejidad temporal de cada uno de los procedimientos, la complejidad fue calculada en notación Big $O$.
+\begin{enumerate}
+  \item El modulo $\proc{Lexer}$ tiene complejidad temporal de $O(t)$ donde t representa el numero de tokens que contiene el archivo $file$.
+  \item El modulo $\proc{Get-LCS}$ tiene complejidad temporal de $O(m*n)$ donde $m$ y $n$, representan el número de elementos de los arreglos de tokens $A$ y $B$.
+  \item El modulo $\proc{Hopcroft-Karp-Extended}$ tiene complejidad temporal $O((|L|*|R|) * \sqrt{|L|+|R|})$, donde $\id{|L|}$ y $\id{|R|}$ representa el numero de fragmentos de codigo de los archivos.
+  \item El modulo $\proc{SCAM-Algorithm}$ hace uso de los anteriores metodos, entonces la complejidad temporal es de $O(t + (m*n)*(|L|*|R|) + (|L|*|R|) * \sqrt{|L|+|R|})$.
+\end{enumerate}
+
+\section{Implementación en Python del algoritmo}
+\subsection{Pygments}
+\id{Pygments} es una libreria de codigo abierto escrita en el lenguaje de programacion de Python, \cite{brandl2022} explica que \id{Pygments} es un resaltador de sintaxis generico, es utilizado en foros, wikis u otros aplicaciones que necesitan embellecer el codigo fuente entre sus características se tiene:
+\begin{itemize}
+  \item Admite una amplia gama de lenguajes son 533 en total, y otros formatos de texto.
+  \item Soporte nuevos lenguajes y formatos, se agrega facilmente, utilizan un mecanismo de lectura simple basado en expresiones regulares.
+  \item Tiene varios formatos de salida disponibles, entre ellos secuencias \id{HTML}, \id{RTF}, \id{Latex} y \id{ANSI}.
+  \item se puede utilizar como herramienta de linea de comandos y como biblioteca.
+\end{itemize}
+La biblioteca de \id{Pygments} tiene un modulo para el analisis lexico llamado \id{pygments.lexers}. El modulo se encarga de convertir un archivo de codigo fuente en un arreglo de tokens. Tambien tiene un modulo para el manejo de tokens llamado \id{pygments.token}.
+\subsection{Modulo lexer}
+\lstinputlisting[caption={Lexer},label={lst:lexer}, language=Python]{programs/design/lexer.py}
+\subsection{Modulo alignment}
+\lstinputlisting[caption={Alignment},label={lst:alignment}, language=Python]{programs/design/alignment.py}
+\subsection{Modulo bipartite-graph}
+\lstinputlisting[caption={Bipartite-graph},label={lst:bipartite_graph}, language=Python]{programs/design/bipartite_graph.py}
+\subsection{Modulo matching}
+\lstinputlisting[caption={Hopcroft-Karp-Extended},label={lst:matching}, language=Python]{programs/design/matching.py}
+\subsection{Modulo scan-algorithm}
+\lstinputlisting[caption={SCAM-Algorithm},label={lst:scam_algorithm}, language=Python]{programs/design/scam_algorithm.py}

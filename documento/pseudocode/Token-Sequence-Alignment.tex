@@ -1,0 +1,20 @@
+\begin{codebox}
+\Procname{$\proc{Token-Sequence-Alignment}(A, B)$}
+\li $\id{n} \gets A.length$
+\li $\id{m} \gets B.length$
+\li let $T[0 \twodots n, 0 \twodots m]$ be new table
+\li \For $i \gets 1$ \To $n$
+\li \Do $T[i][0] \gets i * -1$
+\li $T[0][i] \gets i * -1$ \End
+\li \For $i \gets 1$ \To $n$
+\li \Do \For $j \gets 1$ \To $m$
+\li \Do \If $\proc{token-comparison}(A[i], B[i])$
+\li \Then $T[i][j] \gets T[i - 1][j - 1] + 2$
+\li \Else
+\li $T[i][j] \gets T[i - 1][j - 1] - 1$ \End
+\li $T[i][j] \gets \proc{max}(T[i][j],T[i-1][j]-1)$
+\li $T[i][j] \gets \proc{max}(T[i][j],T[i][j-1]-1)$ \End \End
+\li $\id{alignment-cost} \gets T[n][m]$
+\li $\id{max-length} \gets \proc{max}(n, m)$
+\li \Return $1 - ((\id{alignment-cost}+\id{max-length})/(3*\id{max-length}))$
+\end{codebox}

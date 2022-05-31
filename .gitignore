@@ -6,4 +6,6 @@
 *.lof
 *.lot
 *.out
+*.lol
 main.synctex.gz
+biblio_files

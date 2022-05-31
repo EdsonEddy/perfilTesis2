@@ -1,0 +1,23 @@
+\begin{codebox}
+\Procname{$\proc{BFS-Modified}(G)$}
+\li $\id{Q} \gets \emptyset$
+\li $G.k \gets \infty$
+\li \For each vertex $l \in G.L$ \Do
+\li\If $l.match \isequal -1$ \Then
+\li $l.distance \gets 0$
+\li $\proc{enqueue}(Q, l)$
+\li \Else
+\li $l.distance \gets -1$ \End \End
+\li \While $\id{Q} \neq \emptyset$ \Do
+\li $\id{u} \gets \proc{dequeue}(Q)$
+\li \If $u.distance <= G.k$ \Then
+\li \For each vertex $\id{v} \in \id{G.Adj[u]}$ \Do
+\li \If $v.distance \isequal -1$ \Then
+\li $v.distance \gets u.distance + 1$
+\li \If $v.match \isequal -1$ \Then
+\li $G.k \gets v.distance$
+\li \Else
+\li $v.match.distance \gets v.distance + 1$
+\li $\proc{enqueue}(Q, v.match)$ \End \End \End \End \End
+\li \Return $G.k \neq \infty$
+\end{codebox}

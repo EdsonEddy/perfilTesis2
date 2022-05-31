@@ -1,0 +1,45 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=0.9,
+algorithm/.style ={rectangle, minimum width=3cm, minimum height=1cm,text centered, text width=3cm, draw=black},
+border/.style ={rectangle, minimum width=2.5cm, minimum height=1cm,text centered, text width=2.75cm, draw=black},
+module/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=5cm, draw=black},
+io/.style ={trapezium, trapezium left angle=70, trapezium right angle=110, minimum height=1cm,text centered, text width=2.5cm, draw=black},
+arrow/.style={thick,->},
+darrow/.style={thick,<->},
+]
+\node[io] (n1) at (1,7) {Archivo A, Archivo B};
+\node[module] (n2) at (7,7) {Fragmentacion en secuencias y tokenizacion};
+\node[module] (n3) at (7,5) {Calculo del maximo emparejamiento de fragmentos};
+\node[module] (n4) at (7,3) {Calculo de la subsecuencia de comun mas larga};
+\node[module] (n5) at (7,1) {Calculo del indice de similitud};
+\node[io] (n6) at (1,1) {Indice de similitud};
+
+\node[algorithm] (n7) at (13,7) {Lexer};
+\node[algorithm] (n8) at (13,5) {LCS};
+\node[algorithm] (n9) at (13,3) {Hopcroft-Karp};
+\node[algorithm] (n10) at (13,1) {Sorencen-Dice};
+\node[border] (n11) at (13,7) {};
+\node[border] (n12) at (13,5) {};
+\node[border] (n13) at (13,3) {};
+\node[border] (n14) at (13,1) {};
+
+\draw [arrow] (n1) to (n2);
+\draw [arrow] (n2) to (n3);
+\draw [arrow] (n3) to (n4);
+\draw [arrow] (n4) to (n5);
+\draw [arrow] (n5) to (n6);
+
+\draw [darrow] (n7) to (n2);
+\draw [darrow] (n8) to (n3);
+\draw [darrow] (n9) to (n4);
+\draw [darrow] (n10) to (n5);
+
+%\draw (n7.north west) -- ++ (-13.3,7) |- (n7.south west) ;
+%\draw (n7.north east) -- ++ (13.3,7) |- (n7.south east) ;
+
+\end{tikzpicture}
+\caption{Diagrama de funcionamiento del algoritmo SCBM}
+Fuente: Elaboración propia.
+\label{diseñoAlg}
+\end{figure}

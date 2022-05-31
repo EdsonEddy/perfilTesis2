@@ -1,0 +1,7 @@
+\begin{codebox}
+\Procname{$\proc{DFS-Visit}(G, u)$}
+\li $u.vis \gets \id{VISITED}$
+\li \For each vertex $v \in G.Adj[u]$
+\li \Do \If $v.vis \isequal \id{UNVISITED}$
+\li \Then $\proc{DFS-Visit}(G, v)$ \End \End
+\end{codebox}

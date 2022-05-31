@@ -1,0 +1,21 @@
+\begin{codebox}
+\Procname{$\proc{LCS-Length}(X,Y)$}
+\li $\id{m} \gets X.length$
+\li $\id{n} \gets Y.length$
+\li let $b[1 \twodots m, 1 \twodots n]$ and $c[0 \twodots m, 0 \twodots n]$  be new tables
+\li \For $i \gets 1$ \To $m$ \Do
+\li $c[i,0] \gets 0$ \End
+\li \For $j \gets 0$ \To $n$ \Do
+\li $c[0,j] \gets 0$ \End
+\li \For $i \gets 1$ \To $m$ \Do
+\li \For $j \gets 1$ \To $n$ \Do
+\li \If $x_i \isequal y_j$ \Then
+\li $c[i,j] \gets c[i-1,j-1]+1$
+\li $b[i,j] \gets$ ``$\nwarrow$''
+\li \ElseIf $c[i-1,j] \geq c[i,j-1]$ \Then
+\li $c[i,j] \gets c[i-1,j]$
+\li $b[i,j] \gets$ ``$\uparrow$''
+\li \ElseNoIf $c[i,j] \gets c[i,j-1]$
+\li $b[i,j] \gets$ ``$\leftarrow$'' \End \End \End
+\li \Return $\id{c}$ and $\id{b}$
+\end{codebox}

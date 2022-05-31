@@ -1,0 +1,29 @@
+\begin{codebox}
+\Procname{$\proc{Get-LCS}(X,Y)$}
+\li $\id{m} \gets X.length$
+\li $\id{n} \gets Y.length$
+\li let $c[0 \twodots m, 0 \twodots n]$ be new table
+\li \For $i \gets 1$ \To $m$ \Do
+\li $c[i,0] \gets 0$ \End
+\li \For $j \gets 0$ \To $n$ \Do
+\li $c[0,j] \gets 0$ \End
+\li \For $i \gets 1$ \To $m$ \Do
+\li \For $j \gets 1$ \To $n$ \Do
+\li \If $\proc{token-comparison}(x_i, y_j)$ \Then
+\li $c[i,j] \gets c[i-1,j-1]+1$
+\li \ElseIf $c[i-1,j] \geq c[i,j-1]$ \Then
+\li $c[i,j] \gets c[i-1,j]$
+\li \ElseNoIf $c[i,j] \gets c[i,j-1]$ \End \End \End
+\li $i \gets X.length$
+\li $j \gets Y.length$
+\li $\id{lines-match} \gets \emptyset$
+\li \While $i > 0$ and $j > 0$ \Do
+\li \If $\proc{token-comparison}(x_i, y_j)$ \Then
+\li $\proc{add}(x_i.line, y_j.line)$
+\li $i \gets i - 1$
+\li $j \gets j - 1$
+\li \ElseIf $c[i-1,j] > c[i][j-1]$ \Then
+\li $i \gets i - 1$
+\li \ElseNoIf $j \gets j - 1$ \End \End
+\li \Return $\id{lines-match}$
+\end{codebox}

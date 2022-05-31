@@ -1,4 +1,5 @@
 \usepackage[utf8]{inputenc}
+\usepackage{enumerate}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -25,11 +26,73 @@
 % titulo de la bibliografia
 %\renewcommand{\refname}{BIBLIOGRAFÍA}
 % mostrar bibliografia en contenidos
-\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
 
 %titulos
 \usepackage{titlesec}
 \titleformat{\chapter}{\Large\bf\uppercase}{CAPÍTULO \thechapter:}{0.2cm}{}
-\titlespacing*{\chapter}{0pt}{-30pt}{0pt}
+\titlespacing*{\chapter}{0pt}{-30pt}{10pt}
 
-%header and footer
+%pseudocodigo estilo cormen
+\usepackage{clrscode3e}
+\usepackage{mathrsfs}
+
+%codigo python
+\usepackage{listings}
+\usepackage{xcolor}
+%\usepackage{pxfonts}
+
+% Define a custom color
+%\definecolor{blue}{rgb}{0.0, 0.0, 1.0}
+%\definecolor{green}{rgb}{0.0, 0.5, 0.0}
+% Define a custom style
+\lstdefinestyle{myStyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\bfseries\color{gray},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    keepspaces=true,
+    keywordstyle=\bfseries\color{black},
+    identifierstyle=\color{black},
+    numbers=left,
+    numbersep=6pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    lineskip=1pt
+}
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+\renewcommand{\ttdefault}{pcr}
+\renewcommand{\lstlistingname}{Programa}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Índice de \MakeLowercase{\lstlistingname}s}% List of Listings -> List of Algorithms
+
+
+%% citas en parentesis
+\usepackage[natbibapa]{apacite}
+
+%%  MULTIPLES IMÁGENES JUNTAS
+\usepackage{subfig}
+% forzar posicion de tablas
+\usepackage{float}
+
+% graphs package
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tikzpicture}{\shorthandoff{>}\shorthandoff{<}}{}{}
+
+% adjacency list
+\usetikzlibrary{matrix}
+
+%flowchart
+\usetikzlibrary{shapes.geometric, arrows}
+
+% Token classification
+\usetikzlibrary{trees}
+
+%teoremas
+\newtheorem{theorem}{Teorema}[section]

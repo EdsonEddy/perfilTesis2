@@ -1,0 +1,35 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \tikzstyle{every node}=[draw=black,thick,anchor=west]
+  \tikzstyle{selected}=[draw=red,fill=red!30]
+  \tikzstyle{optional}=[dashed,fill=gray!50]
+  \node {Token}
+    child { node [optional]{separator}}
+    child { node [optional]{text}}
+    child { node {keyword}}
+    child { node {name}
+      child { node {function}}
+      child { node {variable}}
+    }
+    child [missing] {}
+    child [missing] {}
+    child { node {literal}
+      child { node {string}}
+      child { node {number}}
+    }
+    child [missing] {}
+    child [missing] {}
+    child { node {operator}}
+    child { node {punctuation}}
+    child { node [optional]{comment}}
+    child { node {other}}
+;
+\end{tikzpicture}
+\caption{Clasificacion de un Token}
+Fuente: Elaboración propia.
+\label{classToken}
+\end{figure}

@@ -1,0 +1,11 @@
+\begin{codebox}
+\Procname{$\proc{Print-LCS}(b,X,i,j)$}
+\li \If $i \isequal 0$ or $j \isequal 0$ \Then
+\li return \End
+\li \If $b[i,j] \isequal$ ``$\nwarrow$'' \Then
+\li $\proc{Print-LCS}(b,X,i-1,j-1)$
+\li print $x_i$
+\li \ElseIf $b[i,j] \isequal$ ``$\uparrow$'' \Then
+\li $\proc{Print-LCS}(b,X,i-1,j)$
+\li \ElseNoIf $\proc{Print-LCS}(b,X,i,j-1)$ \End
+\end{codebox}
