@@ -1,0 +1,19 @@
+a = 1
+while a != None:
+    c = 0
+    a = int(input())
+    auxi = a
+    d = a // 10
+    u = a % 10
+    aux = d + u
+    nuf = aux % 10
+    a = nuf + (u * 10)
+    c += 1
+    while a != auxi:
+        d = a // 10
+        u = a % 10
+        aux = d + u
+        nuf = aux % 10
+        a = nuf + (u * 10)
+        c+=1
+    print(c)

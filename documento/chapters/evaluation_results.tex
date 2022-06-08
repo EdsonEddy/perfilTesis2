@@ -1,139 +1,204 @@
 \chapter{EVALUACION Y RESULTADOS}
 \section{Especificaciones de la prueba}
-Con los conjuntos y pares de archivos, se realizo la comparación del algoritmo SCAM frente a los algoritmos Greedy-String-Tiling y Winnowing-Fingerprint. El propósito de las pruebas es obtener los resultados sobre el desempeño de los algoritmos, en términos de precisión y tiempo de ejecución en la deteccion de similitud. En la figura \ref{espePrueba} se ilustra el proceso de las pruebas.
+Con los conjuntos y pares de archivos, se realizo la comparación del algoritmo SCAM frente a los algoritmos RKRGST y Winnowing-Fingerprint. El propósito de las pruebas es obtener los resultados sobre el desempeño de los algoritmos, en términos de precisión y tiempo de ejecución en la deteccion de similitud. En la figura \ref{espePrueba} se ilustra el proceso de las pruebas.
 
 \input{figures/espePrueba}
 
-\subsection{Pruebas de precisión en la deteccion de similitud}
-En estas prueba se midió la precisión del algoritmo SCAM frente a los algoritmos Greedy-String-Tiling y Winnowing-Fingerprint. Para cada para de archivos de un conjunto, se realizó la prueba en complejidad temporal de $O(N^2)$. Es decir para un conjunto, se realizó la comparacion de cada par de archivos del mismo.
+\subsection{Pruebas de medicion de precisión en la deteccion de similitud}
+En estas prueba se midió la precisión del algoritmo SCAM frente a los algoritmos RKRGST y Winnowing-Fingerprint. Para cada para de archivos de un conjunto, se realizó la prueba en complejidad temporal de $O(N^2)$. Es decir para un conjunto, se realizó la comparacion de cada par de archivos del mismo.
 
 La precisión de los algoritmos se determino mediante el porcentaje del indice de similitud entre dos archivos. Los resultados obtenidos de la comparacion de similitud entre archivos del conjunto se almacenó en una matriz, y con escala de grises se observó la similitud que existe. Donde los tonos oscuros representan que existe similitud entre dos archivos y los tonos claros representan lo contrario.
 
-\subsection{Tiempo de ejecucion de las pruebas}
-Con bibliotecas propias del lenguaje de programacion Python se midio el tiempo de ejecucion de los algoritmos al calcular la similitud en los conjuntos de archivos. La biblioteca utilizada para la medicion fue \id{timeit}. Un ejemplo para la medicion del tiempo de ejecucion de un programa se muestra en el programa \ref{lst:time_it}.
+\subsection{Tiempo de ejecucion de las pruebas de medicion}
+Con bibliotecas propias del lenguaje de programacion Python se midio el tiempo de ejecucion en segundos de los algoritmos al calcular la similitud en los conjuntos de archivos. La biblioteca utilizada para la medicion fue \id{timeit}. Un ejemplo para la medicion del tiempo de ejecucion de un programa se muestra en el programa \ref{lst:time_it}.
 
-\lstinputlisting[caption={time-it},label={lst:time_it}, language=Python]{programs/time_it.py}
+\lstinputlisting[caption={timeit},label={lst:time_it}, language=Python]{programs/time_it.py}
 
-\section{Primera prueba}
-En la primera se utilizo los archivos de codigo fuente que se utilizaron en los ejemplos de ofuscacion que se presentó en el marco teorico. En la tabla \ref{firstTest} se muestra el detalle de los programas, el identificador del par y las etiquetas de los programas.
+\section{Prueba de medicion Preliminar}
+En esta prueba se utilizo los archivos de codigo fuente que se utilizaron en los ejemplos de ofuscacion de codigo fuente, presentados en el marco teorico. En la tabla \ref{firstTest} se muestra el detalle de los programas, el identificador del par y las etiquetas de los programas.
 
 \input{tables/firstTest}
 
-\section{Segunda prueba}
-En la segunda prueba se utilizo archivos de código fuente en Python enviados por usuarios de un juez de programación. En el cuadro \ref{conjuntoArchivos} se muestra el identificador del conjunto, el numero de problema en el juez, el numero de archivos del conjunto, el promedio de lineas de codigo de los archivos y la varianza de lineas de codigo de los archivos.
+En la figura \ref{set_Pre} se muesta los resultados obtenidos en la prueba preliminar.
+
+\input{figures/set_Pre}
+
+\section{Pruebas de medicion en trabajos de catedra}
+En estas prueba se utilizo archivos de código fuente en Python enviados por usuarios de un juez de programación. En el cuadro \ref{conjuntoArchivos} se muestra el identificador del conjunto, el numero de problema en el juez, el numero de archivos del conjunto, el promedio de lineas de codigo de los archivos y la varianza de lineas de codigo de los archivos.
 
 \input{tables/secondTest}
 
-\subsection{Prueba de precision I}
-En la prueba de precision I, se midió la precision de los algoritmos con un umbral de similitud del $10\%$. Los parametros que utilizaron en los algoritmos fueron los siguientes:
+\subsection{Prueba de medicion I}
+En la prueba I, se midió la precision y el tiempo de ejecucion de los algoritmos con los siguientes parametros:
 \begin{itemize}
-  \item SCBM, $\id{threshold} = 10$
-  \item Greedy-String-Tiling, $\id{threshold} = 10$
-  \item Winnowing-Fingerprint, $\id{window-length} = 10, \id{k-grams} = 1$
+  \item SCED, $\id{D} = 40$
+  \item RKRGST, $\id{threshold} = 80$
+  \item Winnowing-Fingerprint, $\id{window-length} = 10, \id{k-grams} = 5$
 \end{itemize}
 
 \subsubsection{Conjunto A}
-La matriz de similitud que se obtuvo para este conjunto de prueba. En la figura \ref{set_A_precision} muestra poca diferencia respecto a la precisión de los algoritmos.
-\begin{figure}[!h]
-\centering
-\subfloat[SCBM]{
-\label{SCBM_set_A}
-\includegraphics[scale=0.41]{images/results/MAP_1275_SCBM_S_0.3_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Greedy-String-Tiling]{
-\label{GST_set_A}
-\includegraphics[scale=0.41]{images/results/MAP_1275_RKRGST_T_30_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Winnowing-Fingerprint]{
-\label{WIN_set_A}
-\includegraphics[scale=0.41]{images/results/MAP_1275_WIN_W_15_K_5_PRECISION}}
-\caption{Prueba precisión I, conjunto A}
-Fuente: Elaboración propia.
-\label{set_A_precision}
-\end{figure}
+En la figura \ref{set_A_i} se muestra la matriz que se obtuvo para el conjunto A.
+\input{figures/set_A_i}
 
 \subsubsection{Conjunto B}
-La matriz de similitud que se obtuvo para este conjunto de prueba. Se muestra que empiezan a notarse la diferencia respecto a la precisión de los algoritmos, SCBM obtiene mas casos positivos de similitud que Winnowing.
-\begin{figure}[!h]
-\centering
-\subfloat[SCBM]{
-\label{SCBM_set_B}
-\includegraphics[scale=0.41]{images/results/MAP_1407_SCBM_S_0.3_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Greedy-String-Tiling]{
-\label{GST_set_B}
-\includegraphics[scale=0.41]{images/results/MAP_1407_RKRGST_T_30_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Winnowing-Fingerprint]{
-\label{WIN_set_B}
-\includegraphics[scale=0.41]{images/results/MAP_1407_WIN_W_15_K_5_PRECISION}}
-\caption{Prueba precisión I, conjunto B}
-Fuente: Elaboración propia.
-\label{set_B_precision}
-\end{figure}
+En la figura \ref{set_B_i} se muestra la matriz que se obtuvo para el conjunto B.
+\input{figures/set_B_i}
+
 \subsubsection{Conjunto C}
-La matriz de similitud que se obtuvo para este conjunto de prueba. Continua la diferencia respecto a la precisión de los algoritmos, SCBM obtiene mas casos positivos de similitud que Winnowing.
-\begin{figure}[!h]
-\centering
-\subfloat[SCBM]{
-\label{SCBM_set_C}
-\includegraphics[scale=0.41]{images/results/MAP_1588_SCBM_S_0.3_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Greedy-String-Tiling]{
-\label{GST_set_C}
-\includegraphics[scale=0.41]{images/results/MAP_1588_RKRGST_T_30_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Winnowing-Fingerprint]{
-\label{WIN_set_C}
-\includegraphics[scale=0.41]{images/results/MAP_1588_WIN_W_15_K_5_PRECISION}}
-\caption{Prueba precisión I, conjunto C}
-Fuente: Elaboración propia.
-\label{set_C_precision}
-\end{figure}
+En la figura \ref{set_C_i} se muestra la matriz que se obtuvo para el conjunto C.
+\input{figures/set_C_i}
+
 \subsubsection{Conjunto D}
-La matriz de similitud que se obtuvo para este conjunto de prueba. Continua la diferencia respecto a la precisión de los algoritmos, SCBM obtiene un casos en el que no logra identificar la similitud mientras Winnowing si logra identificarlos.
-\begin{figure}[!h]
-\centering
-\subfloat[SCBM]{
-\label{SCBM_set_D}
-\includegraphics[scale=0.41]{images/results/MAP_1222_SCBM_S_0.3_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Greedy-String-Tiling]{
-\label{GST_set_D}
-\includegraphics[scale=0.41]{images/results/MAP_1222_RKRGST_T_30_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Winnowing-Fingerprint]{
-\label{WIN_set_D}
-\includegraphics[scale=0.41]{images/results/MAP_1222_WIN_W_15_K_5_PRECISION}}
-\caption{Prueba precisión I, conjunto D}
-Fuente: Elaboración propia.
-\label{set_D_precision}
-\end{figure}
+En la figura \ref{set_D_i} se muestra la matriz que se obtuvo para el conjunto D.
+\input{figures/set_D_i}
+
 \subsubsection{Conjunto E}
-La matriz de similitud que se obtuvo para este conjunto de prueba. Continua la diferencia respecto a la precisión de los algoritmos, SCBM obtiene un casos en el que no logra identificar la similitud mientras Winnowing si logra identificarlos.
-\begin{figure}[!h]
-\centering
-\subfloat[SCBM]{
-\label{SCBM_set_E}
-\includegraphics[scale=0.41]{images/results/MAP_1089_SCBM_S_0.3_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Greedy-String-Tiling]{
-\label{GST_set_E}
-\includegraphics[scale=0.41]{images/results/MAP_1089_RKRGST_T_30_PRECISION}}
-\hspace{-1.5cm}
-\subfloat[Winnowing-Fingerprint]{
-\label{WIN_set_E}
-\includegraphics[scale=0.41]{images/results/MAP_1089_WIN_W_15_K_5_PRECISION}}
-\caption{Prueba precisión I, conjunto E}
-Fuente: Elaboración propia.
-\label{set_E_precision}
-\end{figure}
+En la figura \ref{set_E_i} se muestra la matriz que se obtuvo para el conjunto E.
+\input{figures/set_E_i}
 
-\subsection{Tiempo de ejecución de la prueba I}
-En la tabla \ref{pruebaTiempo} se presentan los resultados obtenidos, respecto al tiempo de ejecucion de cada algoritmo al calcular la similitud de cada conjunto de prueba. Los resultados obtenidos se encuentran en segundos.
 
-\input{tables/pruebaTiempo}
+\subsection{Tiempo de ejecución de la prueba de medicion I}
+En la tabla \ref{pruebaTiempoI} se presentan los resultados obtenidos, respecto al tiempo de ejecucion de cada algoritmo al calcular la similitud de cada conjunto de prueba. Los resultados obtenidos se encuentran en segundos.
 
+\input{tables/pruebaTiempoI}
+
+\subsection{Prueba de medicion IV}
+En la prueba II, se midió la precision y el tiempo de ejecucion de los algoritmos con los siguientes parametros:
 \begin{itemize}
-  \item Con las prueba realizada demuestro que el algoritmo de Winnowing es mejor por segundos respecto al tiempo de ejecución. El algoritmo SCBM presenta mejores resultados comparando archivos de codigo fuente que no tengan muchas instruciones.
+  \item SCED, $\id{D} = 100$
+  \item RKRGST, $\id{threshold} = 20$
+  \item Winnowing-Fingerprint, $\id{window-length} = 4, \id{k-grams} = 2$
+\end{itemize}
+
+\subsubsection{Conjunto A}
+En la figura \ref{set_A_iv} se muestra la matriz que se obtuvo para el conjunto A.
+\input{figures/set_A_iv}
+
+\subsubsection{Conjunto B}
+En la figura \ref{set_B_iv} se muestra la matriz que se obtuvo para el conjunto B.
+\input{figures/set_B_iv}
+
+\subsubsection{Conjunto C}
+En la figura \ref{set_C_iv} se muestra la matriz que se obtuvo para el conjunto C.
+\input{figures/set_C_iv}
+
+\subsubsection{Conjunto D}
+En la figura \ref{set_D_iv} se muestra la matriz que se obtuvo para el conjunto D.
+\input{figures/set_D_iv}
+
+\subsubsection{Conjunto E}
+En la figura \ref{set_E_iv} se muestra la matriz que se obtuvo para el conjunto E.
+\input{figures/set_E_iv}
+
+
+\subsection{Tiempo de ejecución de la prueba de medicion IV}
+En la tabla \ref{pruebaTiempoIV} se presentan los resultados obtenidos, respecto al tiempo de ejecucion de cada algoritmo al calcular la similitud de cada conjunto de prueba. Los resultados obtenidos se encuentran en segundos.
+
+\input{tables/pruebaTiempoIV}
+
+\section{Prueba de hipotesis}
+Para la prueba de hipotesis se utilizó como muestra, las mediciones obtenidas de los conjunto A, B, C, D, E durante la prueba de medicion IV. Se escogio la prueba IV porque tiene la mejor configuracion de parametros para los algoritmos. En la tabla \ref{DescTable} se muestra los estadisticos descriptivos de la muestra.
+
+\input{tables/DescTable}
+
+\subsection{Prueba de normalidad}
+Antes de escoger el estadistico para la prueba de hipotesis, se debe comprobar si la muestra esta distruida de forma normal, como el numero de datos es grande se utiliza la prueba de normalidad de Kolmogorov-Smirnov. Esta prueba se la realiza con las diferencias entre las mediciones de la muestra, para dos conjuntos de mediciones $A={a_1,a_2,\twodots,a_m}$ y $B={a_1,a_2,\twodots,a_m}$, la diferencia de mediciones esta dado por $C={c_1,c_2,\twodots,c_m}$ donde $c_i = a_i - b_i$.
+\begin{itemize}
+  \item[] \textbf{Paso 1.} Planteamiento de la hipotesis de normalidad:
+  \begin{equation*}
+  \begin{split}
+  H_0 & = \text{Los datos de la muestra siguen una distribucion normal}\\
+  H_1 & = \text{Los datos de la muestra no siguen una distribucion normal}
+  \end{split}
+  \end{equation*}
+  \item[] \textbf{Paso 2.} Nivel de significancia:
+  \begin{equation*}
+  \begin{split}
+  N.C. & = 0.95 \\
+  \alpha & = 0.05
+  \end{split}
+  \end{equation*}
+  \item[] \textbf{Paso 3.} Prueba de Nornmalidad:
+  \begin{center}
+  Si $n > 50$ aplicar la prueba de Kolmogorov-Smirnov.
+  \end{center}
+  \item[] \textbf{Paso 4.} Criterio de decision:
+  \begin{center}
+  Si $\id{valor-p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$.\\
+  Si $\id{valor-p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$.
+  \end{center}
+  \item[] \textbf{Paso 5.} Resultados y conclusion.
+  Como el tamaño de la muestra es $N=5050$ se aplica la prueba de Kolmogorov-Smirnov y el detalle de los resultados se muestra en la tabla \ref{KStable}.
+  \input{tables/KStable}
+  Para los valores obtenidos se tiene que $0.00 < 0.05$, entonces se rechaza $H_0$ y se acepta $H_1$. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que los datos no siguen una distribucion normal.
+\end{itemize}
+
+Con esta prueba de normalidad aseguramos que el estadistico para contrastar la hipotesis debe tener enfoque no parametrico.
+
+\subsection{Prueba de los rangos con signo de Wilcoxon}
+La prueba de Wilcoxon es una prueba no parametrica alternativa a la prueba T para dos muestras relacionadas, es decir los resultados del primer conjunto no son independientes del segundo conjunto, dado que ambas mediciones se obtuvieron de una misma muestra. Se la utiliza para determinar si la diferencia de medianas de mediciones relacionadas se debe al azar o no. El estadistico se muestra en la siguiente ecuacion \ref{disWil}. Los supuestos para esta prueba son: Los datos deben ser dependientes, los datos deben estar medidos a nivel ordinal, no requiere que los datos se distribuyan de forma normal.
+
+\begin{equation}
+Z = \frac{W-n(n+1)/4}{\sqrt{n(n+1)(2n+1)/24}}
+\label{disWil}
+\end{equation}
+
+\subsubsection{Calculo de W}
+El procedimento para obtener el valor \id{W} es el siguiente:
+\begin{itemize}
+  \item Calcular las diferencias entre las dos puntuaciones de cada pareja.
+  \begin{equation*}
+    z_i = x_i - y_i
+  \end{equation*}
+  \item Calcular el valor absoluto de las diferencias de cada pareja.
+  \begin{equation*}
+    z_i = |x_i - y_i|
+  \end{equation*}
+  \item Ordenar los valores absolutos $|z_1|,|z_2|,\twodots,|z_n|$ y asignar su rango. El rango $R_i$ de un número es el tamaño relativo a otros valores en la lista.
+  \item Calcular los estadisticos de prueba de Wilcoxon $W^{+}$ y $W^{+}$.
+  \begin{equation*}
+  \begin{split}
+  W^{+} & = \sum_{z_i>0}{R_i} \\
+  W^{-} & = \sum_{z_i<0}{R_i}
+  \end{split}
+  \end{equation*}
+  \item Calcular el minimo valor entre $W^{+}$ y $W^{-}$.
+  \begin{equation*}
+    W=\proc{min}(W^{+}, W^{-})
+  \end{equation*}
+\end{itemize}
+
+\subsubsection{Prueba de Wilcoxon}
+La hipotesis planteada en la investigacion indica que: ``El algoritmo SCED detecta la similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y Winnowing-Fingerprint''. Donde las variables que fueron evaluadas son las siguientes:
+\begin{itemize}
+  \item[] \textbf{Variable independiente:} El diseño del algoritmo \id{SCED}
+  \item[] \textbf{Variable dependiente:} Resultados en la deteccion de similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmo de RKRGST y Winnowing-Fingerprint.
+\end{itemize}
+
+El procedimento para contrastar la hipotesis de investigacion es el siguiente:
+\begin{itemize}
+  \item[] \textbf{Paso 1.} Planteamiento de la hipotesis:
+  \begin{equation*}
+  \begin{split}
+  H_0 & = \mu_d = 0 \\
+  H_1 & = \mu_d > 0
+  \end{split}
+  \end{equation*}
+  \item[] \textbf{Paso 2.} Nivel de significancia:
+  \begin{equation*}
+  \begin{split}
+  N.C. & = 0.95 \\
+  \alpha & = 0.05
+  \end{split}
+  \end{equation*}
+  \item[] \textbf{Paso 3.} Criterio de decision:
+  \begin{center}
+  Si $\id{valor-p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$\\
+  Si $\id{valor-p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$
+  \end{center}
+  \item[] \textbf{Paso 4.} Resultados y conclusion.\\
+  Se aplica la prueba de Wilcoxon a la muestra, el detalle de los resultados se muestra en la tabla \ref{wilTable}.
+  \input{tables/rangTable}
+  \input{tables/wilTable}
+  Para los valores obtenidos se tiene que $0.00 < 0.05$, entonces se rechaza $H_0$ y se acepta $H_1$. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que el algoritmo SCED detecta similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y WF.
 \end{itemize}

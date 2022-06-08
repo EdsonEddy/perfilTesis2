@@ -1,0 +1,11 @@
+\begin{codebox}
+\Procname{$\proc{SCED-Algorithm}(\id{file-A}, \id{file-B})$}
+\li $\id{lexer-A} \gets \proc{Lexer}(\id{file-A})$
+\li $\id{lexer-B} \gets \proc{Lexer}(\id{file-B})$
+\li $\id{tokens-A} \gets \proc{Get-Tokens}(\id{file-A})$
+\li $\id{tokens-B} \gets \proc{Get-Tokens}(\id{file-B})$
+\li $\id{edit-dis} \gets \proc{Get-Edit-Distance(\id{tokens-A}, \id{tokens-B})}$
+\li $\id{max-length} \gets \proc{max}(\id{tokens-A.length}, \id{tokens-B.length})$
+\li $\id{percentage} \gets (1 - \id{edit-dis} /\id{max-length}) * 100$
+\li \Return \id{percentage}
+\end{codebox}

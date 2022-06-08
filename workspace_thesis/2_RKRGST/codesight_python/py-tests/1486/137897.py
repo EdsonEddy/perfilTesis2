@@ -1,0 +1,18 @@
+n=int(input())
+k=1
+a=1
+b=1
+z=a+b
+b1=2
+i=1
+while(i<=n):
+    if(i%2==0):
+        print(b1)
+        b1=b1+2
+        i=i+1
+    else:
+        print(a)
+        a=b
+        b=z
+        z=a+b
+        i=i+1

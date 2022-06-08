@@ -1,0 +1,10 @@
+s=(int(input()))
+h=s/3600
+m=h-int(h)
+h=int(h)
+m=m*60
+s=m-int(m)
+m=int(m)
+s=round(s*60)
+s=int(s)
+print(h,m,s)

@@ -1,0 +1,79 @@
+   __                 _             ___  __  __     __                       _
+  / /  ___   ___ __ _| |   /\/\    /___\/ _\/ _\   /__\ ___ _ __   ___  _ __| |_
+ / /  / _ \ / __/ _` | |  /    \  //  //\ \ \ \   / \/// _ \ '_ \ / _ \| '__| __|
+/ /__| (_) | (_| (_| | | / /\/\ \/ \_// _\ \_\ \ / _  \  __/ |_) | (_) | |  | |_
+\____/\___/ \___\__,_|_| \/    \/\___/  \__/\__/ \/ \_/\___| .__/ \___/|_|   \__|
+                                                           |_|                   
+Context
+ - reference: None
+ - language: python
+ - window_size: 15
+ - kgram_len: 5
+ - collision_threshold: 10
+ - output_size: short
+ - top: 15
+ - silent: False
+ - pre_lines: 5
+ - post_lines: 5
+ - Hash: 135783914027
+ - Duration: 0:00:00
+/------------------------------------------------------------------------------+
+|                                 SoftwareList                    #bcd19ee8179 |
++------------------------------------------------------------------------------/
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion9_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion9_2\ofuscacion9_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion5_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion5_2\ofuscacion5_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion4_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion4_2\ofuscacion4_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion5_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion5_1\ofuscacion5_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion1_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion1_1\ofuscacion1_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion4_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion4_1\ofuscacion4_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion6_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion6_1\ofuscacion6_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion6_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion6_2\ofuscacion6_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion7_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion7_1\ofuscacion7_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion1_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion1_2\ofuscacion1_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion2_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion2_1\ofuscacion2_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion7_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion7_2\ofuscacion7_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion2_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion2_2\ofuscacion2_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion8_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion8_1\ofuscacion8_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion8_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion8_2\ofuscacion8_2.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion3_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion3_1\ofuscacion3_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion9_1
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion9_1\ofuscacion9_1.py
+C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion3_2
+ - C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion3_2\ofuscacion3_2.py
+/------------------------------------------------------------------------------+
+|                                  CorpusStat                     #8d3c6ebbe0f |
++------------------------------------------------------------------------------/
+ - Number of softwares: 18
+ - Total number of fingerprints: 11
+ - Number of active fingerprints: 9
+ - Number of collisions: 1
+/------------------------------------------------------------------------------+
+|                                 MostSimilar                     #08d8c240df2 |
++------------------------------------------------------------------------------/
+First 15 results
++------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+---------------+---------------+
+| Rank             | Software 1                                                                        | Software 2                                                                        | Cosine Tf-Idf | Jaccard index | # Shareprints |
++------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+---------------+---------------+
+| 1 (#sec:d9d038a) | C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion4_2 | C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\ofuscacion5_2 | 0.40          | 0.25          | 1             |
++------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+---------------+---------------+
+
+================================================================================
+To re-run the code, use (from C:\Users\ACCESO\Desktop\experiments_file\3_WIN\bin)
+local_moss.py -l python -s short C:\Users\ACCESO\Desktop\experiments_file\dataset\py-ofuscation-edit\*\*.py
+['C:\\Users\\ACCESO\\Desktop\\experiments_file\\dataset\\py-ofuscation-edit\\*\\*.py']

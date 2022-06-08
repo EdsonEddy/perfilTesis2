@@ -1,0 +1,5 @@
+g=int(input())
+k=input().split()
+e=max(set(k), key=k.count)
+r=k.count(e)
+print(g-r)

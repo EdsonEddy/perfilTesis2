@@ -1,14 +1,10 @@
 \begin{codebox}
 \Procname{$\proc{Lexer}(file)$}
-\li $\id{array-tokens} \gets \proc{get-tokens}(file)$
-\li $\id{array-sequences} \gets \emptyset$
-\li $\id{array-sequences-per-line} \gets \emptyset$
-\li $sequence \gets \emptyset$
-\li For each $\id{token} \in \id{array-tokens}$
-\li \Do \If $\proc{is-separator}(token)$
-\li \Then $\proc{add}(\id{array-sequences-per-line}, sequence)$
-\li $sequence \gets \emptyset$
-\li \Else $\proc{add}(sequence, token)$
-\li $\proc{add}(array-sequences token)$ \End \End
-\li \Return $\id{array-sequences-per-line}, \id{array-sequences}$
+\li $\id{tokens} \gets \proc{get-tokens}(file)$
+\li $\id{sequence-tokens} \gets \emptyset$
+\li \For each $\id{token} \in \id{tokens}$ \Do
+\li \If $\proc{is-valid}(token)$ \Then
+\li $\id{token-class} \gets \proc{classification}(token)$
+\li $\proc{add}(\id{sequence-tokens}, \id{token-class})$ \End \End
+\li \Return $\id{sequence-tokens}$
 \end{codebox}

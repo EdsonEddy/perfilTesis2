@@ -6,9 +6,9 @@ En el ámbito académico, los estudiantes de programación durante su proceso de
 
 En la actualidad existen herramientas de software para detectar la similitud entre códigos fuente, en las cuales se aplican diferentes métodos para la detección de similitud, a partir de las características de las herramientas, se pudo evidenciar que presentan deficiencias como: sistemas obsoletos, sistemas sin código abierto, procesos complejos para la evaluación de similitud, sistemas incapaces que procesar un grupo grande de archivos, sistemas de difícil configuración e instalación, sistemas que requieren conexión a internet.
 
-En el presente trabajo de tesis se centra en el diseño e implementación de un algoritmo para la detección de similitud entre códigos fuente que tenga buen desempeño, en términos de tiempo de ejecución y precisión.
+El diseño del algoritmo propuesto cuenta con tres fases, la primera fase consiste en la conversion de código fuente en secuencias de tokens (Tokenizacion), esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de las secuencias obtenidas mediante conceptos de distancia de edicion (Distancia de Levenshtein), la fase final consiste en el calculo del porcentaje similitud.
 
-%El diseño del algoritmo propuesto contara con tres fases, la primera fase consiste en la conversion de código fuente en arbol de sintaxis abstracta (AST), esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de arboles obtenidos mediante conceptos de distancia de edicion de arboles (TED), la fase final consiste en la agrupacion de códigos similires mediante conceptos de estructuras para conjuntos disjuntos (DSU).
+En el presente trabajo de tesis se centra en el diseño e implementación de un algoritmo para la detección de similitud entre códigos fuente que tenga buen desempeño, en términos de tiempo de ejecución y precisión.
 
 \section{Problema}
 \subsection{Antecedentes del problema}
@@ -24,41 +24,41 @@ Una manera de ocultar la similitud entre códigos fuente, es mediante la aplicac
 Por lo cual contar un algoritmo que calcule de forma eficiente la similitud entre códigos fuente, tomando en cuenta los métodos de ofuscación, es de gran utilidad.
 
 \subsection{Formulación del problema}
-¿El algoritmo SCAM tiene mejor desempeño frente a los algoritmos de Winnowing-Fingerprint y Greedy-String-Tiling en la detección de similitud entre códigos fuente?
+¿El algoritmo SCED tiene mejor desempeño frente a los algoritmos de Winnowing-Fingerprint y RKRGST en la detección de similitud entre códigos fuente?
 \section{Objetivos}
 \subsection{Objetivo general}
-Diseñar e implementar el algoritmo SCAM para la detección de similitud entre códigos fuente.
+Diseñar e implementar el algoritmo SCED para la detección de similitud entre códigos fuente.
 \subsection{Objetivos específicos}
 \begin{itemize}
-    \item Estudiar las técnicas para la detección de similitud entre códigos fuente existentes.
+    \item Estudiar los metodos de ofuscación de códigos fuente.
     \item Estudiar los algoritmos utilizados en las herramientas para la detección de similitud de código fuente.
-    \item Redactar las especificaciones para el algoritmo SCAM.
-    \item Evaluar el desempeño del algoritmo SCAM realizando las pruebas en trabajos de programación presentado por estudiantes.
+    \item Redactar las especificaciones para el algoritmo SCED.
+    \item Evaluar el desempeño del algoritmo SCED realizando las pruebas en trabajos de programación presentado por estudiantes.
 \end{itemize}
 
 \section{Hipótesis}
-El algoritmo SCAM para la detección de similitud entre códigos fuente obtiene mejores resultados frente a otros algoritmos en la detección de similitud.
+El algoritmo SCED detecta la similitud entre códigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y Winnowing-Fingerprint.
 \subsection{Variables Independientes}
 \begin{itemize}
-    \item El diseño del algoritmo SCAM para la detección de similitud entre códigos fuente.
+    \item El diseño del algoritmo SCED.
 \end{itemize}
 \subsection{Variables Dependientes}
 \begin{itemize}
-    \item Resultados más precisos frente a otros algoritmos para la detección de similitud entre códigos fuente.
+    \item Resultados en la deteccion de similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmo de RKRGST y Winnowing-Fingerprint.
 \end{itemize}
 \section{Justificaciones}
 \subsection{Justificación Social}
-En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. El algoritmo SCAM ayudara a docentes de instituciones académicas, en la detección de trabajos similares de programación presentados por estudiantes.
+En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. El algoritmo SCED ayudara a docentes de instituciones académicas, en la detección de trabajos similares de programación presentados por estudiantes.
 \subsection{Justificación Económica}
-El algoritmo SCAM para la detección de similitud entre códigos fuente sera de código abierto, por lo cual permitirá que se desarrollen software a bajo costo.
+El algoritmo SCED para la detección de similitud entre códigos fuente sera de código abierto, por lo cual permitirá que se desarrollen software a bajo costo.
 \subsection{Justificación Tecnológica}
-El algoritmo SCAM para la detección de similitud entre códigos fuente, se puede implementar en jueces de programación para identificar los envíos similares de los usuarios.
+El algoritmo SCED para la detección de similitud entre códigos fuente, se puede implementar en jueces de programación para identificar los envíos similares de los usuarios.
 \subsection{Justificación Científica}
 Con la utilización de trabajos de programación presentados por estudiantes se medirá el desempeño de los algoritmos para la detección de similitud entre códigos fuente. Con los resultados obtenidos se determinará cuál algoritmo es más eficiente en términos de tiempo de ejecución y precisión.
 \section{Alcances y Limites}
 \subsection{Alcance Sustancial}
 \begin{itemize}
-    \item Se diseñará e implementará en Python el algoritmo SCAM para la detección de similitud entre códigos fuente.
+    \item Se diseñará e implementará en Python el algoritmo SCED para la detección de similitud entre códigos fuente.
     \item Se realizaran las pruebas de similitud con trabajos de programación presentados por estudiantes.
     \item Se realizarán pruebas para medir el tiempo, espacio de memoria ocupado y eficiencia del algoritmo.
     \item Se dejará de lado el estudio de métodos para la detección de similitud que aplican técnicas de inteligencia artificial.

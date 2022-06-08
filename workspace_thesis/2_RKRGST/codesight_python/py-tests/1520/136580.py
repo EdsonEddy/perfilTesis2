@@ -1,0 +1,16 @@
+n=int(input())
+num=1
+den=1
+k="/"
+q=n
+p=n
+while(n!=0):
+    while(p!=0):
+        z=str(num)+str(k)+str(den)
+        print(z)
+        den=den+1
+        p=p-1
+    n=n-1
+    den=1
+    num=num+1
+    p=q

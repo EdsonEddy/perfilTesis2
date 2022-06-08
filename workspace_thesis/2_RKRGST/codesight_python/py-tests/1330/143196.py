@@ -1,0 +1,22 @@
+cad=input()
+tam=len(cad)
+uno=int(cad[tam-1])
+dos=int(cad[tam-2:tam])
+if dos > uno:
+    tam1=tam-3
+    cad1=cad[0:tam1]
+    j=dos%tam1
+    inv=cad1[::-1]
+    inv=inv[0:j]
+    inv=inv[::-1]
+    cad1=cad1[0:tam1-j]
+    print(inv+cad1)
+else:
+    tam1=tam-2
+    cad1=cad[0:tam1]
+    j=uno%tam1
+    inv=cad1[::-1]
+    inv=inv[0:j]
+    inv=inv[::-1]
+    cad1=cad1[0:tam1-j]
+    print(inv+cad1)

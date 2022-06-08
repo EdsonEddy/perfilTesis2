@@ -1,0 +1,21 @@
+while(1>0):
+    a,b=map(int,input().split())
+    if(a==b):
+        print("feliz")
+    else:
+        a=str(a)
+        b=str(b)
+        x=-1
+        y=0
+        for c in a:
+            x=x+1
+            d=a[x]
+            d=int(d)
+            e=b[x]
+            e=int(e)
+            if(d!=e):
+                y=y+1
+        if(y>=2):
+            print("lentes")
+        if(y<=1):
+            print("feliz")

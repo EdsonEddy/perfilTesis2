@@ -1,0 +1,5 @@
+s = input()
+v = s.split()
+a = int(v[0])
+b = int(v[1])
+print(int(a/b), a%b)

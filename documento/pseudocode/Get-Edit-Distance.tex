@@ -1,0 +1,19 @@
+\begin{codebox}
+\Procname{$\proc{Levenshtein}(A,B)$}
+\li $\id{m} \gets A.length + 1$
+\li $\id{n} \gets B.length + 1$
+\li let $t[0 \twodots m, 0 \twodots n]$ be new table
+\li \For $i \gets 0$ \To $m$ \Do
+\li $t[i][0] \gets i$ \End
+\li \For $i \gets 0$ \To $n$ \Do
+\li $t[0][i] \gets i$ \End
+\li \For $i \gets 1$ \To $m$ \Do
+\li \For $j \gets 1$ \To $n$ \Do
+\li \If $\proc{Token-Comparison}(A[i-1], B[j-1])$ \Then
+\li $t[i][j] \gets t[i - 1][j - 1]$
+\li \Else
+\li $t[i][j] \gets t[i - 1][j - 1] + 1$ \End
+\li $t[i][j] \gets \proc{min}(t[i][j],t[i-1][j]+1)$
+\li $t[i][j] \gets \proc{min}(t[i][j],t[i][j-1]+1)$ \End \End
+\li \Return $t[m - 1][n - 1]$
+\end{codebox}

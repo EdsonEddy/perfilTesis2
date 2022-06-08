@@ -1,0 +1,11 @@
+n=int(input())
+a=1
+b=0
+c=1
+d=1
+while(a<=n):
+    a+=1
+    x=d/c
+    c+=1
+    b=x+b
+print(('{:.4f}'.format(b)))

@@ -1,3 +1,18 @@
 \chapter{CONCLUSIONES Y RECOMENDACIONES}
 \section{Conclusiones}
+Se diseño satisfactoriamente el algoritmo SCED de acuerdo a los objetivos planteados. El algoritmo SCED para la deteccion de similitud entre codigos fuente se basa el calculo de la distancia de edicion de codigos fuente tokenizados. Apartir de las pruebas de medicion realizadas en trabajos de catedra se obtienen las siguientes conclusiones:
+
+\begin{itemize}
+  \item El algoritmo detecta similitud entre codigos fuente que contienen metodos de ofuscacion.
+  \item El algoritmo SCED detecta la similitud con una confiabilidad del 95\% frente a los algoritmos Running-Karp-Rabin Greedy-String-Tiling y Winnowing-Fingerprint.
+  \item Se observo que la tecnica de programacion dinamica, utilizada en la deteccion de similitud entre codigos fuente obtiene mejores resultados frente a otras tecnicas.
+\end{itemize}
+
 \section{Recomendaciones}
+El presente trabajo de investigacion hace uso de la distancia de Levenshtein, para el calculo de la similitud entre codigos fuente. Por lo cual se sugieren las siguientes recomendaciones:
+\begin{itemize}
+  \item Comparar el algoritmo propuesto frente a otros algoritmos que utilicen la tecnica de programacion dinamica en la deteccion de similitud.
+  \item Desarrollar una herramienta de software para la deteccion de similitud entre codigos fuente, que utilice el algoritmo SCED.
+  \item Aplicar al algoritmo SCED otros tipos de distancia de edicion como: La distancia de la subsecuencia comun mas larga, la distancia Hamming, la distancia Damerau-Levenshtein y la distancia Jaro-Winkler.
+  \item Realizar mediciones de similitud con el algoritmo SCED en codigos fuente de escritos en diferentes lenguajes de programacion.
+\end{itemize}

@@ -1,0 +1,12 @@
+while(1>0):
+    a,b,c,d=map(int,input().split())
+    if(c==0):
+        c=24
+    e=a*60
+    f=c*60
+    g=e+b
+    h=f+d
+    i=h-g
+    j=i//60
+    k=i%60
+    print(j,k)

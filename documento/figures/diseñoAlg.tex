@@ -8,32 +8,27 @@ io/.style ={trapezium, trapezium left angle=70, trapezium right angle=110, minim
 arrow/.style={thick,->},
 darrow/.style={thick,<->},
 ]
-\node[io] (n1) at (1,7) {Archivo A, Archivo B};
-\node[module] (n2) at (7,7) {Fragmentacion en secuencias y tokenizacion};
-\node[module] (n3) at (7,5) {Calculo del maximo emparejamiento de fragmentos};
-\node[module] (n4) at (7,3) {Calculo de la subsecuencia de comun mas larga};
-\node[module] (n5) at (7,1) {Calculo del indice de similitud};
-\node[io] (n6) at (1,1) {Indice de similitud};
+\node[io] (n1) at (1,5) {Archivo A, Archivo B};
+\node[module] (n2) at (7,5) {Tokenizacion y clasificacion};
+\node[module] (n3) at (7,3) {Calculo de la distancia de edicion};
+\node[module] (n4) at (7,1) {Calculo del porcentaje de similitud};
+\node[io] (n5) at (1,1) {Porcentaje de similitud};
 
-\node[algorithm] (n7) at (13,7) {Lexer};
-\node[algorithm] (n8) at (13,5) {LCS};
-\node[algorithm] (n9) at (13,3) {Hopcroft-Karp};
-\node[algorithm] (n10) at (13,1) {Sorencen-Dice};
-\node[border] (n11) at (13,7) {};
-\node[border] (n12) at (13,5) {};
-\node[border] (n13) at (13,3) {};
-\node[border] (n14) at (13,1) {};
+\node[algorithm] (n6) at (13,5) {Lexer};
+\node[algorithm] (n7) at (13,3) {Levenstein};
+
+\node[border] (n8) at (13,5) {};
+\node[border] (n9) at (13,3) {};
 
 \draw [arrow] (n1) to (n2);
 \draw [arrow] (n2) to (n3);
 \draw [arrow] (n3) to (n4);
 \draw [arrow] (n4) to (n5);
-\draw [arrow] (n5) to (n6);
 
-\draw [darrow] (n7) to (n2);
-\draw [darrow] (n8) to (n3);
-\draw [darrow] (n9) to (n4);
-\draw [darrow] (n10) to (n5);
+\draw [darrow] (n6) to (n2);
+\draw [darrow] (n7) to (n3);
+%\draw [darrow] (n8) to (n3);
+%\draw [darrow] (n9) to (n3);
 
 %\draw (n7.north west) -- ++ (-13.3,7) |- (n7.south west) ;
 %\draw (n7.north east) -- ++ (13.3,7) |- (n7.south east) ;

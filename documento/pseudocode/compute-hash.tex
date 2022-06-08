@@ -1,0 +1,11 @@
+\begin{codebox}
+\Procname{$\proc{compute-hash}(s)$}
+\li $p \gets 31$
+\li $m \gets 10^9 + 9$
+\li $\id{hash-value} \gets 0$
+\li $p-pow \gets 1$
+\For each $s_i \in s$ \Do
+\li $\id{hash-value} \gets ((\id{hash-value} + s_i) * \id{p-pow}) \% m$
+\li $p-pow \gets (\id{p-pow} * p) \% m$
+\li \Return $\id{hash-value}$
+\end{codebox}

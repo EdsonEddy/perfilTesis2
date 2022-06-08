@@ -1,5 +1,6 @@
 \chapter{MARCO TEÓRICO}
-\section{Conceptos de lenguajes de programación}
+\section{Conceptos de ofuscación y código fuente}
+\subsection{Lenguaje de programación}
 ``Los lenguajes de programación son notaciones que describen los cálculos a las personas y las máquinas. Nuestra percepción del mundo en que vivimos depende de los lenguajes de programación, ya que todo el software que se ejecuta en todas las computadoras se escribió en algún lenguaje de programación'' \cite[p. 1]{Aho2008}. Un lenguaje de programación es un lenguaje formal, que mediante un conjunto de instrucciones permite a un programador crear programas. El lenguaje de programación es un sistema estructurado de comunicación conformado por conjuntos de símbolos, palabras clave, reglas semánticas y sintácticas, las cuales sirven para el entendimiento entre un programador y una maquina.
 \begin{itemize}
     \item \textbf{Palabra clave.} En los lenguajes de programacion existen palabras clave. Estas palabras no se pueden ser utilizadas para ningun otro proposito.
@@ -9,7 +10,6 @@
     \item \textbf{Comentarios.} Son secuencias de caracteres que sirven para realizar anotaciones en el codigo fuente.
 \end{itemize}
 
-\section{Conceptos de ofuscación de código fuente}
 \subsection{Código fuente}
 En informática, se denomina código fuente a la conjunto de lineas de texto que escritas por un programador. Estas lineas de texto representan instrucciones en un lenguaje de programación. Las instrucciones representan los pasos que debe seguir la computadora para la ejecución de un programa específico. El código fuente no es directamente ejecutable por la computadora, este debe ser traducido a otro lenguaje de modo que la computadora pueda interpretarlo. En la traducción se usan compiladores, ensambladores, interpretes y otros.
 
@@ -44,24 +44,17 @@ Una definición formal se encuentra en \cite{Collberg1997} que define a la ofusc
     \lstinputlisting[caption={Agregar instrucciones innecesarias, original},label={lst:obfuscation5_1}, language=Python]{programs/obfuscation/obfuscation5_1.py}
     \lstinputlisting[caption={Agregar instrucciones innecesarias, modificado},label={lst:obfuscation5_2}, language=Python]{programs/obfuscation/obfuscation5_2.py}
 
-    \item \cite{donaldson1981plagiarism} Menciona dividir una linea de código en varias lineas. El ejemplo se muestra en los programas \ref{lst:obfuscation6_1} y \ref{lst:obfuscation6_2}.
-    \lstinputlisting[caption={Dividir una instruccion, original},label={lst:obfuscation6_1}, language=Python]{programs/obfuscation/obfuscation6_1.py}
-    \lstinputlisting[caption={Dividir una instruccion, modificado},label={lst:obfuscation6_2}, language=Python]{programs/obfuscation/obfuscation6_2.py}
+    \item \cite{WHALE1990131} Menciona el reemplazo de la llamada de un procedimiento por el procedimiento. El ejemplo se muestra en los programas \ref{lst:obfuscation6_1} y \ref{lst:obfuscation6_2}.
+    \lstinputlisting[caption={Reemplazo de la llamada a un procedimiento, original},label={lst:obfuscation6_1}, language=Python]{programs/obfuscation/obfuscation6_1.py}
+    \lstinputlisting[caption={Reemplazo de la llamada a un procedimiento, modificado},label={lst:obfuscation6_2}, language=Python]{programs/obfuscation/obfuscation6_2.py}
 
-    \item \cite{WHALE1990131} Menciona el reemplazo de la llamada de un procedimiento por el procedimiento. El ejemplo se muestra en los programas \ref{lst:obfuscation7_1} y \ref{lst:obfuscation7_2}.
-    \lstinputlisting[caption={Reemplazo de la llamada a un procedimiento, original},label={lst:obfuscation7_1}, language=Python]{programs/obfuscation/obfuscation7_1.py}
-    \lstinputlisting[caption={Reemplazo de la llamada a un procedimiento, modificado},label={lst:obfuscation7_2}, language=Python]{programs/obfuscation/obfuscation7_2.py}
+    \item \cite{WHALE1990131} Menciona el cambio de la especificación de una declaración. Cambios como: El cambio de las operaciones y el operando, cambio en los tipos de datos. El ejemplo se muestra en los programas \ref{lst:obfuscation7_1} y \ref{lst:obfuscation7_2}.
+    \lstinputlisting[caption={Cambio de operaciones y operandos, original},label={lst:obfuscation7_1}, language=Python]{programs/obfuscation/obfuscation7_1.py}
+    \lstinputlisting[caption={Cambio de operaciones y operandos, modificado},label={lst:obfuscation7_2}, language=Python]{programs/obfuscation/obfuscation7_2.py}
 
-    \item \cite{WHALE1990131} Menciona el cambio de la especificación de una declaración. Cambios como: El cambio de las operaciones y el operando, cambio en los tipos de datos. El ejemplo se muestra en los programas \ref{lst:obfuscation8_1} y \ref{lst:obfuscation8_2}.
-    \lstinputlisting[caption={Cambio de operaciones y operandos, original},label={lst:obfuscation8_1}, language=Python]{programs/obfuscation/obfuscation8_1.py}
-    \lstinputlisting[caption={Cambio de operaciones y operandos, modificado},label={lst:obfuscation8_2}, language=Python]{programs/obfuscation/obfuscation8_2.py}
-
-    \item \cite{article3} Mencionan el cambio de estructuras de control por sus equivalentes. El reemplazo por equivalentes de estructuras repetitivas y condicionales, El ejemplo se muestra en los programas \ref{lst:obfuscation9_1} y \ref{lst:obfuscation9_2}.
-    \lstinputlisting[caption={Cambio en la estructura repetitiva, original},label={lst:obfuscation9_1}, language=Python]{programs/obfuscation/obfuscation9_1.py}
-    \lstinputlisting[caption={Cambio en la estructura repetitiva, modificado},label={lst:obfuscation9_2}, language=Python]{programs/obfuscation/obfuscation9_2.py}
-    %\item \cite{Zoran2012} Mencionan la simplificación de código. El ejemplo se muestra en los programas \ref{lst:ofuscacion10_1} y \ref{lst:ofuscacion10_2}.
-    %\lstinputlisting[caption={Simplificación de código, original},label={lst:ofuscacion10_1},language=Python]{programas/ofuscacion10_1.py}
-    %\lstinputlisting[caption={Simplificación de código, modificado},label={lst:ofuscacion10_2},language=Python]{programas/ofuscacion10_2.py}
+    \item \cite{article3} Mencionan el cambio de estructuras de control por sus equivalentes. El reemplazo por equivalentes de estructuras repetitivas y condicionales, El ejemplo se muestra en los programas \ref{lst:obfuscation8_1} y \ref{lst:obfuscation8_2}.
+    \lstinputlisting[caption={Cambio en la estructura repetitiva, original},label={lst:obfuscation8_1}, language=Python]{programs/obfuscation/obfuscation8_1.py}
+    \lstinputlisting[caption={Cambio en la estructura repetitiva, modificado},label={lst:obfuscation8_2}, language=Python]{programs/obfuscation/obfuscation8_2.py}
 \end{itemize}
 
 \cite{Bejarano2015} se refiere a los métodos como modificaciones y los divide en dos grupos:
@@ -83,14 +76,13 @@ Una de las investigación mas antiguas respecto a la ofuscación de código fuen
 
 \section{Detección de similitud de código fuente}
 \cite{Novak2019} Realizo un estudio sistemático campo de la detección de plagio de código fuente, describe definiciones de plagio, herramientas para la detección de plagio, métricas de comparación, métodos de ofuscación, conjunto de datos para la comparación y algoritmos que utilizan las herramientas.
-\subsection{Algoritmos para la detección de similitud}
+\subsection{Clasificacion de algoritmos para la detección de similitud}
 En su estudio \cite{Novak2019} identifica algoritmos basados en estilo, basado en semántica, basado en texto, huellas dactilares, recuento de atributos, basado en estructura, coincidencia de cadenas, marca de agua, basado en historial, basado en XML, código compilado, basado en compresión, basado en grafos, basado en agrupamiento, basado en N-gramas y basado en árboles. También hace menciona que los enfoques basados en estructuras son mucho mejores y que la mayoría de las herramientas combinan más de un tipo de algoritmo. En el cuadro \ref{tiposDeAlgoritmos} se muestra detalles de estos como el primer y ultimo año de publicación de un algoritmo, el numero de artículos en los que aparecen y si utilizan la tokenización.
 
 \input{tables/tiposDeAlgoritmos}
 
-\cite{Novak2019} Menciona que las tres herramientas principales para la detección de similitud, utilizan los algoritmos de Running-Karp-Rabin Greedy-String-Tiling (RKR GST), Winnowing-Fingerprint e implementaciones de tokenización.
-%\subsection{Algoritmo Greedy-String-Tiling}
-%\subsection{Algoritmo Winnowing-Fingerprint}
+\cite{Novak2019} Menciona que las tres herramientas principales para la detección de similitud, utilizan los algoritmos de Running-Karp-Rabin Greedy-String-Tiling (RKRGST), Winnowing-Fingerprint (W-F) e implementaciones de tokenización.
+
 \subsection{Técnicas para la detección de similitud}
 En su investigación \cite{Karnalim2019} clasifica las técnicas de detección de similitud en tres categorías: Basadas en conteo de atributos, basadas en estructuras y técnicas híbridas, a continuación se dará una breve descripción de cada una de ellas.
 
@@ -134,6 +126,31 @@ En su investigación \cite{Karnalim2019} clasifica las técnicas de detección d
 \subsubsection{SIM}
 \cite{Cheers2021} Explica que SIM analiza programas en busca de similitud estructural mediante el uso de alineación de cadenas. Para dos programas, SIM primero analiza el código fuente creando un árbol de análisis. Luego, la herramienta representará los árboles de análisis como cadenas y los alineará insertando espacios para obtener una subsecuencia común máxima de sus tokens contenidos. La similitud de los programas se evalúa luego como el número de coincidencias.
 
+%\section{Algoritmos para la deteccion de similitud}
+%\subsection{Algoritmo Greedy-String-Tiling}
+%\subsection{Algoritmo Winnowing-Fingerprint}
+
+\section{Indices de similitud}
+\cite{magurran1988} explica que los indices de similitud expresan el grado en que dos muestras son semejantes por las especies presentes en ellas. Estos valores pueden obtenerse con base en datos cualitativos o cuantitativos.
+
+\subsection{Indice de Sorensen-Dice}
+El indice de Sorensen-Dice también conocido como el coeficiente de Sorencen. Es un estadístico utilizado para comparar la similitud entre dos muestras. El indice de Sorencen-Dice se define como:
+
+\begin{equation}
+S = \frac{2*|A \cap B|}{|A|+|B|}
+\label{sorencen}
+\end{equation}
+
+En la ecuacion \ref{sorencen} se muestra a: $|\id{A}|$ y $|\id{B}|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{S} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
+
+\subsection{Indice de Jaccard}
+El indice de Jaccard tambien conocido como el coeficiente de Jaccard, Es un estadistico utilizado para medir el grado de similitud entre dos conjuntos. El indice de Jaccard se define como:
+\begin{equation}
+J = \frac{|A \cap B|}{|A \cup B|}
+\label{jaccard}
+\end{equation}
+En la ecuacion \ref{jaccard} se muestra a: $|A \cup B|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{J} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
+
 \section{Conceptos de compiladores y tokens}
 \subsection{Procesador de lenguaje}
 Un procesador de lenguaje también llamado compilador. \cite{Aho2008} Explica que un procesador de lenguaje es un programa que puede leer un programa en un lenguaje y traducirlo en un programa equivalente en otro lenguaje. Una función importante del compilador es reportar cualquier error en el programa fuente que detecte durante el proceso de traducción.
@@ -155,60 +172,7 @@ Los tokens son la unidad léxica basica, y los lexemas son las palabras de un co
 
 \noindent Finalmente se obtiene los siguientes tokens: $[id, 1] [=] [id, 2] [+] [id, 3] [*] [60]$.
 
-\section{Conceptos de grafos y algoritmos}
-\subsection{Grafo direccionado}
-En \cite{Cormen2009} encontramos la siguiente definición. Un grafo direccionado $G$ es un par $(V,E)$, donde $V$ es un conjunto finito y $E$ es una relación binaria en $V$. El conjunto V es llamado conjunto de vértices de $G$, y sus elementos son llamados vértices. El conjunto $E$ es llamado conjunto de aristas de $G$, y sus elementos son llamados aristas, como se muestra en la figura \ref{grafoDir}.
-
-\input{figures/grafoDir}
-
-\subsection{Grafo no direccionado}
-En \cite{Cormen2009} encontramos la siguiente definición. Un grafo no direccionado $G=(V,E)$, el conjunto de aristas $E$ consiste en pares no ordenados de vértices, en lugar de pares ordenados. Es decir una arista es un conjunto $(u,v)$ donde $u,v \in V$ y $u \neq v$, considerando que $(u,v)$ y $(v,u)$ son la misma arista, como se muestra en la figura \ref{grafoNoDir}.
-
-\input{figures/grafoBip}
-
-\subsection{Lista de adyacencia}
-\cite{Cormen2009} explica que la representación de grafo $G=(V,E)$ mediante listas de adyacencia, consiste en arreglo $Adj$ de $|V|$ listas, una para cada vértice en $V$. Para cada $u \in V$, la lista de adyacencia $Adj[u]$ contiene todos los vértices $v$ talque hay una arista $(u,v) \in E$. Es decir, $Adj[u]$ consiste en todos los vértices adyacentes de $u$ en $G$, un ejemplo se muestra en la figura \ref{listaAdy}.
-
-\input{figures/listaAdy}
-
-\subsection{Búsqueda en profundidad}
-La Busqueda en profundidad tambien es conocida por sus siglas en ingles como DFS. \cite{Halim2019} Explica que la búsqueda en profundidad, es un algoritmo sencillo para el recorrido de grafos. La búsqueda en profundidad comienza en un vértice de origen, recorre primero el grafo en profundidad, si durante el recorrido se encuentra con un vértice que tiene mas de un vecino, elige a uno de los vecinos no visitados y visitara su vértice. La búsqueda en profundidad repite este proceso en profundidad hasta que llega a un vértice terminal, cuando esto ocurre vuelve hacia atrás y explora otros vecinos todavía no visitados. Este comportamiento es de fácil implementación mediante recusión, un ejemplo de este recorrido se muestra en la figura \ref{ejemDfs}.
-
-\input{figures/ejemDfs}
-
-En la implementación de la búsqueda en profundidad. Para cada vértice $v \in V$, si $v$ fue visitado entonces $v.vis$ tendrá el valor de $\id{VISITED}$, caso contrario $v.vis$ tendrá el valor de $\id{UNVISITED}$. Es decir se marca con etiquetas a los vértices que fueron visitados o no visitados. La implementación en pseudocódigo del algoritmo se encuentra en $\proc{DFS}(G, s)$.
-
-\input{pseudocode/DFS}
-\input{pseudocode/DFS-Visit}
-
-La complejidad temporal de la búsqueda en profundidad en un grafo que esta representado mediante una lista de adyacencia es $O(V+E)$.
-
-\subsection{Búsqueda en anchura}
-La busqueda en anchura tambien es conocida por sus siglas en ingles como BFS. \cite{Halim2019} explica que la busqueda en anchura es un algoritmo sencillo para el recorrido de grafos. Comenzando en un vértice de origen, recorre el grafo en anchura, visita todos los vértices vecinos del vértice de origen, seguido los vértices vecinos de los vecinos, y así sucesivamente. Es decir capa a capa. La búsqueda en anchura comienza con todos los vértices del grafo marcados como no visitados, inserta el vértice de origen $s$ en una cola $Q$ y marca a $s$ como visitado, luego mientras la cola no se encuentre vacía realiza el siguiente proceso: Quita el vértice $u$ que se encuentra en frente de la cola, para cada vértice vecino de $u$ que no haya sido visitado lo agrega a la cola y lo marca como visitado. Cuando la cola se encuentre vacía el algoritmo finaliza y se habrá recorrido todos los vértices del componente conexo que contiene a $s$, un ejemplo de este recorrido se muestra en la figura \ref{ejemBfs}.
-
-\input{figures/ejemBfs}
-
-En la implementación de la búsqueda en anchura. Para cada vértice $v \in V$, si $v$ no fue visitado entonces $v.dis$ tendrá el valor igual a $\infty$, caso contrario $v.dis$ tendrá el valor de la distancia entre el vértice origen $s$ y el vértice $v$. La implementación en pseudocódigo del algoritmo se encuentra en $\proc{BFS}(G, s)$.
-
-\input{pseudocode/BFS}
-
-La complejidad temporal de la búsqueda en anchura en un grafo que esta representado mediante una lista de adyacencia es $O(V+E)$.
-
-\subsection{El problema del máximo emparejamiento bipartito}
-En \cite{Cormen2009} encontramos las siguientes definiciones. Una arista y un vértice son incidentes, si tal vértice es extremo de la arista. Dado un grafo no direccionado $G=(V,E)$, un emparejamiento es un subconjunto de aristas $M \subseteq E$, talque para todos los vértices $v \in V$, a lo mucho una arista de $M$ es incidente en $v$. Un vértice $v \in V$ es emparejado por el emparejamiento $M$ si alguna arista en $M$ es incidente en $v$, en otro caso $v$ no esta emparejado. El máximo emparejamiento es un emparejamiento de máxima cardinalidad, es decir, un emparejamiento $M$ talque para para cualquier emparejamiento ${M}'$, se tiene que $|M| \geq |{M}'|$. El conjunto de vértices de un grafo puede ser particionado en $V=L \cup R$, donde $L$ y $R$ son disjuntos y todas las aristas en $E$ van entre $L$ y $R$.
-
-\input{figures/empBip}
-
-\subsection{Algoritmo de Hopcroft-Karp}
-\cite{Cormen2009} Explica que el problema de buscar un máximo emparejamiento bipartito en un grafo puede ser solucionado mediante el algoritmo de Hopcroft-Karp Karp. Los vértices que conforman a una arista se llaman puntos finales. Dado un grafo no direccionado y bipartito $G=(V,E)$, donde $V=L \cup R$ y todas las aristas tienen exactamente un punto final en $L$. Sea $M$ un emparejamiento en $G$. Un camino simple $P$ en $G$, es un camino de aumento con respecto a $M$ si comienza en un vértice no emparejado en $L$, si termina en un vértice no emparejado en $R$ y si sus aristas pertenecen alternativamente a $M$ y $E-M$. Un camino de aumento mas corto con respecto a un emparejamiento $M$ es un camino de aumento con un mínimo numero de aristas.
-
-Dados dos conjuntos $A$ y $B$, la diferencia simétrica de $A \oplus B$ es definida como $(A-B) \cup (B-A)$. Es decir los elementos que están exactamente en uno de los dos conjuntos. Aplicando la definición de la diferencia simétrica, se tiene que si $M$ es un emparejamiento y $P$ es un camino de aumento con respecto a $M$, entonces la diferencia simétrica $M \oplus P$ es un emparejamiento y $|M \oplus P| = |M|+1$. nótese que si $P_1,P_2, \twodots ,P_k$ son vértices disjuntos de caminos de aumento con respecto a $M$, entonces la diferencia simétrica $M \oplus (P_1 \cup P_2 \cup  \twodots  P_k)$ es un emparejamiento con cardinalidad $|M|+k$. Es decir que al encontrar caminos de aumento, puede aumentar el numero emparejamientos. La implementación en pseudocódigo del algoritmo se encuentra en $\proc{Hopcroft-Karp}(G)$.
-
-\input{pseudocode/Hopcroft-Karp}
-
-\cite{Cormen2009} Explica que el algoritmo de Hopcroft-Karp encuentra el conjunto máximo de caminos de aumento en $O(\sqrt{|V|})$ iteraciones. Por lo cual la complejidad temporal del algoritmo es $O(|E|*\sqrt{|V|})$.
-
-\section{Conceptos de programacion dinamica y algoritmos}
+\section{Conceptos de programacion dinamica y distancia de edicion}
 \subsection{Programación dinámica}
 \cite{Cormen2009} Explica que la programación dinámica es un método para la resolución de problemas, el cual resuelve un problema combinando las soluciones de los subproblemas. La programación dinámica se aplica cuando los problemas se superponen, cuando los subproblemas comparten subproblemas, donde un algoritmo de programación dinámica resuelve un subproblemas solo una vez y guarda la respuesta en una tabla, de esta forma evita el trabajo de volver a calcular la respuesta. La programación dinámica se aplica a problema de optimización dichos problemas pueden tener mas de una solución posible, en el cual se desea encontrar el máximo o mínimo, a estas soluciones se llaman solución optima.\\
 
@@ -220,174 +184,20 @@ Dados dos conjuntos $A$ y $B$, la diferencia simétrica de $A \oplus B$ es defin
     \item Construir una solución optima a partir de la información calculada.
 \end{enumerate}
 
-%\subsection{El problema de la alineación de cadenas}
-%\cite{Cormen2009} Explica que el problema de la alineación de cadenas o distancia de edición, consiste en dadas dos cadenas $A=[1 \twodots n]$ y $B=[1 \twodots m]$, y un conjunto de costos de operaciones de transformación. La distancia de edición de $A$ a $B$ es el costo de la secuencia de operaciones menos costosa que transforma $A$ en $B$, las operaciones se realizan en los caracteres de la cadena, que consisten en insertar, reemplazar y eliminar. Es decir, la distancia de edición es una forma de medir que tan diferentes son dos cadenas entre si.
+\subsection{El problema de la distancia de edicion}
+\cite{Cormen2009} explica que el problema de la alineación de cadenas o distancia de edición, consiste en dadas dos cadenas $A=[1 \twodots n]$ y $B=[1 \twodots m]$, y un conjunto de operaciones de transformación y sus costos. La distancia de edición de $A$ a $B$ es el costo de la secuencia de operaciones menos costosa que transforma $A$ en $B$, las operaciones se realizan en los caracteres de la cadena. La distancia de edición es una forma de medir que tan diferentes son dos cadenas entre si.
 
-%\subsection{Algoritmo de Needleman-Wunsch}
-%\cite{Halim2019} Explica que el problema de la alineación de cadenas con operaciones de insertar, reemplazar y eliminar caracteres, puede ser solucionado mediante el algoritmo de programación dinámica de Needleman-Wunsch. Consideremos dos cadenas $A[1 \twodots n]$, $B[1 \twodots m]$. Los costos  operaciones en los caracteres $A[i]$ y $B[i]$ son los siguientes:
+\subsection{Tipos de distancia de edicion}
+\cite{Navarro2001} explica que existen diferentes tipos de distancia de edicion, las cuales se distinguen al permitir diferentes operaciones en las cadenas.
+\begin{itemize}
+  \item La distancia de la subsecuencia comun mas larga, permite la inserción y eliminacion.
+  \item La distancia de Levenshtein, permite la eliminacion, inserción y reemplazamiento.
+  \item La distancia de Damerau-Levenshtein, permite la insercion, eliminacion, reemplazamiento y transposicion de dos caracteres adyacentes.
+\end{itemize}
+Las primeras referencias de este problema son de los años sesenta y setenta, donde el problema de la distancia de edicion aparece en diferentes campos. En el campo de la biologia computacional, procesamiento de señales y recuperacion de texto. En la biologia computacional, las secuencias de ADN y proteinas se ven como textos extensos sobre alfabetos, estas secuencias representan el codigo genetico de los seres vivos. Por lo cual encontrar secuencias especificas sobre estos textos, son operaciones fundamentales para problemas como el ensamblaje de la cadena del ADN o la deteminacion de que tan diferentes son dos secuencias geneticas. Todo esto se modela como la busqueda de patrones en un texto, como ejemplo se tiene el algoritmo de programacion dinamica de Needleman-Wunsch que resuelve el problema de la alineación global de secuenciasde ADN. En el campo del procesamiento de señales, uno de los problemas es la correccion de errores de transmision. La transmision fisica de señales es propensa a errores, de modo que para asegurar una transmision correcta a travez de un canal fisico, es necesario ser capaz de recuperar el mensaje correcto despues de una posible modificacion introducida durante la transmision. Dado que la modificacion no es conocida se requiere un texto que este mas cercano al mensaje enviado, como ejemplo se tienen algoritmos de programacion dinamica que resuelve el problema de la distancia de Levenshtein. En el campo de la recuperacion de texto, tiene como problema principal la correccion de errores de ortograficos de un texto. Esta es una de las aplicaciones antiguas con mas potencial, como ejemplo se tienen algoritmos de programacion dinamica que resuelven el problema de la distancia de Damerau-Levenshtein que permite transposicion de caracteres adyacentes.
 
-%\begin{enumerate}
-  %\item Si los caracteres $A[i]$ y $B[i]$ coinciden, la operación puntuá $+2$.
-  %\item Si los caracteres $A[i]$ y $B[i]$ no coinciden, reemplazar $A[i]$ con $B[i]$, la operación puntua $-1$.
-  %\item Si se inserta un carácter en $A[i]$, la operación puntuá $-1$.
-  %\item Si se elimina un carácter en $A[i]$, la operación puntuá $-1$.
-%\end{enumerate}
-
-%Se define a $V(i,j)$ como la puntuación de la alineación optima, para los prefijos $A[1 \twodots i]$ y $B[1 \twodots j]$ y $score(C1,C2)$ como la función que devuelve la puntuación, si el carácter $C1$ está alineado con el carácter $C2$.\\
-
-%\noindent Casos base:
-%\begin{itemize}
-  %\item $V(0,0)=0$ \\Dos cadenas vaciás no puntúan.
-  %\item $V(i,0)=i \times score(A[i],\_)$ \\Eliminar la subcadena $A[1 \twodots i]$ para realizar la alineación, $i>0$.
-  %\item $V(0,j)=j \times score(\_,B[j])$ \\ Insertar espacios en $B[1 \twodots j]$ para realizar la alineación, $j>0$.
-%\end{itemize}
-
-%\noindent Recurrencias: Para $i>0$ y $j>0$:
-%\begin{itemize}
-  %\item $V(i,j) = max(opcion1, opcion2, opcion3)$, donde:
-  %\begin{itemize}
-    %\item $opcion1=V(i-1,j-1)+score(A[i],B[j])$ \\ Puntuación de coincidencia o no coincidencia.
-    %\item $opcion2=V(i-1,j)+score(A[i],\_)$ \\ Eliminar $A_i$
-    %\item $opcion3=V(i,j-1)+score(\_,B[j])$ \\ Eliminar $B_j$
-  %\end{itemize}
-%\end{itemize}
-
-%El algoritmo de DP se concentra en tres posibilidades del ultimo par de caracteres, que deben ser una coincidencia o no coincidencia, una eliminación o una inserción. Probando todas las posibilidades, evitando recalcular los subproblemas superpuestos. Con una función de puntuación sencilla, donde una conciencia obtiene $+2$ puntos y una no coincidencia, una inserción o una eliminación obtienen $-1$ puntos, se muestra el detalle de la puntuación de alineación de A=``ACAATCC'' y B=``AGCATGC'' en la figura \ref{editDis}. Inicialmente, solo se conocen los casos base. Después, se rellenan los valores fila por fila, de izquierda a derecha. Para rellenar $V(i,j)$ para $i,j>0$, unicamente necesitamos otros tres valores: $V(i-1,j-1)$, $V(i-1,j)$ y $V(i,j-1)$. La puntuación de la alineación máxima se almacena en la celda inferior derecha.
-
-%\begin{figure}[!h]
-%\centering
-%\begin{tikzpicture}[
-%table/.style={
-    %matrix of nodes,
-    %row sep=-\pgflinewidth,
-    %column sep=-\pgflinewidth,
-    %nodes={rectangle,text width=1.5em,align=center,draw},
-    %text depth=1.2ex,
-    %text height=2ex,
-    %nodes in empty cells,
-%}
-%]
-        %\matrix (mat) [table]{
-        %&\_&A&G&C&A&T&G&C\\
-        %\_&0&-1&-2&-3&-4&-5&-6&-7\\
-        %A&-1&2&1&0&-1&-2&-3&-4\\
-        %C&-2&1&1&3&2&1&0&-1\\
-        %A&-3&0&0&2&5&4&3&2\\
-        %A&-4&-1&-1&1&4&4&3&2\\
-        %T&-5&-2&-2&0&3&6&5&4\\
-        %C&-6&-3&-3&0&2&5&5&7\\
-        %C&-7&-4&-4&-1&1&4&4&7\\
-    %};
-    %\fill[black,opacity=0.2] (mat-2-2.north west) rectangle (mat-2-2.south east);
-    %\fill[black,opacity=0.2] (mat-3-3.north west) rectangle (mat-3-3.south east);
-    %\fill[black,opacity=0.2] (mat-3-4.north west) rectangle (mat-3-4.south east);
-    %\fill[black,opacity=0.2] (mat-4-5.north west) rectangle (mat-4-5.south east);
-    %\fill[black,opacity=0.2] (mat-5-6.north west) rectangle (mat-5-6.south east);
-    %\fill[black,opacity=0.2] (mat-6-6.north west) rectangle (mat-6-6.south east);
-    %\fill[black,opacity=0.2] (mat-7-7.north west) rectangle (mat-7-7.south east);
-    %\fill[black,opacity=0.2] (mat-8-8.north west) rectangle (mat-8-8.south east);
-    %\fill[black,opacity=0.2] (mat-9-9.north west) rectangle (mat-9-9.south east);
-    %\foreach \x in {1,2,3,4,5,6,7,8,9}
-    %{
-        %\draw
-        %([xshift=-.125\pgflinewidth]mat-\x-1.north west) --
-        %([xshift=-.125\pgflinewidth]mat-\x-9.north east);
-    %}
-    %\draw
-        %([xshift=-.125\pgflinewidth]mat-9-1.south west) --
-        %([xshift=-.125\pgflinewidth]mat-9-9.south east);
-    %\foreach \y in {1,2,3,4,5,6,7,8,9}
-    %{
-        %\draw
-        %([yshift=.5\pgflinewidth]mat-1-\y.north east) --
-        %([yshift=.5\pgflinewidth]mat-9-\y.south east);
-    %}
-    %\draw
-        %([xshift=-.125\pgflinewidth]mat-1-1.north west) --
-        %([xshift=-.125\pgflinewidth]mat-9-1.south west);
-    %\begin{scope}[shorten >=7pt,shorten <= 7pt]
-    %\draw[->,line width=1pt]  (mat-9-9.center) -- (mat-8-8.center);
-    %\draw[->,line width=1pt]  (mat-8-8.center) -- (mat-7-7.center);
-    %\draw[->,line width=1pt]  (mat-7-7.center) -- (mat-6-6.center);
-    %\draw[->,line width=1pt]  (mat-6-6.center) -- (mat-5-6.center);
-    %\draw[->,line width=1pt]  (mat-5-6.center) -- (mat-4-5.center);
-    %\draw[->,line width=1pt]  (mat-4-5.center) -- (mat-3-4.center);
-    %\draw[->,line width=1pt]  (mat-3-4.center) -- (mat-3-3.center);
-    %\draw[->,line width=1pt]  (mat-3-3.center) -- (mat-2-2.center);
-    %\end{scope}
-%\end{tikzpicture}
-%\caption{Ejemplo del algoritmo de Needleman-Wunsch}
-%Ejemplo: A=``ACAATCC'' y B=``AGCATGC'', la puntuación de la alineación = 7. \\Fuente: \cite{Halim2019}.
-%\label{editDis}
-%\end{figure}
-
-%Para evaluar la similitud entre dos cadenas, se utiliza el puntaje obtenido, el rango de puntajes esta en el intervalo $[\id{minScore} \twodots \id{maxScore}]$. En la figura \ref{intervalEdit} se muestra el rangos de puntajes.
-
-%\begin{figure}[!h]
-%\centering
-%\begin{tikzpicture}[]%
-    %\draw[<-] (0,0) -- (1.5,0);
-    %\draw[{[-|}] (1.5,0) node[label=below:{minScore}] {} -- (3,0) node[label=below:{0}] {};
-    %\draw[{|-|}] (3,0) node[label=below:{}] {} -- (4.5,0) node[label=below:{}] {};
-    %\draw[{|-|}] (4.5,0) node[label=below:{}] {} -- (6,0) node[label=below:{}] {};
-    %\draw[{|-]}] (6,0) node[label=below:{}] {} -- (7.5,0) node[label=below:{maxScore}] {};
-    %\draw[->] (7.5,0) -- (9,0);
-%\end{tikzpicture}
-%\caption{Rango de puntajes Needleman-Wunsch}
-%Fuente: Elaboracion propia.
-%\label{intervalEdit}
-%\end{figure}
-
-%\begin{itemize}
-  %\item El puntaje más alto que se puede obtener es $\id{maxScore} = 2 * \proc{max}(|A|,|B|)$. Este puntaje representa que ambas cadenas son exactamente iguales y no se utilizaron operaciones para transformar \id{A} en \id{B}.
-  %\item El puntaje más bajo que se puede obtener es $\id{minScore} = -1 * \proc{max}(|A|,|B|)$. Este puntaje representa que ambas cadenas son distintas y se utilizaron varias operaciones para transformar \id{A} en \id{B}.
-%\end{itemize}
-
-%En $\proc{NEEDLEMAN-WUNSCH}(A,B)$ se tiene la implementación en pseudocódigo del algoritmo.
-
-%\begin{codebox}
-%\Procname{$\proc{NEEDLEMAN-WUNSCH}(A,B)$}
-%\li $\id{n} \gets A.length$
-%\li $\id{m} \gets B.length$
-%\li let $T[1 \twodots n, 1 \twodots m]$ be new table
-%\li \For $i \gets 1$ \To $n$
-%\li \Do \For $j \gets 1$ \To $m$
-%\li \Do $T[i][j] \gets 0$ \End \End
-%\li \For $i \gets 1$ \To $n$
-%\li \Do $T[i][0] \gets i * -1$
-%\li $T[0][i] \gets i * -1$ \End
-%\li \For $i \gets 1$ \To $n$
-%\li \Do \For $j \gets 1$ \To $m$
-%\li \Do \If $A[i-1] \isequal B[j-1]$
-%\li \Then $table[i][j] \gets table[i - 1][j - 1] + 2$
-%\li \Else
-%\li $table[i][j] \gets table[i - 1][j - 1] - 1$ \End
-%\li $table[i][j] \gets \proc{max}(table[i][j],table[i-1][j]-1)$
-%\li $table[i][j] \gets \proc{max}(table[i][j],table[i][j-1]-1)$ \End \End
-%\li \Return $T[n][m]$
-%\end{codebox}
-%La complejidad espacial de este algoritmo de DP es $O(n * m)$ el tamaño de la tabla de DP. Debemos rellenar las celdas en $O(1)$ por tanto la complejidad temporal es de $O(n * m)$.
-
-%\subsection{Conjuntos Disjuntos}
-%En \cite{Cormen2009} obtenemos una la definición de conjuntos disjuntos y la estructura de datos para conjuntos disjuntos.
-
-%Los conjuntos disjuntos es una colección representada por $S=\{ S_1,S_2, \twodots ,S_k \}$ donde cada elemento $S_i$ representa un conjunto dinámico, y para cada elemento de la colección se cumple que $S_i \cap S_j = \emptyset$.
-
-%La estructura de datos para conjuntos disjuntos soporta eficientemente las operaciones de crear un conjunto, búsqueda del representante de un conjunto y la unión de conjuntos.
-
-%\noindent Sean u y v elementos de un conjunto:
-%\begin{itemize}
-%    \item $MAKE-SET(u)$ Crea un nuevo conjunto cuyo único miembro es u. Dado que los conjuntos son disjuntos, es necesario que u no se encuentre en otro conjunto.
-%    \item $UNION(u, v)$ Une los conjuntos dinámicos que contienen a u y v, es decir $S_u \cap S_v$, el representante del conjunto resultante sera cualquiera de los dos.
-%    \item $FIND-SET(u)$ devuelve un puntero al representante del conjunto que contiene a u.
-%\end{itemize}
-
-%\subsection{Detección léxica}
-%Las técnicas y herramientas para computar las diferencias textuales entre documentos son bien conocidas y aprobadas. Sin embargo, las herramientas existentes como GNU diff tratan con información plana, en lugar de jerárquica. Por lo general, calculan una lista de líneas que deben cambiarse, insertarse o eliminarse para que un primer documento coincida con el segundo. \cite{ChangeDistiller}.
-
-%\subsection{El algoritmo de Levenshtein}
-\subsection{El problema de la subsecuencia comun mas larga}
-La subsecuencia comun mas larga tambien es conocida por sus siglas en ingles como \id{LCS}. En \cite{Cormen2009} encontramos las siguientes definiciones. Dada una secuencia $\id{X} = [x_1, x_2, \twodots, x_m]$, una secuencia $\id{Z} = [z_1, z_2, \twodots, z_k]$ es una subsecuencia de \id{X} si existe una secuencia estrictamente creciente $[i_1,i_2,\twodots,i_k]$ de indices de \id{X} talque para todo $j=1,2,\twodots,k$ se tiene que $x_i = z_j$. Dadas dos secuencias \id{X} y \id{Y}, se dice que una secuencia \id{Z} es una subsecuencia comun de \id{X} y \id{Y} si \id{Z} es una subsecuencia de \id{X} y \id{Y}. Apartir las definiciones, el problema de la subsecuencia comun mas larga se define como: Dadas dos secuencias $\id{X} =[x_1, x_2, \twodots, x_m]$ y $\id{Y} = [y_1, y_2, \twodots, y_n]$ se desea encontrar la subsecuencia comun de longitud maxima de \id{X} y \id{Y}.
+\section{La distancia de la subsecuencia comun mas larga}
+La subsecuencia comun mas larga tambien es conocida por sus siglas en ingles como \id{LCS}. En \cite{Cormen2009} encontramos las siguientes definiciones. Dada una secuencia $\id{X} = [x_1, x_2, \twodots, x_m]$, una secuencia $\id{Z} = [z_1, z_2, \twodots, z_k]$ es una subsecuencia de \id{X} si existe una secuencia estrictamente creciente $[i_1,i_2,\twodots,i_k]$ de indices de \id{X} talque para todo $j=1,2,\twodots,k$ se tiene que $x_i = z_j$. Dadas dos secuencias \id{X} y \id{Y}, se dice que una secuencia \id{Z} es una subsecuencia comun de \id{X} y \id{Y} si \id{Z} es una subsecuencia de \id{X} y \id{Y}. Apartir las definiciones, el problema de la subsecuencia comun mas larga se define como: Dadas dos secuencias $\id{X} =[x_1, x_2, \twodots, x_m]$ y $\id{Y} = [y_1, y_2, \twodots, y_n]$ se quiere encontrar la subsecuencia comun de longitud maxima de \id{X} y \id{Y}.
 
 \subsection{Caracterizacion de la LCS}
 Dada una secuencia $\id{X} = [x_1, x_2, \twodots, x_m]$, se define como el i-ésimo prefijo de \id{X}, para $i=1,2,\twodots,m$ como $X_i=[x_1,x_2,\twodots,x_i]$. A continuación se muestra el teorema para la subestructura optima de la subsecuencia comun mas larga:
@@ -439,23 +249,74 @@ Apartir de la tabla \id{b} que retorna el procedimiento $\proc{LCS-Length}$, se 
 
 Para la tabla \id{b} de la figura \ref{tableLcsB}, este procedimiento imprime \id{BCBA}. La complejidad temporal del procedimiento $\proc{Print-LCS}$ es de $O(m + n)$.
 
-\section{Indices de similitud}
-\cite{magurran1988} explica que los indices de similitud expresan el grado en que dos muestras son semejantes por las especies presentes en ellas. Estos valores pueden obtenerse con base en datos cualitativos o cuantitativos.
+\subsection{Intervalo de puntajes de la LCS}
+Los puntajes que se pueden obtener por el procedimiento $\proc{LCS-Length}$ se encuentran en el intervalo $[\id{minScore} \twodots \id{maxScore}]$. En la figura \ref{intervalLCS} se muestra el intervalo.
 
-\subsection{Indice de Sorensen-Dice}
-El indice de Sorensen-Dice también conocido como el coeficiente de Sorencen. Es un estadístico utilizado para comparar la similitud entre dos muestras. El indice de Sorencen-Dice se define como:
+\input{figures/intervalLCS}
 
+\begin{itemize}
+  \item El puntaje más alto que se puede obtener es $\id{maxScore} = \proc{max}(|A|,|B|)$. Este puntaje representa que ambas cadenas son exactamente iguales y no se utilizaron operaciones para transformar \id{A} en \id{B}.
+  \item El puntaje más bajo que se puede obtener es $\id{minScore} = 0$. Este puntaje representa que ambas cadenas son distintas y se utilizaron varias operaciones para transformar \id{A} en \id{B}.
+\end{itemize}
+
+\section{La distancia de Levenshtein}
+La distancia de Levenshtein tambien es llamada distancia de edicion. Apartir de las definiciones de \cite{Cormen2009} y \cite{Halim2019}, podemos definir la distancia de Levenshtein. Dadas dos cadenas $A=[1 \twodots m]$ y $B=[1 \twodots n]$ y un conjunto de operaciones de transformacion y sus costos, donde las operaciones consisten en insertar, eliminar y reemplazar elementos de las cadenas. La distancia de Levenshtein de $A$ y $B$ es el minimo costo de operaciones que transforma $A$ en $B$. Los costos de las operaciones de transformacion son las siguientes:
+\begin{enumerate}
+  \item Si los caracteres $A[i]$ y $B[j]$ coinciden, entonces no se realizan operaciones se puntua $0$.
+  \item Si los caracteres $A[i]$ y $B[j]$ no coinciden, se realiza la operacion de reemplazar $A[i]$ con $B[j]$, la operacion puntua $+1$.
+  \item Si se realiza la operacion de insertar un caracter en $A[i]$, la operacion puntua $+1$.
+  \item Si se realiza la operacion de eliminar un caracter en $A[i]$, la operacion puntua $+1$.
+\end{enumerate}
+
+Se define a $\proc{Lev}(i, j)$ como la puntuacion de la alineacion optima, para los prefijos $A[1 \twodots i]$ y $B[1 \twodots j]$. Donde sus casos base y sus Recurrencias son las siguientes:
+
+\noindent Casos base.
+\begin{itemize}
+  \item $Lev(0,0) = 0$, dos cadenas vacias no puntuan.
+  \item $Lev(i,0) = i$, eliminar la subcadena $A[1 \twodots i]$ para realizar la alineacion, $i>0$.
+  \item $Lev(0,j) = j$, insertar un caracter en $B[1 \twodots j]$ para realizar la alineacion $j>0$.
+\end{itemize}
+\noindent Recurrencias para $i, j > 0$.
+\begin{itemize}
+  \item $Lev(i,j) = \proc{min}(opcion1, opcion2, opcion3)$
+  \begin{itemize}
+    \item $\id{opcion1} = Lev(i-1,j-1)$, si $A[i]$ y $B[j]$ coinciden.
+    \item $\id{opcion1} = Lev(i-1,j-1) + 1$, si $A[i]$ y $B[j]$ no coinciden.
+    \item $\id{opcion2} = Lev(i-1,j) + 1$, eliminar $A_i$.
+    \item $\id{opcion3} = Lev(i,j - 1) + 1$, insertar $B_j$.
+  \end{itemize}
+\end{itemize}
+
+El algoritmo de programacion dinamica se concentra en tres posibilidades para el ultimo par de caracteres, probando todas las posibilidades, evitando recalcular los subproblemas superpuestos. Con una funcion de puntuacion sencilla, donde una coincidencia obtiene $0$ puntos y un reemplazamiento, insercion o eliminacion obtienen $+1$, se muestra el detalle de la alineacion de $A=``ACAATCC''$ y $B=``AGCATGC''$ en la figura \ref{tableLev}. Inicialmente solo se conocen los casos base, y se rellenan los valores fila por fila de izquierda a derecha. Para rellenar $Lev(i,j)$ donde $i , j > 0$, unicamente se necesita de tres valores: $Lev(i-1,j-1)$, $Lev(i-1,j)$ y $Lev(i,j-1)$. La puntuacion de la alineacion maxima se almacena en la celda inferior derecha.
+\input{figures/tableLev}
+
+\subsection{Implementacion del procedimiento}
+En $\proc{Levenshtein}(A,B)$ se tiene la implementación en pseudocódigo del algoritmo.
+\input{pseudocode/Levenshtein}
+La complejidad espacial de este algoritmo de DP es $O(n * m)$ dado que la tabla tiene dimension $n * m$. El rellenado de una celda tiene complejidad temporal de $O(1)$ por lo tanto la complejidad temporal del algoritmo es $O(n * m)$.
+
+\subsection{Intervalo de puntajes de Levenshtein}
+Los puntajes que se pueden obtener por el procedimiento $\proc{Levenshtein}$ se encuentran en el intervalo $[\id{minScore} \twodots \id{maxScore}]$. En la figura \ref{intervalLev} se muestra el intervalo.
+\input{figures/intervalLev}
+\begin{itemize}
+  \item El puntaje más alto que se puede obtener es $\id{maxScore} = \proc{max}(|A|,|B|)$. Este puntaje representa que ambas cadenas son distintas y se utilizaron varias operaciones para transformar \id{A} en \id{B}.
+  \item El puntaje más bajo que se puede obtener es $\id{minScore} = 0$. Este puntaje representa que ambas cadenas son exactamente iguales y no se utilizaron operaciones para transformar \id{A} en \id{B}.
+\end{itemize}
+
+\subsection{Reduccion de la complejidad espacial}
+En \cite{Halim2019} explica que el truco para reducir la complejidad espacial. Durante el calculo de la solucion de cualquier subproblema solo se necesita la fila anterior y la actual. Se puede ahorrar espacio almacenando solo estas dos filas, con este truco la nueva complejidad espacial sera de $O(\proc{min}(n,m))$ colocando la cadena con menor longitud como la segunda cadena, para el ahorro de espacio. La complejidad temporal se mantiene en $O(n*m)$, la desventaja de este truco es que no puede reconstruir la solucion optima.
+
+\subsection{Reduccion de la complejidad temporal}
+En \cite{Halim2019} explica que el truco para reducir la complejidad temporal. Con el fin de reducir la complejidad temporal solo resolver los subproblemas que estan adyacentes la diagonal principal de la tabla, a una distancia \id{d}, con este truco la nueva complejidad temporal sera de $O(m * d)$, la desventaja de este truco es que no siempre se llega a obtener la alineacion óptima. Para asegurarse de obtener la solucion optima \id{d} debe ser igual \id{n}.
+
+\section{Hashing de cadenas}
+Los algoritmos de hashing ayudan a resolver un monton de problemas, uno de esos problemas consiste en la comparación de dos cadenas de forma eficiente. El algoritmo de fuerza bruta compara las cadenas caracter por caracter, esto tiene como complejidad temporal $O(\proc{min}(n,m))$ donde n y m son longitudes de las dos cadenas. El hashing de cadenas consiste en asignar a cada cadena un valor entero, y comparar los valores enteros, esto reduce la complejidad temporal en $O(1)$ cuando los valores hash ya fueron calculados previamente. Los valores hash de una cadena \id{s} de longitud \id{n} se define como:
 \begin{equation}
-S = \frac{2*|A \cap B|}{|A|+|B|}
-\label{sorencen}
+  \proc{hash}(s) = \sum_{i=0}^{n-1}{s[i]*p^i \id{mod} \id{m}}
+\label{hashValue}
 \end{equation}
 
-En la ecuacion \ref{sorencen} se muestra a: $|\id{A}|$ y $|\id{B}|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{S} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
+los valores \id{p} y \id{m} de la ecuacion \ref{hashValue} son numeros enteros positivos, donde el numero \id{p} es primo y el numero \id{m} es un valor lo suficientemente grande, con el fin de evitar colisiones. Una colision sucede cuando $\proc{hash}(s)=\proc{hash}(t)$ donde $s \neq t$.
 
-\subsection{Indice de Jaccard}
-El indice de Jaccard tambien conocido como el coeficiente de Jaccard, Es un estadistico utilizado para medir el grado de similitud entre dos conjuntos. El indice de Jaccard se define como:
-\begin{equation}
-J = \frac{|A \cap B|}{|A \cup B|}
-\label{jaccard}
-\end{equation}
-En la ecuacion \ref{jaccard} se muestra a: $|A \cup B|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{J} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
+En $\proc{compute-hash}$ se tiene la implementacion en pseudocódigo del algoritmo para calcular el hashing de cadenas.
+\input{pseudocode/compute-hash}

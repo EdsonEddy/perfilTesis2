@@ -1,0 +1,18 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=0.9,
+module/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=2cm, draw=black},
+io/.style ={trapezium, trapezium left angle=70, trapezium right angle=110, minimum height=1cm,text centered, text width=2.5cm, draw=black},
+arrow/.style={thick,->},
+]
+\node[io] (n1) at (1,1) {Archivo A, Archivo B};
+\node[module] (n2) at (5,1) {Algoritmo SCED};
+\node[io] (n3) at (9,1) {Porcentaje de similitud};
+
+\draw [arrow] (n1) to (n2);
+\draw [arrow] (n2) to (n3);
+\end{tikzpicture}
+\caption{Especificación no formal del algoritmo SCED}
+Fuente: Elaboración propia.
+\label{espAlg}
+\end{figure}

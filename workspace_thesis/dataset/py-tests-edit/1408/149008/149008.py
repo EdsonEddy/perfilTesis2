@@ -1,0 +1,47 @@
+a='A'
+b='B'
+c='C'
+Alvaro=[]
+Edwin=[]
+Gabriel=[]
+x=5
+y=3
+for i in range (110):
+	if(i==x):
+		for j in range (2):
+			Alvaro.append(a)
+			Alvaro.append(b)
+			Alvaro.append(c)
+		Gabriel.append(c)
+		Gabriel.append(c)
+		Gabriel.append(a)
+		Gabriel.append(a)
+		Gabriel.append(b)
+		Gabriel.append(b)
+		x+=6
+	if(y==i):
+		Edwin.append(b)
+		Edwin.append(a)
+		Edwin.append(b)
+		Edwin.append(c)
+		y+=4
+N=int(input())
+cadena=input()
+c1=0
+c2=0
+c3=0
+for i in range (N):
+	if(Alvaro[i]==cadena[i]):
+		c1+=1
+	if(Edwin[i]==cadena[i]):
+		c2+=1
+	if(Gabriel[i]==cadena[i]):
+		c3+=1
+c4=max(c1,c2,c3)
+print(c4)
+if(c4==c1):
+	print('Alvaro')
+if(c4==c2):
+	print('Edwin')
+if(c4==c3):
+	print('Gabriel')

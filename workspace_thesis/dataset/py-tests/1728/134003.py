@@ -1,0 +1,16 @@
+y=int(input(""))
+x=0
+while(y!=0):
+ dig=int(y%10)
+ y=y/10
+ if(dig%2==0):
+  x=x+dig
+print(x)
+y1=int(input(""))
+x1=0
+while(y1!=0):
+ dig1=int(y1%10)
+ y1=y1/10
+ if(dig1%2==0):
+  x1=x1+dig1
+print(x1)

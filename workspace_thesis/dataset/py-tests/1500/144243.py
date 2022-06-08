@@ -1,0 +1,13 @@
+n=int(input())
+x=list(map(int,input().split()))
+i=0
+l=len(x)-1
+v=[]
+while(i<n):
+    v.append(x[l])
+    l=l-1
+    i=i+1
+if(x==v):
+    print("SI")
+else:
+    print("NO")

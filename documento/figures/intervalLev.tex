@@ -1,0 +1,13 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[]
+    \draw[<-] (0,0) -- (1.5,0);
+    \draw[{[-}] (1.5,0) node[label=above:{minScore}] {} -- (3,0);
+    \draw[{[-}] (1.5,0) node[label=below:{0}] {} -- (3,0);
+    \draw[{|-]}] (3,0) node[label=below:{}] {} -- (4.5,0) node[label=above:{maxScore}] {};
+    \draw[->] (4.5,0) node[label=below:{}] {} -- (6,0) node[label=below:{}] {};
+\end{tikzpicture}
+\caption{Rango de puntajes Levenshtein}
+Fuente: Elaboracion propia.
+\label{intervalLev}
+\end{figure}

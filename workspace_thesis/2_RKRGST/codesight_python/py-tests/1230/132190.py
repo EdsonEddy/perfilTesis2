@@ -1,0 +1,5 @@
+num=int(input())
+hor=int(num/3600)
+minu=int((num-(hor*3600))/60)
+seg=num-((hor*3600)+(minu*60))
+print((hor),(minu),(seg))

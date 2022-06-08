@@ -1,0 +1,5 @@
+x=int(input())
+z=input().split()
+cc=max(set(z), key=z.count)
+p=z.count(cc)
+print(x-p)

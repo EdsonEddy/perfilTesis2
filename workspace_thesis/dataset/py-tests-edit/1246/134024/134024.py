@@ -1,0 +1,6 @@
+x=str(input())
+x=x.lower()
+j=str(input())
+j=j.lower()
+au=j.count(x)
+print(au)

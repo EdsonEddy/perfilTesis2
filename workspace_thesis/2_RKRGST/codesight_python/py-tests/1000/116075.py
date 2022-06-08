@@ -1,0 +1,5 @@
+cad = input()
+v = cad.split()
+a = int(v[0])
+b = int(v[1])
+print(a+b)

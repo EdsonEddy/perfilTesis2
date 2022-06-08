@@ -1,0 +1,75 @@
+run time
+1275 WIN window=10 kgrams=5 elapsed_time=0.844106
+1275 WIN window=8 kgrams=4 elapsed_time=0.8330657
+1275 WIN window=6 kgrams=3 elapsed_time=0.8377228
+1275 WIN window=4 kgrams=2 elapsed_time=0.8304665999999999
+
+1407 WIN window=10 kgrams=5 elapsed_time=3.4637872
+1407 WIN window=8 kgrams=4 elapsed_time=3.5900354
+1407 WIN window=6 kgrams=3 elapsed_time=3.5292992
+1407 WIN window=4 kgrams=2 elapsed_time=3.5983494
+
+1588 WIN window=10 kgrams=5 elapsed_time=8.6513873
+1588 WIN window=8 kgrams=4 elapsed_time=8.794048
+1588 WIN window=6 kgrams=3 elapsed_time=8.7074392
+1588 WIN window=4 kgrams=2 elapsed_time=8.9500754
+
+1222 WIN window=10 kgrams=5 elapsed_time=8.1704491
+1222 WIN window=8 kgrams=4 elapsed_time=8.347932100000001
+1222 WIN window=6 kgrams=3 elapsed_time=8.6632594
+1222 WIN window=4 kgrams=2 elapsed_time=9.008507999999999
+
+1089 WIN window=10 kgrams=5 elapsed_time=43.4898356
+1089 WIN window=8 kgrams=4 elapsed_time=44.092297900000005
+1089 WIN window=6 kgrams=3 elapsed_time=45.3494438
+1089 WIN window=4 kgrams=2 elapsed_time=47.0330191
+
+1275 RKRGST threshold=80 elapsed_time=0.9006024
+1275 RKRGST threshold=60 elapsed_time=0.8836132
+1275 RKRGST threshold=40 elapsed_time=0.9097834
+1275 RKRGST threshold=20 elapsed_time=0.9271815999999999
+
+1407 RKRGST threshold=80 elapsed_time=3.0562529
+1407 RKRGST threshold=60 elapsed_time=3.1307968
+1407 RKRGST threshold=40 elapsed_time=3.049842
+1407 RKRGST threshold=20 elapsed_time=3.0897292
+
+1588 RKRGST threshold=80 elapsed_time=7.8111811
+1588 RKRGST threshold=60 elapsed_time=7.7466717
+1588 RKRGST threshold=40 elapsed_time=7.7254523
+1588 RKRGST threshold=20 elapsed_time=7.9248521
+
+1222 RKRGST threshold=80 elapsed_time=1.9014442
+1222 RKRGST threshold=60 elapsed_time=1.8905676999999999
+1222 RKRGST threshold=40 elapsed_time=1.8781685000000001
+1222 RKRGST threshold=20 elapsed_time=1.9095253
+
+1089 RKRGST threshold=80 elapsed_time=27.8819929
+1089 RKRGST threshold=60 elapsed_time=27.8984623
+1089 RKRGST threshold=40 elapsed_time=27.1228264
+1089 RKRGST threshold=20 elapsed_time=28.3037428
+
+1275 SCED d=40 elapsed_time=1.6952951
+1275 SCED d=60 elapsed_time=1.7317553
+1275 SCED d=80 elapsed_time=1.7735676
+1275 SCED d=100 elapsed_time=1.8010925
+
+1407 SCED d=40 elapsed_time=4.5270126
+1407 SCED d=60 elapsed_time=4.9488626
+1407 SCED d=80 elapsed_time=5.031241100000001
+1407 SCED d=100 elapsed_time=5.1101612
+
+1588 SCED d=40 elapsed_time=9.9395533
+1588 SCED d=60 elapsed_time=10.3559673
+1588 SCED d=80 elapsed_time=10.795852700000001
+1588 SCED d=100 elapsed_time=10.986270600000001
+
+1222 SCED d=40 elapsed_time=19.0693917
+1222 SCED d=60 elapsed_time=19.267920999999998
+1222 SCED d=80 elapsed_time=19.384414999999997
+1222 SCED d=100 elapsed_time=19.2051695
+
+1089 SCED d=40 elapsed_time=47.7661625
+1089 SCED d=60 elapsed_time=50.603640500000004
+1089 SCED d=80 elapsed_time=52.5859015
+1089 SCED d=100 elapsed_time=53.615258700000005
