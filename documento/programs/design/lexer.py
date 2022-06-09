@@ -46,20 +46,20 @@ class Lexer:
 			if token_type in token.Text:
 				pass
 			elif token_type in token.Keyword:
-				self.tokens.append(self.get_hash(token_value))
+				self.tokens.append((self.get_hash(token_value), token_value))
 			elif token_type in token.Name.Function:
-				self.tokens.append("F")
+				self.tokens.append(("F", token_value))
 			elif token_type in token.Name:
-				self.tokens.append("V")
+				self.tokens.append(("V", token_value))
 			elif token_type in token.Literal.String:
-				self.tokens.append("S")
+				self.tokens.append(("S", token_value))
 			elif token_type in token.Literal.Number:
-				self.tokens.append("N")
+				self.tokens.append(("N", token_value))
 			elif token_type in token.Operator:
-				self.tokens.append(token_value)
+				self.tokens.append((token_value, token_value))
 			elif token_type in token.Punctuation:
-				self.tokens.append(token_value)
+				self.tokens.append((token_value, token_value))
 			elif token_type in token.Comment:
 				pass
 			else:
-				self.tokens.append("X")
+				self.tokens.append(("X", token_value))

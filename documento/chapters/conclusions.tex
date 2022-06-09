@@ -4,14 +4,15 @@ Se diseño satisfactoriamente el algoritmo SCED de acuerdo a los objetivos plant
 
 \begin{itemize}
   \item El algoritmo detecta similitud entre codigos fuente que contienen metodos de ofuscacion.
-  \item El algoritmo SCED detecta la similitud con una confiabilidad del 95\% frente a los algoritmos Running-Karp-Rabin Greedy-String-Tiling y Winnowing-Fingerprint.
-  \item Se observo que la tecnica de programacion dinamica, utilizada en la deteccion de similitud entre codigos fuente obtiene mejores resultados frente a otras tecnicas.
+  \item El algoritmo SCED detecta la similitud con una confiabilidad del 95\% frente al algoritmo convencional para el calculo de la distancia de Levenshtein.
+  \item Se observo que la tecnica de programacion dinamica, utilizada en la deteccion de similitud entre codigos fuente obtiene mejores resultados frente a tecnicas de ventana deslizante y greedy.
 \end{itemize}
 
 \section{Recomendaciones}
 El presente trabajo de investigacion hace uso de la distancia de Levenshtein, para el calculo de la similitud entre codigos fuente. Por lo cual se sugieren las siguientes recomendaciones:
 \begin{itemize}
-  \item Comparar el algoritmo propuesto frente a otros algoritmos que utilicen la tecnica de programacion dinamica en la deteccion de similitud.
+  \item Aplicar al algoritmo SCED tecnicas de agrupamiento para la deteccion de similitud para conjuntos de archivos codigos fuente.
+  \item Comparar el algoritmo propuesto frente a otros algoritmos que utilicen tecnicas de programacion dinamica en la deteccion de similitud.
   \item Desarrollar una herramienta de software para la deteccion de similitud entre codigos fuente, que utilice el algoritmo SCED.
   \item Aplicar al algoritmo SCED otros tipos de distancia de edicion como: La distancia de la subsecuencia comun mas larga, la distancia Hamming, la distancia Damerau-Levenshtein y la distancia Jaro-Winkler.
   \item Realizar mediciones de similitud con el algoritmo SCED en codigos fuente de escritos en diferentes lenguajes de programacion.

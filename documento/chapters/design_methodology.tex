@@ -17,7 +17,7 @@ Para el diseño del algoritmo se debe tomar en cuenta las transformaciones o mé
 El problema a resolver es: Dados dos archivos de codigo fuente A y B, donde estos archivos pueden tener o no transformaciones. Se quiere encontrar el porcentaje similitud entre los dos archivos dados.
 
 \section{Especificación no formal del algoritmo}
-El algoritmo SCED, tiene como entrada: Dos archivos de código fuente A y B. Como salida un numero en el rango de $[0 \twodots 100]$, que representa el porcentaje de similitud entre los dos archivos.
+El algoritmo SCED, tiene como entrada: Dos archivos de código fuente A y B, y un numero D en el rango de $[0 \twodots 100]$ que representa la precisión de la médicion. Como salida un numero en el rango de $[0 \twodots 100]$, que representa el porcentaje de similitud entre los dos archivos.
 
 \input{figures/espAlg}
 
@@ -31,7 +31,7 @@ Resumiendo el funcionamiento del algoritmo, el lexer tiene como funcion converti
 \input{tables/algorithms_problems}
 
 \subsection{Tokenización y clasificacion}
-En esta fase se eliminan los elementos innecesarios que tenga el código fuente como: Los comentarios, saltos de linea que no contengan instrucciones, espacios en blanco, etc. Esto se debe a que estas lineas no serán utilizadas para la comparación de similitud. Al mismo tiempo se realizara la tokenización y clasificacion de los tokens, los tokens generados son tuplas que contienen dos valores: El tipo de token, la cadena del token. A continuacion se muestra la clasificacion de tipos de tokens:
+En esta fase se eliminan los elementos innecesarios que tenga el código fuente como: Los comentarios, saltos de linea que no contengan instrucciones, espacios en blanco, etc. Esto se debe a que estas lineas no serán utilizadas para la comparación de similitud. Al mismo tiempo se realizara la tokenización y clasificacion de los tokens, los tokens generados son tuplas que contienen dos valores: El tipo de token, la cadena del token. A continuacion se muestra como se clasificaran los tokens:
 \begin{itemize}
   \item \textbf{Token.text} para datos de tipo texto como: Espacios en blanco y  tabulaciones.
   \item \textbf{Token.keyword} para cualquier palabra clave o reservada.
@@ -96,7 +96,7 @@ En este modulo se hace uso de la libreria \id{pygments} para la tokenizacion y c
 En este modulo se implementan algoritmos de programacion dinamica que resuelven el problema de la distancia de edicion de dos secuencias. En la implementación  se toma en cuenta la reduccion de complejidad espacial y temporal, presentados en el capitulo anterior.
 \lstinputlisting[caption={Sequence-alignment},label={lst:alignment}, language=Python]{programs/design/sequence_alignment.py}
 
-La funcion $\proc{levenhtein-min-space-time}$ es la que se utilizara para el calulo de la distancia de edicion de secuencias, donde tiene como parametro de entrada dos secuencias de tokens y un numero \id{D} en el rango $[0, \twodots, 100]$ que representa el porcentaje de las columnas adyacentes a la diagonal principal que se consideran para el calculo de la distancia de edicion.
+La funcion $\proc{levenhtein-min-space-time}$ es la que se utilizara para el calulo de la distancia de edicion de secuencias, donde tiene como parametro de entrada dos secuencias de tokens y un numero \id{D} en el rango $[0, \twodots, 100]$ que representa la precisión en el calculo de la distancia de edicion.
 
 \subsection{Modulo SCED-Algorithm}
 En este modulo se aplican las anteriores implementaciones de algoritmos, y se calcula el porcentaje de similitud de dos codigos fuente.
@@ -106,11 +106,13 @@ En este modulo se aplican las anteriores implementaciones de algoritmos, y se ca
 A continuación el análisis de la complejidad temporal y espacial de cada uno de los procedimientos, la complejidad fue calculada en notación Big $O$.
 \subsection{Complejidad temporal}
 \begin{enumerate}
-  \item El modulo $\proc{Lexer}$ tiene complejidad temporal de $O(t)$ donde t representa el numero de tokens que contiene el archivo $file$.
-  \item El modulo $\proc{Get-Edit-Distance}$ tiene complejidad temporal de $O(m*d)$ donde $m$ y $d$, representan el número de elementos de la primera secuencias de tokens y el numero de columnas adyacentes a la diagonal principal, donde $d \leq n$ y $n$ es el numero de elementos de la segunda secuencia.
+  \item El modulo $\proc{Lexer}$ tiene complejidad temporal de $O(t)$ donde t representa el numero de tokens que contiene el archivo.
+  \item El modulo $\proc{Get-Edit-Distance}$ tiene complejidad temporal de $O(m*d)$ donde $m$ y $d \leq n$, representan el número de elementos de la primera secuencias de tokens y el numero de columnas adyacentes a la diagonal principal de $m*n$, y $n$ es el numero de elementos de la segunda secuencia.
   \item El modulo $\proc{SCED-Algorithm}$ hace uso de los anteriores metodos, entonces la complejidad temporal es de $O(t + (m*d))$.
 \end{enumerate}
 \subsection{Complejidad espacial}
 \begin{enumerate}
+  \item El modulo $\proc{Lexer}$ tiene complejidad espacial de $O(t)$ donde t representa el numero de tokens que contiene el archivo.
   \item El modulo $\proc{Get-Edit-Distance}$ tiene complejidad espacial de $O(\proc{min}(m,n))$ donde $m$ y $n$, representan el número de elementos de las secuencias de tokens.
+  \item El modulo $\proc{SCED-Algorithm}$ hace uso de los anteriores metodos, entonces la complejidad espacial es de $O(t + \proc{min}(m,n))$.
 \end{enumerate}

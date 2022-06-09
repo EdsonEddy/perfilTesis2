@@ -1,11 +1,11 @@
 \chapter{EVALUACION Y RESULTADOS}
 \section{Especificaciones de la prueba}
-Con los conjuntos y pares de archivos, se realizo la comparación del algoritmo SCAM frente a los algoritmos RKRGST y Winnowing-Fingerprint. El propósito de las pruebas es obtener los resultados sobre el desempeño de los algoritmos, en términos de precisión y tiempo de ejecución en la deteccion de similitud. En la figura \ref{espePrueba} se ilustra el proceso de las pruebas.
+Con los conjuntos archivos, se realizo la comparación del algoritmo SCED frente a los algoritmos RKRGST y Winnowing-Fingerprint. El propósito de las pruebas es obtener los resultados sobre el desempeño de los algoritmos, en términos de precisión y tiempo de ejecución en la deteccion de similitud. En la figura \ref{espePrueba} se ilustra el proceso de las pruebas.
 
 \input{figures/espePrueba}
 
 \subsection{Pruebas de medicion de precisión en la deteccion de similitud}
-En estas prueba se midió la precisión del algoritmo SCAM frente a los algoritmos RKRGST y Winnowing-Fingerprint. Para cada para de archivos de un conjunto, se realizó la prueba en complejidad temporal de $O(N^2)$. Es decir para un conjunto, se realizó la comparacion de cada par de archivos del mismo.
+En estas prueba se midió la precisión del algoritmo SCED frente a los algoritmos RKRGST y Winnowing-Fingerprint. Para cada para de archivos de un conjunto, se realizó la prueba en complejidad temporal de $O(N^2)$. Es decir para un conjunto, se realizó la comparacion de cada par de archivos del mismo.
 
 La precisión de los algoritmos se determino mediante el porcentaje del indice de similitud entre dos archivos. Los resultados obtenidos de la comparacion de similitud entre archivos del conjunto se almacenó en una matriz, y con escala de grises se observó la similitud que existe. Donde los tonos oscuros representan que existe similitud entre dos archivos y los tonos claros representan lo contrario.
 
@@ -97,7 +97,7 @@ En la tabla \ref{pruebaTiempoIV} se presentan los resultados obtenidos, respecto
 \input{tables/pruebaTiempoIV}
 
 \section{Prueba de hipotesis}
-Para la prueba de hipotesis se utilizó como muestra, las mediciones obtenidas de los conjunto A, B, C, D, E durante la prueba de medicion IV. Se escogio la prueba IV porque tiene la mejor configuracion de parametros para los algoritmos. En la tabla \ref{DescTable} se muestra los estadisticos descriptivos de la muestra.
+Para la prueba de hipotesis se utilizó como muestra, las mediciones obtenidas por los algoritmos LEVED y SCED de los conjuntos A, B, C, D, E durante la prueba de medicion IV. Se escogio la prueba IV porque tiene la mejor configuracion de parametros para los algoritmos. En la tabla \ref{DescTable} se muestra los estadisticos descriptivos de la muestra.
 
 \input{tables/DescTable}
 
@@ -124,13 +124,15 @@ Antes de escoger el estadistico para la prueba de hipotesis, se debe comprobar s
   \end{center}
   \item[] \textbf{Paso 4.} Criterio de decision:
   \begin{center}
-  Si $\id{valor-p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$.\\
-  Si $\id{valor-p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$.
+  Si $\text{valor p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$.\\
+  Si $\text{valor p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$.
+  %Si $\id{Z} < Z_\alpha/2$ se rechaza $H_0$ y se acepta $H_1$.\\
+  %Si $\id{Z} \geq Z_\alpha/2$ se acepta $H_0$ y se rechaza $H_1$.
   \end{center}
   \item[] \textbf{Paso 5.} Resultados y conclusion.
   Como el tamaño de la muestra es $N=5050$ se aplica la prueba de Kolmogorov-Smirnov y el detalle de los resultados se muestra en la tabla \ref{KStable}.
   \input{tables/KStable}
-  Para los valores obtenidos se tiene que $0.00 < 0.05$, entonces se rechaza $H_0$ y se acepta $H_1$. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que los datos no siguen una distribucion normal.
+  Para el valor p obtenido se tiene que $0.001 < 0.05$, entonces se rechaza $H_0$ y se acepta $H_1$. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que los datos no siguen una distribucion normal.
 \end{itemize}
 
 Con esta prueba de normalidad aseguramos que el estadistico para contrastar la hipotesis debe tener enfoque no parametrico.
@@ -169,7 +171,7 @@ El procedimento para obtener el valor \id{W} es el siguiente:
 \end{itemize}
 
 \subsubsection{Prueba de Wilcoxon}
-La hipotesis planteada en la investigacion indica que: ``El algoritmo SCED detecta la similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y Winnowing-Fingerprint''. Donde las variables que fueron evaluadas son las siguientes:
+La hipotesis planteada en la investigacion indica que: ``El algoritmo SCED detecta la similitud entre códigos fuente con una confiabilidad del 95\% frente al algoritmo convencional que calcula la distancia de Levenshtein''. Donde las variables que fueron evaluadas son las siguientes:
 \begin{itemize}
   \item[] \textbf{Variable independiente:} El diseño del algoritmo \id{SCED}
   \item[] \textbf{Variable dependiente:} Resultados en la deteccion de similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmo de RKRGST y Winnowing-Fingerprint.
@@ -193,12 +195,14 @@ El procedimento para contrastar la hipotesis de investigacion es el siguiente:
   \end{equation*}
   \item[] \textbf{Paso 3.} Criterio de decision:
   \begin{center}
-  Si $\id{valor-p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$\\
-  Si $\id{valor-p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$
+  Si $\id{Z} < Z_\alpha$ se rechaza $H_0$ y se acepta $H_1$\\
+  Si $\id{Z} \geq Z_\alpha$ se acepta $H_0$ y se rechaza $H_1$
+  %Si $\id{valor-p} < \alpha$ se rechaza $H_0$ y se acepta $H_1$\\
+  %Si $\id{valor-p} \geq \alpha$ se acepta $H_0$ y se rechaza $H_1$
   \end{center}
   \item[] \textbf{Paso 4.} Resultados y conclusion.\\
   Se aplica la prueba de Wilcoxon a la muestra, el detalle de los resultados se muestra en la tabla \ref{wilTable}.
   \input{tables/rangTable}
   \input{tables/wilTable}
-  Para los valores obtenidos se tiene que $0.00 < 0.05$, entonces se rechaza $H_0$ y se acepta $H_1$. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que el algoritmo SCED detecta similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y WF.
+  Para los valores obtenidos se tiene que $-67.82 < -1.64$, entonces se rechaza $H_0$ y se acepta $H_1$. Ademas el $\text{valor p} < \alpha$ indica que los datos son poco probables con una hipotesis nula verdadera. Con el rechazo de hipotesis nula y se aceptacion de la hipotesis de alterna, se puede inferir que el algoritmo SCED detecta similitud entre codigos fuente con una confiabilidad del 95\% frente al algoritmo convencional que calcula la distancia de edicion.
 \end{itemize}

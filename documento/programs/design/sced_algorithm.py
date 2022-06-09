@@ -1,7 +1,5 @@
 from lexer import Lexer
-from sequence_alignment import levenshtein
-from sequence_alignment import levenshtein_min_space_time
-from sequence_alignment import levenshtein_min_time
+from sequence_alignment import Sequence_alignment
 
 class Sced_algorithm:
 	def __init__(self, file_name_a, file_name_b, D):
@@ -14,7 +12,8 @@ class Sced_algorithm:
 		lexer_b = Lexer(self.file_name_b)
 		tokens_a = lexer_a.tokens
 		tokens_b = lexer_b.tokens
-		edit_dis = levenshtein_min_space_time(tokens_a, tokens_b, self.D)
+		algorithm = Sequence_alignment(tokens_a, tokens_b, self.D)
+		edit_dis = algorithm.levenshtein_min_space_time()
 		max_len = max(len(tokens_a), len(tokens_b))
 		percentage = (1 - edit_dis / max_len) * 100
 		return percentage

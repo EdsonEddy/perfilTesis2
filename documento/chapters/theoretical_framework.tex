@@ -126,31 +126,6 @@ En su investigación \cite{Karnalim2019} clasifica las técnicas de detección d
 \subsubsection{SIM}
 \cite{Cheers2021} Explica que SIM analiza programas en busca de similitud estructural mediante el uso de alineación de cadenas. Para dos programas, SIM primero analiza el código fuente creando un árbol de análisis. Luego, la herramienta representará los árboles de análisis como cadenas y los alineará insertando espacios para obtener una subsecuencia común máxima de sus tokens contenidos. La similitud de los programas se evalúa luego como el número de coincidencias.
 
-%\section{Algoritmos para la deteccion de similitud}
-%\subsection{Algoritmo Greedy-String-Tiling}
-%\subsection{Algoritmo Winnowing-Fingerprint}
-
-\section{Indices de similitud}
-\cite{magurran1988} explica que los indices de similitud expresan el grado en que dos muestras son semejantes por las especies presentes en ellas. Estos valores pueden obtenerse con base en datos cualitativos o cuantitativos.
-
-\subsection{Indice de Sorensen-Dice}
-El indice de Sorensen-Dice también conocido como el coeficiente de Sorencen. Es un estadístico utilizado para comparar la similitud entre dos muestras. El indice de Sorencen-Dice se define como:
-
-\begin{equation}
-S = \frac{2*|A \cap B|}{|A|+|B|}
-\label{sorencen}
-\end{equation}
-
-En la ecuacion \ref{sorencen} se muestra a: $|\id{A}|$ y $|\id{B}|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{S} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
-
-\subsection{Indice de Jaccard}
-El indice de Jaccard tambien conocido como el coeficiente de Jaccard, Es un estadistico utilizado para medir el grado de similitud entre dos conjuntos. El indice de Jaccard se define como:
-\begin{equation}
-J = \frac{|A \cap B|}{|A \cup B|}
-\label{jaccard}
-\end{equation}
-En la ecuacion \ref{jaccard} se muestra a: $|A \cup B|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{J} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
-
 \section{Conceptos de compiladores y tokens}
 \subsection{Procesador de lenguaje}
 Un procesador de lenguaje también llamado compilador. \cite{Aho2008} Explica que un procesador de lenguaje es un programa que puede leer un programa en un lenguaje y traducirlo en un programa equivalente en otro lenguaje. Una función importante del compilador es reportar cualquier error en el programa fuente que detecte durante el proceso de traducción.
@@ -307,7 +282,7 @@ Los puntajes que se pueden obtener por el procedimiento $\proc{Levenshtein}$ se 
 En \cite{Halim2019} explica que el truco para reducir la complejidad espacial. Durante el calculo de la solucion de cualquier subproblema solo se necesita la fila anterior y la actual. Se puede ahorrar espacio almacenando solo estas dos filas, con este truco la nueva complejidad espacial sera de $O(\proc{min}(n,m))$ colocando la cadena con menor longitud como la segunda cadena, para el ahorro de espacio. La complejidad temporal se mantiene en $O(n*m)$, la desventaja de este truco es que no puede reconstruir la solucion optima.
 
 \subsection{Reduccion de la complejidad temporal}
-En \cite{Halim2019} explica que el truco para reducir la complejidad temporal. Con el fin de reducir la complejidad temporal solo resolver los subproblemas que estan adyacentes la diagonal principal de la tabla, a una distancia \id{d}, con este truco la nueva complejidad temporal sera de $O(m * d)$, la desventaja de este truco es que no siempre se llega a obtener la alineacion óptima. Para asegurarse de obtener la solucion optima \id{d} debe ser igual \id{n}.
+En \cite{Halim2019} explica que el truco para reducir la complejidad temporal. El truco consiste en solo resolver los subproblemas que estan adyacentes la diagonal principal de la tabla de DP, a una distancia \id{d}, con este truco la nueva complejidad temporal sera de $O(m * d)$, la desventaja de este truco es que no siempre se llega a obtener la distancia de edicion óptima. Para asegurar la obtencion de la solucion optima \id{d} debe ser igual \id{n}.
 
 \section{Hashing de cadenas}
 Los algoritmos de hashing ayudan a resolver un monton de problemas, uno de esos problemas consiste en la comparación de dos cadenas de forma eficiente. El algoritmo de fuerza bruta compara las cadenas caracter por caracter, esto tiene como complejidad temporal $O(\proc{min}(n,m))$ donde n y m son longitudes de las dos cadenas. El hashing de cadenas consiste en asignar a cada cadena un valor entero, y comparar los valores enteros, esto reduce la complejidad temporal en $O(1)$ cuando los valores hash ya fueron calculados previamente. Los valores hash de una cadena \id{s} de longitud \id{n} se define como:
@@ -320,3 +295,29 @@ los valores \id{p} y \id{m} de la ecuacion \ref{hashValue} son numeros enteros p
 
 En $\proc{compute-hash}$ se tiene la implementacion en pseudocódigo del algoritmo para calcular el hashing de cadenas.
 \input{pseudocode/compute-hash}
+
+
+\section{Algoritmos para la deteccion de similitud}
+\subsection{Algoritmo Greedy-String-Tiling}
+\subsection{Algoritmo Winnowing-Fingerprint}
+
+\subsection{Indices de similitud}
+\cite{magurran1988} explica que los indices de similitud expresan el grado en que dos muestras son semejantes por las especies presentes en ellas. Estos valores pueden obtenerse con base en datos cualitativos o cuantitativos.
+
+\subsection{Indice de Sorensen-Dice}
+El indice de Sorensen-Dice también conocido como el coeficiente de Sorencen. Es un estadístico utilizado para comparar la similitud entre dos muestras. El indice de Sorencen-Dice se define como:
+
+\begin{equation}
+S = \frac{2*|A \cap B|}{|A|+|B|}
+\label{sorencen}
+\end{equation}
+
+En la ecuacion \ref{sorencen} se muestra a: $|\id{A}|$ y $|\id{B}|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{S} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.
+
+\subsection{Indice de Jaccard}
+El indice de Jaccard tambien conocido como el coeficiente de Jaccard, Es un estadistico utilizado para medir el grado de similitud entre dos conjuntos. El indice de Jaccard se define como:
+\begin{equation}
+J = \frac{|A \cap B|}{|A \cup B|}
+\label{jaccard}
+\end{equation}
+En la ecuacion \ref{jaccard} se muestra a: $|A \cup B|$ como el numero de especies en las muestras \id{A} y \id{B}, $|A \cap B|$ como el numero de especies compartidas por las muestras y \id{J} como el indice de similitud y varia entre 0 a 1. Es decir se encuentra en el rango de $[0 \twodots 1]$.

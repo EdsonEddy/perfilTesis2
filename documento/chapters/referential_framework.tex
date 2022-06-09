@@ -2,9 +2,9 @@
 \section{Introducción}
 \cite{Cheers2021} Explica que la identificación de similitud entre códigos fuente puede servir para varios propósitos, entre ellos están el estudio de la evolución de código fuente de un proyecto, detección de prácticas de plagio, detección de prácticas de reutilización, extracción de código para refactorización del mismo y seguimiento de defectos para su corrección.
 
-En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. Cuando estas actividades se realizan de forma individual, sirven para medir la capacidad de resolución de problemas y el enfoque lógico de los estudiantes. Por ello encontrar similitud en trabajos de programación presentados por estudiantes puede ser identificado como plagio.
+En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación. Cuando estas actividades se realizan de forma individual, sirven para medir la capacidad de resolución de problemas y el enfoque lógico de los estudiantes. Por ello encontrar similitud en trabajos de programación presentados por estudiantes puede ser identificado como plagio.
 
-En la actualidad existen herramientas de software para detectar la similitud entre códigos fuente, en las cuales se aplican diferentes métodos para la detección de similitud, a partir de las características de las herramientas, se pudo evidenciar que presentan deficiencias como: sistemas obsoletos, sistemas sin código abierto, procesos complejos para la evaluación de similitud, sistemas incapaces que procesar un grupo grande de archivos, sistemas de difícil configuración e instalación, sistemas que requieren conexión a internet.
+En la actualidad existen herramientas de software para detectar la similitud entre códigos fuente, en las cuales se aplican diferentes métodos para la detección de similitud, a partir de las características de las herramientas, se pudo evidenciar que presentan deficiencias como: sistemas obsoletos, sistemas sin código abierto, procesos complejos para la evaluación de similitud, sistemas incapaces que procesar un grupo grande de archivos, sistemas de difícil configuración e instalación, herramientas que requieren conexión a internet.
 
 El diseño del algoritmo propuesto cuenta con tres fases, la primera fase consiste en la conversion de código fuente en secuencias de tokens (Tokenizacion), esto se realizara mediante conceptos de compiladores, la segunda fase consiste en la comparacion de las secuencias obtenidas mediante conceptos de distancia de edicion (Distancia de Levenshtein), la fase final consiste en el calculo del porcentaje similitud.
 
@@ -14,17 +14,23 @@ En el presente trabajo de tesis se centra en el diseño e implementación de un 
 \subsection{Antecedentes del problema}
 Un trabajo similar al propuesto es realizado por \cite{Anzai2019} en el que presenta un algoritmo para la detección de similitud llamado ``Algoritmo para determinar la distancia de edición ampliada entre códigos de programa''. El algoritmo consiste en tres fases, en la primera fase el código dado es dividido en funciones, en la segunda fase cada función es dividida en bloques, en la tercera fase cada bloque es dividido en tokens y otras tareas de preprocesamiento. La distancia entre dos bloques, es calculado por un algoritmo de programación dinámica, la relación entre bloques y funciones de dos códigos fuente es tratado como el problema de Minimum-Cost-Flow. Para la evaluación del algoritmo, realiza varios experimentos utilizando recursos de un juez de programación en linea. Respecto a la complejidad temporal del algoritmo, se emplea el algoritmo de Bellman-Ford para el calculo de Minimum-Cost-Flow. La complejidad temporal de Bellman-Ford es de $O(V*E)$, donde $V$ es el numero de vértices y $E$ es el numero de aristas, $E$ es igual a $V^{2}$ por que el grafo es bipartito y completo, entonces la complejidad temporal de Minimum-Cost-Flow es $O(V^{3})$. La complejidad temporal para calcular la distancia de edición extendida entre bloques es $O(L^{2})$ donde $L$ es el numero de tokens. La complejidad temporal de dividir las funciones en bloques y realizar el calculo de la distancia entre bloques es $O(M^{2}*L^{2}+M^{4})$ donde $M$ es el numero de bloques. La complejidad temporal para dividir el bloque en funciones y realizar calculo de la distancia entre códigos fuente es $O(N^{2}*M^{2}+N^{2}*M^{4}+N^{2})$ donde $N$ es el numero de funciones.
 
-Otro trabajo similar es realizado por \cite{Popescu2016}, el cual presenta un método para medir la similitud entre paginas web, el método utiliza un algoritmo para calcular la distancia de edición, el valor calculado es usado como métrica de similitud. El algoritmo utiliza las etiquetas HTML de las paginas web para realizar en las operaciones de edición, las operaciones en las etiquetas consisten en eliminar, insertar y reemplazar. Es decir, dados dos archivos HTML la forma de calcular que tan diferentes es contando el numero mínimo de operaciones en las etiquetas, para transformar un archivo en otro.
+Otro trabajo similar es realizado por \cite{Popescu2016}, el cual presenta un método para medir la similitud entre paginas web, el método utiliza un algoritmo de programacion dinamica para calcular la distancia de edición, el valor calculado es usado como métrica de similitud. El algoritmo utiliza las etiquetas HTML de las paginas web para realizar en las operaciones de edición, las operaciones en las etiquetas consisten en eliminar, insertar y reemplazar. Es decir, dados dos archivos HTML la forma de calcular que tan diferentes es contando el numero mínimo de operaciones en las etiquetas, para transformar un archivo en otro.
 
 \subsection{Planteamiento del problema}
 \cite{Cheers2021} Explica que la identificación de similitud entre códigos fuente, puede servir para varios propósitos como: El estudio de la evolución de código fuente de un proyecto, la detección de prácticas de plagio en el ámbito académico, la detección de prácticas de reutilización, la extracción de código para refactorización del mismo y el seguimiento de defectos para su corrección.
+
+Existen muchas tecnicas para la deteccion de similitud entre codigos fuente, dentro de las tecnicas mas populares y antiguas, se encuentra la tecnica basada en emparejamiento de cadenas, esta tecnica utiliza un algoritmo de programacion dinamica para calcular la distancia de edición de textos de los codigos fuente, el valor calculado es usado como métrica de similitud.
 
 Una manera de ocultar la similitud entre códigos fuente, es mediante la aplicación de métodos de ofuscación. Estos métodos consisten en aplicar cambios léxicos o estructurales al código fuente, con el propósito de que no sean identificados como similares.
 
 Por lo cual contar un algoritmo que calcule de forma eficiente la similitud entre códigos fuente, tomando en cuenta los métodos de ofuscación, es de gran utilidad.
 
 \subsection{Formulación del problema}
-¿El algoritmo SCED tiene mejor desempeño frente a los algoritmos de Winnowing-Fingerprint y RKRGST en la detección de similitud entre códigos fuente?
+\begin{itemize}
+  \item ¿El algoritmo SCED tendrá mejor desempeño frente a los algoritmos de RKRGST y Winnowing-Fingerprint en la detección de similitud entre códigos fuente?
+  \item ¿Que método de ofuscación de codigo fuente es mas difícil de detectar?
+\end{itemize}
+
 \section{Objetivos}
 \subsection{Objetivo general}
 Diseñar e implementar el algoritmo SCED para la detección de similitud entre códigos fuente.
@@ -33,28 +39,28 @@ Diseñar e implementar el algoritmo SCED para la detección de similitud entre c
     \item Estudiar los metodos de ofuscación de códigos fuente.
     \item Estudiar los algoritmos utilizados en las herramientas para la detección de similitud de código fuente.
     \item Redactar las especificaciones para el algoritmo SCED.
-    \item Evaluar el desempeño del algoritmo SCED realizando las pruebas en trabajos de programación presentado por estudiantes.
+    \item Evaluar el desempeño los algoritmos SCED, Winnowing-Fingerprint y RKRGST realizando pruebas con trabajos de programación presentado por estudiantes.
 \end{itemize}
 
 \section{Hipótesis}
-El algoritmo SCED detecta la similitud entre códigos fuente con una confiabilidad del 95\% frente a los algoritmos de RKRGST y Winnowing-Fingerprint.
+El algoritmo SCED detecta la similitud entre códigos fuente con una confiabilidad del 95\% frente al algoritmo convencional que calcula la distancia de Levenshtein.
 \subsection{Variables Independientes}
 \begin{itemize}
-    \item El diseño del algoritmo SCED.
+    \item Diseño del algoritmo SCED.
 \end{itemize}
 \subsection{Variables Dependientes}
 \begin{itemize}
-    \item Resultados en la deteccion de similitud entre codigos fuente con una confiabilidad del 95\% frente a los algoritmo de RKRGST y Winnowing-Fingerprint.
+    \item Deteccion de similitud entre codigos fuente con una confiabilidad del 95\% frente al algoritmo convencional que calcula la distancia de Levenshtein.
 \end{itemize}
 \section{Justificaciones}
 \subsection{Justificación Social}
-En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación, escritos en algún lenguaje de programación. El algoritmo SCED ayudara a docentes de instituciones académicas, en la detección de trabajos similares de programación presentados por estudiantes.
+En el ámbito académico, los estudiantes de programación durante su proceso de formación elaboran trabajos, proyectos, tareas, ejercicios, etc. de programación. El algoritmo SCED ayudara a docentes de instituciones académicas, en la detección de trabajos similares de programación presentados por estudiantes.
 \subsection{Justificación Económica}
 El algoritmo SCED para la detección de similitud entre códigos fuente sera de código abierto, por lo cual permitirá que se desarrollen software a bajo costo.
 \subsection{Justificación Tecnológica}
 El algoritmo SCED para la detección de similitud entre códigos fuente, se puede implementar en jueces de programación para identificar los envíos similares de los usuarios.
 \subsection{Justificación Científica}
-Con la utilización de trabajos de programación presentados por estudiantes se medirá el desempeño de los algoritmos para la detección de similitud entre códigos fuente. Con los resultados obtenidos se determinará cuál algoritmo es más eficiente en términos de tiempo de ejecución y precisión.
+Con la utilización de trabajos de programación presentados por estudiantes se medirá el desempeño de los algoritmos SCED, Winnowing-Fingerprint y RKRGST en la detección de similitud entre códigos fuente. Con los resultados obtenidos se determinará cuál algoritmo es más eficiente en términos de tiempo de ejecución y precisión.
 \section{Alcances y Limites}
 \subsection{Alcance Sustancial}
 \begin{itemize}
@@ -70,7 +76,7 @@ Con la utilización de trabajos de programación presentados por estudiantes se 
 \end{itemize}
 \subsection{Alcance Temporal}
 \begin{itemize}
-  \item En la presente investigación se realizaran las pruebas con archivos de código fuente que fueron presentados al juez desde su despliegue hasta la fecha.
+  \item En la presente investigación se realizaran las pruebas con archivos de código fuente que fueron presentados al juez desde su despliegue hasta la fecha en que se realiza la investigación.
 \end{itemize}
 \section{Metodología}
 \subsection{Metodología Experimental}
