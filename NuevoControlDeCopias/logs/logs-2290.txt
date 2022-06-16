@@ -1,0 +1,6719 @@
+JLenin:Problem2199:Accepted
+n=int(input())
+print('   *   '*n)
+print('  /#\  '*n)
+print(' /###\ '*n)
+print('___#___'*n)
+------------------------------------------------------
+lkchavez:Problem2175:Accepted
+numero_casos=int(input())
+for i in range(numero_casos):
+    n=int(input())
+    a=-1
+    b=1
+    c=0
+    pasos=0
+    for i in range(100):
+        c=a+b
+        if c==n:
+            print(pasos)
+            break
+        a=b
+        b=c
+        pasos+=1
+------------------------------------------------------
+Marco_Cusicanqui:Problem1593:Compile Error
+import sys
+import math
+from collections import deque
+from functools import cmp_to_key
+
+# 2*5, 10=2*5,
+# 5, 10, 15, 20, 25=5*5, 30=5*6,
+# 5*2, 5*2, 5*2, 5*2 ...
+# 5, 10, 15, 20, 25, 30
+v=[]
+curr=5
+cnt=0
+while cnt<=100000:
+    x=curr
+    while x%5==0:
+        cnt+=1
+        x//=5
+    curr = curr + 5
+    v.append((curr-5,cnt))
+
+cin=sys.stdin
+for line in cin:
+    x=int(line)
+    lo,hi=0,len(v)
+    while lo+1 != hi:
+        mid=(lo+hi)//2
+        if v[mid][1]<=x: lo=mid
+        else: hi=mid
+    if v[lo][1]!=x: print(0)
+    else:
+        for i in range(v[lo][0], v[lo+1][0]): print(i,end=' ')
+        print()
+
+------------------------------------------------------
+kjolvea:Problem2199:Accepted
+n = input()
+n=int(n)
+print ("   *   "*n+"\n"+"  /#\  "*n+"\n"+" /###\ "*n+"\n"+"___#___"*n)
+------------------------------------------------------
+Marco_Cusicanqui:Problem1593:Presentation Error
+import sys
+
+# 2*5, 10=2*5,
+# 5, 10, 15, 20, 25=5*5, 30=5*6,
+# 5*2, 5*2, 5*2, 5*2 ...
+# 5, 10, 15, 20, 25, 30
+v=[]
+curr=5
+cnt=0
+while cnt<=100000:
+    x=curr
+    while x%5==0:
+        cnt+=1
+        x//=5
+    curr = curr + 5
+    v.append((curr-5,cnt))
+
+cin=sys.stdin
+for line in cin:
+    x=int(line)
+    lo,hi=0,len(v)
+    while lo+1 != hi:
+        mid=(lo+hi)//2
+        if v[mid][1]<=x: lo=mid
+        else: hi=mid
+    if v[lo][1]!=x: print(0)
+    else:
+        for i in range(v[lo][0], v[lo+1][0]): print(i,end=' ')
+        print()
+
+------------------------------------------------------
+Marco_Cusicanqui:Problem1593:Accepted
+import sys
+
+# 2*5, 10=2*5,
+# 5, 10, 15, 20, 25=5*5, 30=5*6,
+# 5*2, 5*2, 5*2, 5*2 ...
+# 5, 10, 15, 20, 25, 30
+v=[]
+curr=5
+cnt=0
+while cnt<=100000:
+    x=curr
+    while x%5==0:
+        cnt+=1
+        x//=5
+    curr = curr + 5
+    v.append((curr-5,cnt))
+
+cin=sys.stdin
+for line in cin:
+    x=int(line)
+    lo,hi=0,len(v)
+    while lo+1 != hi:
+        mid=(lo+hi)//2
+        if v[mid][1]<=x: lo=mid
+        else: hi=mid
+    if v[lo][1]!=x: print(0)
+    else:
+        for i in range(v[lo][0], v[lo+1][0]):
+            if i<v[lo+1][0]-1: print(i,end=' ')
+            else: print(i)
+
+------------------------------------------------------
+egaracena:Problem2199:Wrong Answer
+n=int(input("ingrese un n= "))
+
+for i in range(n):
+    print("   *   ")
+    print("  /#\  ")
+    print(" /###\ ")
+    print("___#___")
+------------------------------------------------------
+JLenin:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    i,x,y=1,0,1
+    if n==0:print(0);continue
+    while True:
+        x,y=y,x+y
+        if x==n:print(i);break
+        i+=1
+------------------------------------------------------
+egaracena:Problem2199:Wrong Answer
+n=int(input("ingrese un n= "))
+
+for i in range(n):
+    print("   *   ")
+    print("  /#\  ")
+    print(" /###\ ")
+    print("___#___")
+------------------------------------------------------
+Marco_Cusicanqui:Problem2199:Accepted
+import sys
+
+cin=sys.stdin
+for line in cin:
+    x=int(line)
+    for i in range(x): print('   *   ',end='')
+    print()
+    for i in range(x): print('  /#\\  ',end='')
+    print()
+    for i in range(x): print(' /###\\ ',end='')
+    print()
+    for i in range(x): print('___#___',end='')
+
+------------------------------------------------------
+jaimico313:Problem2175:Accepted
+n=int(input())
+for i in range(n):
+    numero=int(input())
+    s=0;a=-1;b=1
+    fibo=a+b
+    while (fibo!=numero):
+        a=b;b=fibo
+        fibo=a+b
+        s=s+1
+    print(s)
+------------------------------------------------------
+lkchavez:Problem2199:Accepted
+n=int(input())
+for i in range(n):
+    print("   *   ",end="")
+print()
+for i in range(n):
+    print("  /#\  ",end="")
+print()
+for i in range(n):
+    print(" /###\ ",end="")
+print()
+for i in range(n):
+    print("___#___",end="")
+------------------------------------------------------
+Marco_Cusicanqui:Problem2175:Accepted
+import sys
+
+cin=sys.stdin
+dummy=cin.readline()
+v=[]
+for line in cin:
+    x=int(line)
+    pos=0
+    a,b=0,1
+    while True:
+        curr=a
+        if curr==x:
+            print(pos)
+            break
+        a,b=b,a+b
+        pos+=1
+
+------------------------------------------------------
+13373050:Problem2199:Accepted
+n=int(input())
+print("   *   "*n)
+print("  /#\  "*n)
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+David973:Problem2199:Accepted
+a="   *   "
+aa=""
+b="  /#\  " 
+bb="" 
+c=" /###\ "
+cc=""
+d="___#___"
+dd=""
+n=int(input())
+sw=0
+cont=0
+while (cont<n):
+    aa=aa+a
+    bb=bb+b
+    cc=cc+c
+    dd=dd+d
+    cont=cont+1
+print(aa)
+print(bb)
+print(cc)
+print(dd)
+------------------------------------------------------
+jaimico313:Problem2199:Accepted
+n=int(input())
+for i in range(n):
+    print("   *   ",end="")
+print()
+for i in range(n):
+    print("  /#\  ",end="")
+print()
+for i in range(n):
+    print(" /###\ ",end="")
+print()
+for i in range(n):
+    print("___#___",end="")
+print()
+------------------------------------------------------
+jaurbina1:Problem2199:Wrong Answer
+n= int(input("cuantos arboles quieres",))
+m= 0
+while 1<=n<=100:
+    print ('''           *  
+          /#\ 
+         /###\ 
+        ___#___''')
+    m= m+1
+    if m == n:
+        print("listo")
+        break
+
+------------------------------------------------------
+jaurbina1:Problem2199:Wrong Answer
+n= int(input("cuantos arboles quieres",))
+m= 0
+while 1<=n<=100:
+    print ('''           *  
+          /#\ 
+         /###\ 
+        ___#___''')
+    m= m+1
+    if m == n:
+        print("listo")
+        break
+
+------------------------------------------------------
+Jaba:Problem2199:Wrong Answer
+n=int(input())
+arbolito=str('''   *   
+  /#\  
+ /###\ 
+___#___''')
+arbolito=(arbolito*n)
+print(arbolito)
+------------------------------------------------------
+jaurbina1:Problem2199:Wrong Answer
+n= int(input())
+m= 0
+while 1<=n<=100:
+    print ('''           *  
+          /#\ 
+         /###\ 
+        ___#___''')
+    m= m+1
+    if m == n:
+        print("listo")
+        break
+
+------------------------------------------------------
+Marco_Cusicanqui:Problem2177:Accepted
+import sys
+
+cin=sys.stdin
+dummy=cin.readline()
+for line in cin:
+    n,k=line.strip().split()
+    k=int(k)
+    n=n[::-1]
+    v=[]
+    for i in range(0,len(n)-k+1):
+        s=10
+        xa=n[i:i+k]
+        while s>9:
+            s=0
+            for j in xa: s+=ord(j)-ord('0')
+            xa=str(s)
+        v.append(s)
+    v.reverse()
+    flag=0
+    for i in v:
+        if i==0 and flag: print(0, end='')
+        elif i!=0:
+            print(i,end='')
+            flag=1
+    print()
+
+------------------------------------------------------
+David973:Problem2175:Accepted
+casos=int(input())
+for i in range (casos):
+    n=int(input())
+    a=-1
+    b=1
+    fibo=7778742049
+    cont=0
+    while (n>0):
+        cont=cont+1
+        fibo=a+b
+        a=b
+        b=fibo    
+        if (n==fibo):             
+            break 
+    if(n==0):
+        print(0)
+    else:
+        print(cont-1)    
+------------------------------------------------------
+Brherrera3114:Problem2199:Accepted
+n=int(input())
+a = "   *   "
+a1 = a
+b = "  /#\  "
+b1 = b
+c = " /###\ "
+c1 = c
+d = "___#___"
+d1 = d
+for x in range(n -1):
+    a1 = a1 + a
+    b1 = b1 + b
+    c1 = c1 + c
+    d1 = d1 + d
+print(a1)
+print(b1)
+print(c1)
+print(d1)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Compile Error
+m = int(input())
+if m < 5:
+  aux = m*5
+  for i in range(m*5, m*5+5):
+    print(i, end = " ")
+elif m == 5:
+  print(0)
+else:
+  aux = m*5
+  for i in range(m*5-5, m*5):
+    print(i, end=" ")
+------------------------------------------------------
+Aizaljp:Problem2199:Accepted
+n=int(input())
+a='   *   '
+b='  /#\  '
+c=' /###\ '
+d='___#___'
+print(a*n)
+print(b*n)
+print(c*n)
+print(d*n)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+m = int(input())
+if m < 5:
+  aux = m*5
+  for i in range(m*5, m*5+5):
+    print(i, end = " ")
+elif m == 5:
+  print(0)
+else:
+  aux = m*5
+  for i in range(m*5-5, m*5):
+    print(i, end=" ")
+------------------------------------------------------
+JLenin:Problem2177:Runtime Error
+import math
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    c,x=0,''
+    while n>0:
+        m=n%10**k
+        r=0
+        if int(math.log10(m)+1)==k:
+            while True:
+                s=0
+                for i in str(m):
+                    s+=(int(i))
+                if s<10:x=str(s)+x;break
+                else:m=s
+        n//=10
+    print(x)
+------------------------------------------------------
+cuppe:Problem2175:Compile Error
+n=int(input("introducir n:"))
+d=0
+a=-1
+b=1
+p=0
+while d<1:
+    c=a+b
+    a=b
+    b=c
+    if c==n:
+        print(p)
+        d=2
+    elif c>=n:
+        d=2
+    else:
+        p=p+1
+------------------------------------------------------
+dcondoric2:Problem2175:Wrong Answer
+k=int(input())
+x=-1
+y=1
+z=0
+c=-1
+for i in range(0,100):
+    if (z == k):
+        print(c)
+    z=x+y
+    c=c+1
+    x = y
+    y = z
+------------------------------------------------------
+Alemax:Problem2175:Wrong Answer
+for _ in range(int(input())):
+    n=int(input())
+    fib = [0]
+    a,b=1,0
+    for i in range (0,n+1):
+        f = a + b
+        fib.append(f)
+        a=b
+        b=f
+    print(fib[i])
+------------------------------------------------------
+CastellonS:Problem2199:Accepted
+n=int(input())
+print("   *   "*n)
+print("  /#\  "*n)
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+14702324:Problem2199:Wrong Answer
+n = int (input("ingrese un numero ") )
+if n>0:
+     for i in range (1,n+1):
+        
+               
+                    print ("ARBOL" )
+else:
+        
+        print("el numero no es corecto ")
+------------------------------------------------------
+14702324:Problem2199:Wrong Answer
+n = int (input("ingrese un numero ") )
+if n>0:
+     for i in range (1,n+1):
+        
+               
+                    print ("ARBOL" )
+else:
+        
+        print("el numero no es corecto ")
+------------------------------------------------------
+Jaba:Problem2199:Wrong Answer
+n=int(input())
+a=str('''   *   
+  /#\  
+ /###\ 
+___#___''')
+n<=1 and n>=100
+a=(a*n)
+print(a)
+
+------------------------------------------------------
+13373050:Problem2175:Compile Error
+n=int(input())
+for i in range(n):
+    fib=(int(input()))
+    a=-1
+    b=1
+    i=0
+    while c!=fib:
+        c=a+b
+        a=b
+        b=c
+        i+=1
+    print(i-1)
+------------------------------------------------------
+jrmarca6:Problem1593:Wrong Answer
+import sys
+import math
+for linea in sys.stdin:
+    m = int(linea)
+    cont,cero=0,0
+    aux=''
+    for i in range (1,100):
+        x=int(math.factorial(i))
+        cero = 0
+        while x%10==0:
+            cero=cero+1
+            x=x//10
+
+        if m==cero and cont== 0:
+            cont=cont+1
+            aux=aux+'{}'.format(i)
+        elif m==cero:
+            cont = cont + 1
+            aux = aux + ' {}'.format(i)
+
+    print (aux)
+------------------------------------------------------
+SerTitirico:Problem2199:Wrong Answer
+a = int(input())
+for i in range(a+1):
+	print("   *   ")
+	print("  /#\  ")
+	print(" /###\ ")
+	print("___#___")
+------------------------------------------------------
+Ale412:Problem2199:Accepted
+n=int(input())
+a="   *   "
+b="  /#\  "
+c=" /###\ "
+d="___#___"
+print(n*a)
+print(n*b)
+print(n*c)
+print(n*d)
+------------------------------------------------------
+lsolorzanos:Problem2199:Wrong Answer
+for i in range(int(input())):
+        print('   *   '
+              '  /#\  '
+              ' /###\ '
+              '___#___')
+------------------------------------------------------
+Carolina3114:Problem2199:Wrong Answer
+N = int(input())
+cabeza = "   *   "
+medio1 = "  /#\  "
+medio2 = " /###\ "
+base = "_#_"
+c = cabeza
+m1 = medio1
+m2 = medio2
+b = base
+while N > 1:
+    c = c + cabeza
+    m1 = m1 + medio1
+    m2 = m2 + medio2
+    b = b + base
+    N = N - 1
+print(c)
+print(m1)
+print(m2)
+print(b)
+------------------------------------------------------
+13373050:Problem2175:Accepted
+n=int(input())
+for i in range(n):
+    fib=(int(input()))
+    a=-1
+    b=1
+    j=0
+    while True:
+        c=a+b
+        a=b
+        b=c
+        if c==fib:
+            print(j)
+            break
+        j+=1
+------------------------------------------------------
+lsolorzanos:Problem2199:Wrong Answer
+for i in range(int(input())):
+        print('   *   ')
+        print('  /#\  ')
+        print(' /###\ ')
+        print('___#___')
+------------------------------------------------------
+jrmarca6:Problem1593:Time Limit Exceed
+import sys
+import math
+for linea in sys.stdin:
+    m = int(linea)
+    cont,cero=0,0
+    aux=''
+    for i in range (1,100000):
+        x=int(math.factorial(i))
+        cero = 0
+        while x%10==0:
+            cero=cero+1
+            x=x//10
+        if m==cero and cont== 0:
+            cont=cont+1
+            aux=aux+'{}'.format(i)
+        elif m==cero:
+            cont = cont + 1
+            aux = aux + ' {}'.format(i)
+    if cont==0:
+        aux='0'
+    print (aux)
+------------------------------------------------------
+efromero:Problem2199:Accepted
+cantidad= int(input())
+for i in range(0, cantidad, 1):
+    print('   *', end='   ')
+print('')
+for i in range(0, cantidad, 1):
+    print('  /#', end='')
+    print('\\', end='  ')
+print('')
+for i in range(0, cantidad, 1):
+    print(' /###', end='')
+    print('\\', end=' ')
+print('')
+for i in range(0, cantidad, 1):
+    print('___#___', end='')
+------------------------------------------------------
+jrmarca6:Problem1593:Time Limit Exceed
+import sys
+import math
+for linea in sys.stdin:
+    m = int(linea)
+    cont,cero=0,0
+    aux=''
+    for i in range (1,1000):
+        x=int(math.factorial(i))
+        cero = 0
+        while x%10==0:
+            cero=cero+1
+            x=x//10
+        if m==cero and cont== 0:
+            cont=cont+1
+            aux=aux+'{}'.format(i)
+        elif m==cero:
+            cont = cont + 1
+            aux = aux + ' {}'.format(i)
+    if cont==0:
+        aux='0'
+    print (aux)
+------------------------------------------------------
+Carolina3114:Problem2199:Wrong Answer
+N = int(input())
+cabeza = "   *   "
+medio1 = "  /#\  "
+medio2 = " /###\ "
+base   =   "_#_"
+c = cabeza
+m1 = medio1
+m2 = medio2
+b = base
+while N > 1:
+    c = c + cabeza
+    m1 = m1 + medio1
+    m2 = m2 + medio2
+    b = b + base
+    N = N - 1
+print(c)
+print(m1)
+print(m2)
+print(b)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  for i in range(len(result)):
+    print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+  
+n = int(input())
+busqueda(n)
+------------------------------------------------------
+JBTicona:Problem2199:Compile Error
+import math
+ 
+max=21
+separacion=5
+j=1
+ 
+# creamos el arbol
+for i in range(0,max,2):
+ 
+    # ponemos los espacios
+    linea=(separacion+math.ceil(max/2)-j)*" "
+ 
+    # ponemos los asteriscos
+    linea+=i*"*"
+ 
+    j+=1
+    print(linea)
+ 
+# cramos el tronco
+linea=(separacion+math.ceil(max/2)-3)*" "
+linea+=4*"*"
+print(linea)
+print(linea)
+------------------------------------------------------
+cuppe:Problem2199:Compile Error
+n=int(input ("introducir n: "))
+for i in range(1,n+1):
+    print("   *   ")
+    print("  /#\  ")
+    print(" /###\ ")
+    print(" __#__ ")
+------------------------------------------------------
+jaimico313:Problem1593:Wrong Answer
+import sys
+for linea in sys.stdin:
+    m = int(linea)
+    if m==5:
+        print("0")
+    else:
+        inicio = m*5
+        for i in range(5):
+            if i==4:
+                print(inicio)
+            else:
+                print(inicio,end=" ")
+                inicio=inicio+1
+------------------------------------------------------
+JBTicona:Problem2199:Wrong Answer
+import math
+ 
+max=21
+separacion=5
+j=1
+ 
+# creamos el arbol
+for i in range(0,max,2):
+ 
+    # ponemos los espacios
+    linea=(separacion+math.ceil(max/2)-j)*" "
+ 
+    # ponemos los asteriscos
+    linea+=i*"*"
+ 
+    j+=1
+    print(linea)
+ 
+# cramos el tronco
+linea=(separacion+math.ceil(max/2)-3)*" "
+linea+=4*"*"
+print(linea)
+print(linea)
+------------------------------------------------------
+14702324:Problem2199:Wrong Answer
+formImp=" / # \   "
+
+barara1 =" "
+
+
+n = int (input("ingrese un numero ") )
+if n>0:
+     for i in range (1,n+1):
+             
+            
+                    print (formImp.format (barara1))
+else:
+        
+        print("el numero no es corecto ")
+------------------------------------------------------
+JLenin:Problem2177:Wrong Answer
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    x=''
+    while n>0:
+        m=n%10**k
+        c=0
+        p=m
+        while m>0:
+            i=m%10
+            m//=10
+            c+=1
+        if c==k:
+            while True:
+                s=0
+                for j in str(p):
+                    s+=int(j)
+                if s<10:x=str(s)+x;break
+                else:p=s
+        n//=10
+    print(x)
+------------------------------------------------------
+afloress:Problem2199:Accepted
+#2199 Problem B Navidad
+n=int(input())
+
+a=('   *   ')
+b=('  /#\  ')
+c=(' /###\ ')
+d=('___#___')
+    
+print(a*n)
+print(b*n)
+print(c*n)
+print(d*n)
+
+------------------------------------------------------
+acpezas:Problem2175:Wrong Answer
+m=int(input())
+if(m>0):
+    a=-1
+    b=1
+    c=0
+    for i in range (0,49,1):
+        c=a+b
+        if(c==m):
+            print(c)
+            print(i)
+            a=b
+            b=c
+        else:
+            a = b
+            b = c
+else:
+    print("n negativo")
+------------------------------------------------------
+lsalgado1:Problem2199:Compile Error
+n = int(input())
+
+if n >= 1 and n <= 100:
+    for i in range(0, n):
+        a = "*"
+        b = "/"
+        c = "\ "
+        d = "#"
+        e = "_"
+        t = " "
+        for o in range(1, n):
+            print(t,t,t,a,t,t,t )
+            print(t,t,t,t,t,t,t )
+            print(t,t,b,d,c,t,t )
+            print(t,b,d,d,d,c,t )
+            print(e,e,e,d,e,e,e )
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  for i in range(len(result)):
+    print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+for i in range(iteraciones):
+  if i == 0:
+    busqueda(iteraciones)
+  else:
+    n = int(input())
+    busqueda(n)
+------------------------------------------------------
+lsalgado1:Problem2199:Output Limit Exceed
+n = int(input())
+
+if n >= 1 and n <= 100:
+    for i in range(0, n):
+        a = "*"
+        b = "/"
+        c = "\ "
+        d = "#"
+        e = "_"
+        t = " "
+        for o in range(1, n):
+            print(t,t,t,a,t,t,t )
+            print(t,t,t,t,t,t,t )
+            print(t,t,b,d,c,t,t )
+            print(t,b,d,d,d,c,t )
+            print(e,e,e,d,e,e,e )
+------------------------------------------------------
+cuppe:Problem2199:Compile Error
+n=int(input ("introducir n: "))
+for i in range(1,n+1):
+    print("  *   ")
+    print(" /#\  ")
+    print("/###\ ")
+    print("__#__")
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  for i in range(len(result)):
+    print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+for i in range(iteraciones):
+  if i == 0:
+    busqueda(iteraciones)
+  else:
+    n = int(input())
+    busqueda(n)
+  print()
+------------------------------------------------------
+lsalgado1:Problem2199:Wrong Answer
+n = int(input())
+
+if n >= 1 and n <= 100:
+    for i in range(0, n):
+        a = "*"
+        b = "/"
+        c = "\ "
+        d = "#"
+        e = "_"
+        t = " "
+        print(t,t,t,a,t,t,t )
+        print(t,t,t,t,t,t,t )
+        print(t,t,b,d,c,t,t )
+        print(t,b,d,d,d,c,t )
+        print(e,e,e,d,e,e,e )
+------------------------------------------------------
+9075500:Problem2175:Wrong Answer
+n = int(input())
+a = -1
+b = 1
+for i in range(n):
+    fibo=a+b
+    if i == n-1:
+        print (i)
+    else:
+        print(i,end=", ")
+        a = b
+        b = fibo
+
+------------------------------------------------------
+JOSECUETO:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    numfib=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 1836311903, 2971215073, 4807526976, 7778742049]
+    posicion=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]
+    posicion=numfib.index(n)
+    print(posicion)
+------------------------------------------------------
+jrmarca6:Problem2199:Accepted
+a=int(input())
+lin1,lin2,lin3,lin4= '','','',''
+for i in range(a):
+    lin1 = lin1 + '   *   '
+    lin2 = lin2 + '  /#\  '
+    lin3 = lin3 + ' /###\ '
+    lin4 = lin4 + '___#___'
+
+print(lin1)
+print(lin2)
+print(lin3)
+print(lin4)
+------------------------------------------------------
+Ale412:Problem2175:Accepted
+x=int(input())
+for i in range(x):
+    n=int(input())
+    a=0
+    b=1
+    cont=0
+    while n!=a:
+        f=a+b
+        a=b
+        b=f
+        #print(f)
+        cont=cont+1
+    print(cont)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+for i in range(iteraciones):
+  if i == 0:
+    busqueda(iteraciones)
+  else:
+    n = int(input())
+    busqueda(n)
+  if i != iteraciones-1:print()
+------------------------------------------------------
+maquiroz4:Problem2199:Wrong Answer
+import sys
+
+for entrada in sys.stdin:
+    n=int(entrada.strip())
+    for i in range (1,n+1):
+        print('   *    ',end='')
+    print('')
+
+    for i in range(1, n + 1):
+        print('  /#\   ',end='')
+    print('')
+
+    for i in range(1, n + 1):
+        print(' /###\  ',end='')
+    print('')
+
+    for i in range(1, n + 1):
+        print('___#____',end='')
+    print('')
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+egaracena:Problem1593:Compile Error
+import math
+entrada =  int(input())
+sum =0
+cont = 0
+for i in range(5,25):
+    n = i
+    while (n >= 5): 
+        n = n / 5
+    if int(n) == entrada:
+        print(i)
+
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Wrong Answer
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  for i in range(len(result)):
+    print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+  
+n = int(input())
+busqueda(n)
+------------------------------------------------------
+egaracena:Problem1593:Wrong Answer
+entrada =  int(input())
+sum =0
+cont = 0
+for i in range(5,25):
+    n = i
+    while (n >= 5): 
+        n = n / 5
+    if int(n) == entrada:
+        print(i)
+
+------------------------------------------------------
+esromero:Problem2199:Accepted
+n = int(input())
+a = '   *   ' * n
+b = '  /#\\  ' * n
+c = ' /###\\ ' * n
+d = '___#___' * n
+print(a, end="\n")
+print(b, end="\n")
+print(c, end="\n")
+print(d, end="\n")
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+JLenin:Problem2177:Accepted
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    x=''
+    while n>0:
+        m=n%10**k
+        c=0
+        p=m
+        if m!=0:
+            while m>0:
+                i=m%10
+                m//=10
+                c+=1
+            if c==k:
+                while True:
+                    s=0
+                    for j in str(p):
+                        s+=int(j)
+                    if s<10:x=str(s)+x;break
+                    else:p=s
+        else: x=str(m)+x
+        n//=10
+    print(x)
+------------------------------------------------------
+Alemax:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    fib = [0]
+    a,b=1,0
+    for i in range (100):
+        if n in fib:
+            print(len(fib)-1)
+            break
+        f = a + b
+        fib.append(f)
+        a=b
+        b=f
+------------------------------------------------------
+cuppe:Problem2199:Wrong Answer
+n=int(input ("introducir n: "))
+for i in range(3,n+3):
+    print("  *   ")
+    print(" /#\  ")
+    print("/###\ ")
+    print("__#__")
+------------------------------------------------------
+aocalderon1:Problem2199:Wrong Answer
+N=int(input("ingrese cantidad de arboles: "))
+c=("   *   \n  /#\  \n /###\ \n   #   \n       ")
+
+for i in range(0,N,1):
+    print(c)
+
+------------------------------------------------------
+jrmarca6:Problem2175:Wrong Answer
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    x=int(sys.stdin.readline())
+    fib1 = 1
+    fib2 = 0
+    auxf = 0
+    for j in range(50):
+        auxf = fib2
+        fib2 = fib1 + fib2
+        fib1 = auxf
+        if x==fib1:
+            print(j)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+cuppe:Problem2199:Wrong Answer
+n=int(input ("introducir n: "))
+for i in range(1,n+1):
+    print("  *   ")
+    print(" /#\  ")
+    print("/###\ ")
+    print("__#__")
+------------------------------------------------------
+aocalderon1:Problem2199:Wrong Answer
+N=int(input("ingrese cantidad de arboles: "))
+for i in range(0,N,1):
+    print("   *   ")
+    print("  /#\  ")
+    print(" /###\ ")
+    print("   #   ")
+    print("       ")
+
+------------------------------------------------------
+afloress:Problem2175:Accepted
+#2175 Problem C Otra vez Fibonacci
+casos=int(input())
+for i in range(1,casos+1):
+    n=int(input())
+    cont=0
+    a=-1
+    b=1
+    while True:
+        x=a+b
+        
+        a=b
+        b=x
+        cont=cont+1
+        if n==x:
+            print(cont-1)
+            break
+            
+
+------------------------------------------------------
+jaurbina1:Problem2199:Wrong Answer
+n= int(input())
+m= 0
+while 1<=n<=100:
+    y= ('''           *  
+          /#\ 
+         /###\ 
+        ___#___''')
+    print (y, end="")
+    m= m+1
+    if m == n:
+        print("listo")
+        break
+------------------------------------------------------
+maquiroz4:Problem2199:Accepted
+import sys
+
+for entrada in sys.stdin:
+    n=int(entrada.strip())
+    for i in range (1,n+1):
+        print('   *   ',end='')
+    print('')
+
+    for i in range(1,n+1):
+        print('  /#\  ',end='')
+    print('')
+
+    for i in range(1,n+1):
+        print(' /###\ ',end='')
+    print('')
+
+    for i in range(1,n+1):
+        print('___#___',end='')
+    print('')
+------------------------------------------------------
+aocalderon1:Problem2199:Wrong Answer
+N=int(input("ingrese cantidad de arboles: "))
+c=("   *   \n  /#\  \n /###\ \n   #   \n       ")
+
+for i in range(0,N,1):
+    print(c)
+
+------------------------------------------------------
+9075500:Problem2199:Wrong Answer
+n = int(input())
+n = 3
+print ("    *      *      *   ")
+print ("   /#\    /#\    /#\  ")
+print ("  /###\  /###\  /###\ ")
+print (" ___#______#______#___")
+
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+Anthony784:Problem2199:Accepted
+n = int(input())
+for i in range(n):
+    print("   *   ",end="")
+print("\n", end="")
+for m in range(n):
+    print("  /#\\  ",end="")
+print("\n",end="")
+for k in range(n):
+    print(" /###\\ ", end="")
+print("\n",end="")
+for l in range(n):
+    print("___#___", end="")
+------------------------------------------------------
+cuppe:Problem2175:Wrong Answer
+n=int(input("introducir n:"))
+d=0
+a=-1
+b=1
+p=0
+while d<1:
+    c=a+b
+    a=b
+    b=c
+    if c==n:
+        print(p)
+        d=2
+    elif c>=n:
+        d=2
+    else:
+        p=p+1
+------------------------------------------------------
+jrmarca6:Problem2175:Accepted
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    x=int(sys.stdin.readline().strip())
+    fib1 = 1
+    fib2 = 0
+    auxf = 0
+    for j in range(50):
+        auxf = fib2
+        fib2 = fib1 + fib2
+        fib1 = auxf
+        if x==fib1:
+            print(j)
+            break
+------------------------------------------------------
+DANILOMAGNE:Problem2199:Wrong Answer
+def base(N):
+  for i in range(N):
+    print("__#__", end="")
+
+def segunda(N):
+  for i in range(N):
+    print("  /#\\ ", end=" ")
+
+def tercera(N):
+  for i in range(N):
+    print(" /###\\",end=" ")
+
+def cabeza(N):
+  for i in range(N):
+    print("   * ",end="  ")
+N =int(input())
+
+cabeza(N)
+print()
+segunda(N)
+print()
+tercera(N)
+print()
+base(N)
+------------------------------------------------------
+fernanda081:Problem2199:Compile Error
+for i in range(N):
+  # print(i)
+ print ( ' ' * (N - i - 1) + "#" * (2 * i + 1))
+
+for n in range(int(N/2)):
+     print(' ' * int(N - N/4) + '#' * int (N/2))
+
+
+------------------------------------------------------
+JBTicona:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    fib = [0]
+    a,b=1,0
+    for i in range (100):
+        if n in fib:
+            print(len(fib)-1)
+            break
+        f = a + b
+        fib.append(f)
+        a=b
+        b=f
+
+------------------------------------------------------
+Carolina3114:Problem2199:Accepted
+N = int(input())
+cabeza = "   *   "
+medio1 = "  /#\  "
+medio2 = " /###\ "
+base   = "___#___"
+c = cabeza
+m1 = medio1
+m2 = medio2
+b = base
+while N > 1:
+    c = c + cabeza
+    m1 = m1 + medio1
+    m2 = m2 + medio2
+    b = b + base
+    N = N - 1
+print(c)
+print(m1)
+print(m2)
+print(b)
+------------------------------------------------------
+Aizaljp:Problem2175:Accepted
+contador=0
+posicion=1
+for i in range(int(input())):
+	n=int(input())
+	a=1
+	b=0
+	c=1
+	if n==0:
+		print(n)
+	elif n==1:
+		print(posicion)
+	else:
+		while c<n:
+			c=a+b
+			a=b
+			b=c
+			contador=contador+1
+		if c==n:
+			print(contador)
+		contador=0
+------------------------------------------------------
+maquiroz4:Problem2175:Accepted
+ncasos=int(input())
+for _ in range(ncasos):
+    n = int(input())
+    a,b=0,1
+    c=0
+    if n==0:
+        print(c)
+        c=c+1
+    else:
+        for i in range (50):
+            c=c+1
+            a,b=b,a+b
+            if a==n:
+                print(c)
+                break
+
+------------------------------------------------------
+DANILOMAGNE:Problem2199:Wrong Answer
+def base(N):
+  for i in range(N):
+    print("__#__", end="")
+
+def segunda(N):
+  for i in range(N):
+    print("  /#\\ ", end=" ")
+
+def tercera(N):
+  for i in range(N):
+    print(" /###\\",end=" ")
+
+def cabeza(N):
+  for i in range(N):
+    print("   * ",end="  ")
+N =int(input())
+
+
+def arrbol(N):
+  for i in range(N):
+    print(""""
+*   
+  /#\  
+ /###\ 
+_#_""")
+
+arrbol(N)
+------------------------------------------------------
+CastellonS:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    fibo=[0]
+    x=1
+    y=0
+    for i in range(100):
+        if n in fibo:
+            print(len(fibo)-1)
+            break
+        f=x+y
+        fibo.append(f)
+        x=y
+        y=f
+------------------------------------------------------
+Alemax:Problem2199:Accepted
+n=int(input())
+print("   *   "*n)
+print("  /#\  "*n)
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+efromero:Problem2175:Accepted
+casos = (int(input()))
+for i in range(0, casos, 1):
+    numero= int(input())
+    a,b = 0,1
+    contador = 0
+    if (numero == a) or (numero == b):
+        print(numero)
+    else:
+        while (a != numero):
+            # print(a, end= ' ')
+            a,b = b, a+b
+            contador += 1
+        print(contador)
+------------------------------------------------------
+cuppe:Problem2199:Wrong Answer
+n=int(input ("introducir n: "))
+for i in range(1,n+1):
+    print("   *   ")
+    print("  /#\  ")
+    print(" /###\ ")
+    print("___#___")
+------------------------------------------------------
+dcondoric2:Problem2175:Wrong Answer
+
+k=int(input())
+x=-1
+y=1
+z=0
+c=-1
+dig=0
+while(k>0):
+    dig=k%10
+    #print(dig)
+    for i in range(0,100):
+        if (z == dig):
+            if(c>=0):
+                print(c)
+        z=x+y
+        c=c+1
+        x = y
+        y = z
+    x = -1
+    y = 1
+    z = 0
+    c=-1
+    k=k//10
+
+
+------------------------------------------------------
+11542541:Problem2175:Accepted
+t = int(input())
+for c in range(t):
+    n = int(input())
+    a = -1
+    b = 1
+    fibo = a + b
+    for i in range(50):
+        if fibo == n:
+            print(i)
+            break
+        a = b
+        b = fibo
+        fibo = a + b
+------------------------------------------------------
+easviracka:Problem2199:Wrong Answer
+n=int(input())
+if n>=1:
+    for i in range (n):
+        print("   *   ",end="")
+        if(i==n-1):
+            print("   *   ")
+    for i in range (n):
+        print("  /#\  ",end="")
+        if(i==n-1):
+            print("  /#\  ")
+    for i in range (n):
+        print(" /###\ ",end="")
+        if(i==n-1):
+            print(" /###\  ")
+    for i in range (n):
+        print("___#___",end="")
+        if(i==n-0):
+            print("___#___")
+------------------------------------------------------
+DANILOMAGNE:Problem2199:Wrong Answer
+def base(N):
+  for i in range(N):
+    print("_#_", end="")
+
+def segunda(N):
+  for i in range(N):
+    print("  /#\\ ", end="  ")
+
+def tercera(N):
+  for i in range(N):
+    print(" /###\\",end=" ")
+
+def cabeza(N):
+  for i in range(N):
+    print("   *",end="   ")
+N =int(input())
+
+
+def arrbol(N):
+  for i in range(N):
+    print(""""
+*   
+  /#\  
+ /###\ 
+_#_""")
+
+
+cabeza(N)
+print()
+segunda(N)
+print()
+tercera(N)
+print()
+base(N)
+------------------------------------------------------
+JBTicona:Problem2199:Wrong Answer
+n=int(input())
+print(" * "*n)
+print(" /##\ "*n)   
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+lsolorzanos:Problem2175:Wrong Answer
+for i in range(int(input())):
+    a=map(int,input().split())
+    cont=0
+    c = a
+    b = 1
+    for cont in c:
+        f = cont+b
+        b = f
+    print(cont)
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=0
+    b=1
+    c=0
+    if numero_busca==0:
+           print(a)    
+    for i in range(50):
+        
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+------------------------------------------------------
+kjolvea:Problem2175:Wrong Answer
+t = input()
+for q in range(int(t)):
+    Nfibo=int(input())
+    if Nfibo==0:
+        print("1")
+    elif Nfibo==1:
+        print("2")
+    else:
+        a=0
+        b=1
+        cont=2
+        while Nfibo != b:
+            c=b
+            b=b+a
+            a=c
+            cont+=1
+            if Nfibo == b:
+                print(cont)
+            elif b > Nfibo:
+                print("0")
+                break
+------------------------------------------------------
+cuppe:Problem2175:Wrong Answer
+n=int(input ("introducir n: "))
+d=0
+a=-1
+b=1
+p=0
+while d<1:
+    c=a+b
+    a=b
+    b=c
+    if c==n:
+        print(p)
+        d=2
+    elif c>=n:
+        d=2
+    else:
+        p=p+1
+
+
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=0
+    b=1
+    c=0
+    if numero_busca==0:
+           print(a)    
+    for i in range(50):
+        
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=c=0
+    b=1
+    if numero_busca==0:
+           print(a)    
+    for i in range(50):
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+------------------------------------------------------
+JBTicona:Problem2199:Wrong Answer
+n=int(input())
+print(" * "*n)
+print(" /##\ "*n)   
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=c=0
+    b=1
+    if numero_busca==0:
+           print(a)    
+    for i in range(40):
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=c=0
+    b=1
+    if numero_busca==0:
+           print(a)    
+    for i in range(30):
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+
+------------------------------------------------------
+kjolvea:Problem2175:Accepted
+t = input()
+for q in range(int(t)):
+    Nfibo=int(input())
+    if Nfibo==0:
+        print("0")
+    elif Nfibo==1:
+        print("1")
+    else:
+        a=0
+        b=1
+        cont=1
+        while Nfibo != b:
+            c=b
+            b=b+a
+            a=c
+            cont+=1
+            if Nfibo == b:
+                print(cont)
+            elif b > Nfibo:
+                print("0")
+                break
+------------------------------------------------------
+JBTicona:Problem2199:Compile Error
+n=int(input())
+print("  *  "×n)
+print(" /##\ "×n)   
+print(" /###\ "×n)
+print("___#___"×n)
+------------------------------------------------------
+DANILOMAGNE:Problem2199:Wrong Answer
+def base(N):
+  for i in range(N):
+    print("__#__", end="")
+
+def segunda(N):
+  for i in range(N):
+    print("  /#\\", end="")
+
+def tercera(N):
+  for i in range(N):
+    print(" /###\\",end="")
+
+def cabeza(N):
+  for i in range(N):
+    print("   *",end="  ")
+N =int(input())
+
+cabeza(N)
+print()
+segunda(N)
+print()
+tercera(N)
+print()
+base(N)
+------------------------------------------------------
+JBTicona:Problem2199:Compile Error
+n=int(input())
+print(" * "*n)
+print("/##\"*n)   
+print("/###\"*n)
+print("___#___"*n)
+------------------------------------------------------
+David973:Problem2177:Wrong Answer
+import math
+n=3728954
+k=2
+kk=n%(10)**k
+n=n//10
+nuevo=0
+pot=0
+while(n>0):
+    s=0
+    tamkk=int(math.log10(kk)+1)
+    while(kk>0 and tamkk==k):
+        dig=kk%10
+        kk=kk//10
+        s=s+dig
+    while (s>9):
+        s=(s%10)+(s//10)
+    nuevo=nuevo+(s*10**pot)
+    pot=pot+1
+    kk=n%(10)**k
+    n=n//10
+print(nuevo)
+------------------------------------------------------
+JBTicona:Problem2199:Compile Error
+n=int(input())
+print(" * "*n)
+print("/##\"*n)   
+print("/###\"*n)
+print("___#___"*n)
+------------------------------------------------------
+esromero:Problem2175:Wrong Answer
+n=int(input())
+if n<=0:
+    print("0")
+else:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="")
+------------------------------------------------------
+11542541:Problem2199:Wrong Answer
+n = int(input())
+for i in range(1):
+    for j in range(n):
+        print("   *   ",end=" ")
+    print()
+    for k in range(n):
+        print("  /#\  ",end=" ")
+    print()
+    for l in range(n):
+        print(" /###\ ",end=" ")
+    print()
+    for m in range(n):
+        print("___#___",end=" ")
+------------------------------------------------------
+David973:Problem2177:Runtime Error
+import math
+casos=int(input())
+for i in range (casos):
+    n,k=map(int,input().split(" "))
+    kk=n%(10)**k
+    n=n//10
+    nuevo=0
+    pot=0
+    while(n>0):
+        s=0
+        tamkk=int(math.log10(kk)+1)
+        while(kk>0 and tamkk==k):
+            dig=kk%10
+            kk=kk//10
+            s=s+dig
+        while (s>9):
+            s=(s%10)+(s//10)
+        nuevo=nuevo+(s*10**pot)
+        pot=pot+1
+        kk=n%(10)**k
+        n=n//10
+    print(nuevo)
+------------------------------------------------------
+11542541:Problem2199:Wrong Answer
+n = int(input())
+for j in range(n):
+    print("   *   ",end=" ")
+print()
+for k in range(n):
+    print("  /#\  ",end=" ")
+print()
+for l in range(n):
+    print(" /###\ ",end=" ")
+print()
+for m in range(n):
+    print("___#___",end=" ")
+------------------------------------------------------
+esromero:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+else:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+------------------------------------------------------
+JBTicona:Problem2199:Accepted
+n=int(input())
+print("   *   "*n)
+print("  /#\  "*n)
+print(" /###\ "*n)
+print("___#___"*n)
+
+------------------------------------------------------
+CastellonS:Problem1593:Runtime Error
+import math
+import sys
+for linea in sys.stdin:
+    n=int(input())
+    for i in range(1,10):
+        #print("este es el i:",i)
+        d=math.factorial(i)
+        #print("este es el d",d)
+        cd=int(math.log10(d))+1
+        #print("este es el cd:",cd)
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+------------------------------------------------------
+esromero:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+else:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+------------------------------------------------------
+CastellonS:Problem1593:Wrong Answer
+import math
+import sys
+for linea in sys.stdin:
+    n=int,linea.split()
+    for i in range(1,10):
+        #print("este es el i:",i)
+        d=math.factorial(i)
+        #print("este es el d",d)
+        cd=int(math.log10(d))+1
+        #print("este es el cd:",cd)
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+
+------------------------------------------------------
+CastellonS:Problem1593:Wrong Answer
+import math
+import sys
+for linea in sys.stdin:
+    n=int,linea.split()
+    for i in range(1,100):
+        #print("este es el i:",i)
+        d=math.factorial(i)
+        #print("este es el d",d)
+        cd=int(math.log10(d))+1
+        #print("este es el cd:",cd)
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+
+------------------------------------------------------
+CastellonS:Problem1593:Time Limit Exceed
+import math
+import sys
+for linea in sys.stdin:
+    n=int,linea.split()
+    for i in range(1,10000):
+        #print("este es el i:",i)
+        d=math.factorial(i)
+        #print("este es el d",d)
+        cd=int(math.log10(d))+1
+        #print("este es el cd:",cd)
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+
+------------------------------------------------------
+11542541:Problem2199:Wrong Answer
+n = int(input())
+for j in range(n):
+    print("   *   ",end=" ")
+print()
+for k in range(n):
+    print("  /#\  ",end=" ")
+print()
+for l in range(n):
+    print(" /###\ ",end=" ")
+print()
+for m in range(n):
+    if m == n-1:
+        print("___#___",end=" ")
+    else:
+        print("___#___",end="_")
+------------------------------------------------------
+CastellonS:Problem1593:Time Limit Exceed
+import math
+import sys
+for linea in sys.stdin:
+    n=int,linea.split()
+    for i in range(1,1000):
+        #print("este es el i:",i)
+        d=math.factorial(i)
+        #print("este es el d",d)
+        cd=int(math.log10(d))+1
+        #print("este es el cd:",cd)
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+
+------------------------------------------------------
+CastellonS:Problem1593:Wrong Answer
+import math
+import sys
+for linea in sys.stdin:
+    n=int,linea.split()
+    for i in range(1,100):
+        d=math.factorial(i)
+        cd=int(math.log10(d))+1
+        cont=0
+        for j in range(1,cd+1):
+            a=d%10
+            d=d//10
+            if(a<1):
+                cont=cont+1
+            else:
+                break
+        if(cont==n):
+                print(i, end=" ")
+
+------------------------------------------------------
+DANILOMAGNE:Problem2177:Runtime Error
+import sys
+for linea in sys.stdin:
+    n, t, z = map(int, linea.split())
+    num=n
+    ans = 0
+    pasos=0
+    rot=0
+    r=0
+    p=0
+    pa=0
+    pasoss=0
+    while z>=t:
+        z= z-t
+    #si n es impar
+    pas=t-z
+    if n==359019190 and t==6 and z==2:
+        print(35003791)
+    elif n%10==0:
+        for i in range(t):
+            dig=num%10
+            ans=(dig*10**pasos)+ans
+            num=num//10
+            pasos +=1
+        nm=ans
+        #rotar a la derecha enviar adelante
+        for i in range(z):
+            dig=nm%10
+            rot+=dig*10**pa
+            nm=nm//10
+            pa+=1
+        numero_rotado=(rot*10*(t-z)+nm)
+        print(num*10**t+numero_rotado)
+    elif n%2==0:
+        for i in range(t):
+            dig=num%10
+            ans=(dig*10**pasos)+ans
+            num=num//10
+            pasos +=1
+        nm=ans
+        #rotar a la derecha enviar adelante
+        for i in range(z):
+            dig=nm%10
+            rot+=dig*10**pasoss
+            pasoss+=1
+            nm=nm//10
+        numero_rotado=rot*10**(t-z)+nm
+        print(num*10**t+numero_rotado)
+    else:
+        for i in range(t):
+            dig=num%10
+            ans=(dig*10**pasos)+ans
+            num=num//10
+            pasos +=1
+        nm=ans
+        for i in range(t-z):
+            dig=nm%10
+            r=(dig*10**p)+r
+            nm=nm//10
+            p +=1
+        rotado=(r*10**z+nm)
+        print(num*10**t+rotado)
+------------------------------------------------------
+Brherrera3114:Problem2177:Wrong Answer
+def autom(aux1,cont):
+    c = cont
+    digito = 0
+    while cont > 0:
+        digito = digito + (aux1 % 10)
+        aux1 = aux1 // 10
+        cont = cont - 1
+    if digito > 9:
+            digito = autom(digito,c)
+    return digito
+
+for i in range(int(input())):
+    num,cant = map(int,input().split())
+    neonum = 0
+    x = 0
+    while num >= pow(10,cant-1):
+        aux2 = autom(num,cant)
+        neonum = (aux2 * pow(10,x))+ neonum
+        x = x + 1
+        num = num // 10
+    print(neonum)
+------------------------------------------------------
+esromero:Problem2175:Runtime Error
+import sys
+n=int(input(),sys.stdin.readline())
+if n<=0:
+    print("0")
+else:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+------------------------------------------------------
+lkchavez:Problem2177:Wrong Answer
+import math
+numero_casos=int(input())
+for i in range(numero_casos):
+    num, digi=map( int, input(). split())
+    n=num
+    pasos=0
+    nuevo=0
+    p=0
+    total=0
+    if digi==2:
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==digi:
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                k=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                    k=k+dig
+                    while k>9:
+                        ng=k
+                        t=int(math.log10(ng))+1
+                        k=0
+                        while t>0:
+                            dig=ng//(10**(t-1))
+                            ng=ng%(10**(t-1))
+                            t=t-1
+                            k=k+dig
+                suma=k
+                total+=k*10**p
+                p+=1
+                pasos=0
+                nuevo=x
+            n=n//10
+            pasos+=1
+        print(total)
+    else:
+        n=num
+        nuevo=0
+        nuev=0
+        pasos=0
+        compu=0
+        total=0
+        p=0
+        k=digi
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==k:
+                compu=math.floor(nuevo/10)
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                g=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    g+=dig
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                while g>9:
+                    ng=g
+                    t=int(math.log10(ng))+1
+                    g=0
+                    while t>0:
+                        dig=ng//(10**(t-1))
+                        ng=ng%(10**(t-1))
+                        t=t-1
+                        g=g+dig
+                suma=g
+                total=total+g*10**p
+                p+=1
+                nuevo=compu
+                pasos=k-2
+            n=n//10
+            pasos+=1
+        print(total)
+------------------------------------------------------
+David973:Problem2177:Wrong Answer
+casos=int(input())
+for i in range (casos):
+    n,k=map(int,input().split(" "))
+    kk=n%(10)**k
+    n=n//10
+    nuevo=0
+    pot=0
+    while(n>0):
+        s=0
+        tamkk=int(len(str(kk)))
+        while(kk>0 and tamkk==k):
+            dig=kk%10
+            kk=kk//10
+            s=s+dig
+        while (s>9):
+            s=(s%10)+(s//10)
+        nuevo=nuevo+(s*10**pot)
+        pot=pot+1
+        kk=n%(10)**k
+        n=n//10
+    print(nuevo)
+------------------------------------------------------
+11542541:Problem2199:Accepted
+n = int(input())
+for j in range(n):
+    print("   *   ",end="")
+print()
+for k in range(n):
+    print("  /#\  ",end="")
+print()
+for l in range(n):
+    print(" /###\ ",end="")
+print()
+for m in range(n):
+    print("___#___",end="")
+------------------------------------------------------
+easviracka:Problem2199:Presentation Error
+n=int(input())
+aux=0
+if n>=1:
+    for i in range (n):
+        print("   *   ",end="")
+        aux=aux-1
+        if(i==aux-1):
+            print("   *   ")
+    for i in range (n):
+        print("  /#\  ",end="")
+        if(i==aux-1):
+            print("  /#\  ")
+    for i in range (n):
+        print(" /###\ ",end="")
+        if(i==aux-1):
+            print(" /###\  ")
+    for i in range (n):
+        print("___#___",end="")
+        if(i==n-0):
+            print("___#___")
+------------------------------------------------------
+9075500:Problem2199:Accepted
+n= int(input())
+for i in range(0, n, 1):
+    print('   *', end='   ')
+print('')
+for i in range(0, n, 1):
+    print('  /#', end='')
+    print('\\', end='  ')
+print('')
+for i in range(0, n, 1):
+    print(' /###', end='')
+    print('\\', end=' ')
+print('')
+for i in range(0, n, 1):
+    print('___#___', end='')
+------------------------------------------------------
+David973:Problem2177:Wrong Answer
+casos=int(input())
+for i in range (casos-1):
+    n,k=map(int,input().split(" "))
+    kk=n%(10)**k
+    n=n//10
+    nuevo=0
+    pot=0
+    while(n>0):
+        s=0
+        tamkk=int(len(str(kk)))
+        while(kk>0 and tamkk==k):
+            dig=kk%10
+            kk=kk//10
+            s=s+dig
+        while (s>9):
+            s=(s%10)+(s//10)
+        nuevo=nuevo+(s*10**pot)
+        pot=pot+1
+        kk=n%(10)**k
+        n=n//10
+    if (nuevo !=0):
+        print(nuevo)
+------------------------------------------------------
+dcondoric2:Problem2175:Wrong Answer
+k=int(input())
+x=-1
+y=1
+z=0
+c=-1
+dig=0
+cont=0
+aux=0
+while(k>0):
+    dig=k%10
+    #print(dig)
+    for i in range(0,100):
+        if (z == dig):
+            if(c >= 0):
+                aux=c
+                print(c)
+        z=x+y
+        c=c+1
+        x = y
+        y = z
+    x = -1
+    y = 1
+    z = 0
+    c = -1
+    k = k//10
+------------------------------------------------------
+David973:Problem2177:Accepted
+casos=int(input())
+for i in range (casos):
+    n,k=map(int,input().split(" "))
+    kk=n%(10)**k
+    n=n//10
+    nuevo=0
+    pot=0
+    while(n>0):
+        s=0
+        tamkk=int(len(str(kk)))
+        while(kk>0 and tamkk==k):
+            dig=kk%10
+            kk=kk//10
+            s=s+dig
+        while (s>9):
+            s=(s%10)+(s//10)
+        nuevo=nuevo+(s*10**pot)
+        pot=pot+1
+        kk=n%(10)**k
+        n=n//10
+    if (nuevo !=0):
+        print(nuevo)
+------------------------------------------------------
+Brherrera3114:Problem2177:Wrong Answer
+def autom(aux1,cont):
+    c = cont
+    digito = 0
+    while cont > 0:
+        digito = digito + (aux1 % 10)
+        aux1 = aux1 // 10
+        cont = cont - 1
+    if digito > 9:
+            digito = autom(digito,c)
+    return digito
+
+for i in range(int(input())):
+    num,cant = map(int,input().split())
+    neonum = 0
+    x = 0
+    if(num < pow(10,cant)):
+        print(num)
+        continue
+    while num >= pow(10,cant-1):
+        aux2 = autom(num,cant)
+        neonum = (aux2 * pow(10,x))+ neonum
+        x = x + 1
+        num = num // 10
+    print(neonum)
+------------------------------------------------------
+Brherrera3114:Problem2177:Accepted
+def autom(aux1,cont):
+    c = cont
+    digito = 0
+    while cont > 0:
+        digito = digito + (aux1 % 10)
+        aux1 = aux1 // 10
+        cont = cont - 1
+    if digito > 9:
+            digito = autom(digito,c)
+    return digito
+
+for i in range(int(input())):
+    num,cant = map(int,input().split())
+    neonum = 0
+    x = 0
+    if(num < pow(10,cant)):
+        print('')
+        continue
+    while num >= pow(10,cant-1):
+        aux2 = autom(num,cant)
+        neonum = (aux2 * pow(10,x))+ neonum
+        x = x + 1
+        num = num // 10
+    print(neonum)
+    
+------------------------------------------------------
+lkchavez:Problem2177:Compile Error
+import math
+numero_casos=int(input())
+for i in range(numero_casos):
+    num, digi=map( int, input(). split())
+    n=num
+    pasos=0
+    nuevo=0
+    p=0
+    total=0
+    if n%10000==0:
+        print(n//10**(k-1))
+    elif digi==2:
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==digi:
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                k=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                    k=k+dig
+                    while k>9:
+                        ng=k
+                        t=int(math.log10(ng))+1
+                        k=0
+                        while t>0:
+                            dig=ng//(10**(t-1))
+                            ng=ng%(10**(t-1))
+                            t=t-1
+                            k=k+dig
+                suma=k
+                total+=k*10**p
+                p+=1
+                pasos=0
+                nuevo=x
+            n=n//10
+            pasos+=1
+        print(total)
+    else:
+        n=num
+        nuevo=0
+        nuev=0
+        pasos=0
+        compu=0
+        total=0
+        p=0
+        k=digi
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==k:
+                compu=math.floor(nuevo/10)
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                g=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    g+=dig
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                while g>9:
+                    ng=g
+                    t=int(math.log10(ng))+1
+                    g=0
+                    while t>0:
+                        dig=ng//(10**(t-1))
+                        ng=ng%(10**(t-1))
+                        t=t-1
+                        g=g+dig
+                suma=g
+                total=total+g*10**p
+                p+=1
+                nuevo=compu
+                pasos=k-2
+            n=n//10
+            pasos+=1
+        print(total)
+------------------------------------------------------
+lkchavez:Problem2177:Wrong Answer
+import math
+numero_casos=int(input())
+for i in range(numero_casos):
+    num, digi=map( int, input(). split())
+    n=num
+    pasos=0
+    nuevo=0
+    p=0
+    total=0
+    if n%10000==0:
+        print(n//10**(digi-1))
+    elif digi==2:
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==digi:
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                k=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                    k=k+dig
+                    while k>9:
+                        ng=k
+                        t=int(math.log10(ng))+1
+                        k=0
+                        while t>0:
+                            dig=ng//(10**(t-1))
+                            ng=ng%(10**(t-1))
+                            t=t-1
+                            k=k+dig
+                suma=k
+                total+=k*10**p
+                p+=1
+                pasos=0
+                nuevo=x
+            n=n//10
+            pasos+=1
+        print(total)
+    else:
+        n=num
+        nuevo=0
+        nuev=0
+        pasos=0
+        compu=0
+        total=0
+        p=0
+        k=digi
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==k:
+                compu=math.floor(nuevo/10)
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                g=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    g+=dig
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                while g>9:
+                    ng=g
+                    t=int(math.log10(ng))+1
+                    g=0
+                    while t>0:
+                        dig=ng//(10**(t-1))
+                        ng=ng%(10**(t-1))
+                        t=t-1
+                        g=g+dig
+                suma=g
+                total=total+g*10**p
+                p+=1
+                nuevo=compu
+                pasos=k-2
+            n=n//10
+            pasos+=1
+        print(total)
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(j)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(
+    if len(p) == 0:
+        print(0)
+    else:
+        print(j)
+
+------------------------------------------------------
+lkchavez:Problem2177:Compile Error
+import math
+numero_casos=int(input())
+for i in range(numero_casos):
+    num, digi=map( int, input(). split())
+    n=num
+    contador = len(str(sult))
+    pasos=0
+    nuevo=0
+    p=0
+    total=0
+    if contador<digi:
+        print("")
+    elif n%10000==0:
+        print(n//10**(digi-1))
+    elif digi==2:
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==digi:
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                k=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                    k=k+dig
+                    while k>9:
+                        ng=k
+                        t=int(math.log10(ng))+1
+                        k=0
+                        while t>0:
+                            dig=ng//(10**(t-1))
+                            ng=ng%(10**(t-1))
+                            t=t-1
+                            k=k+dig
+                suma=k
+                total+=k*10**p
+                p+=1
+                pasos=0
+                nuevo=x
+            n=n//10
+            pasos+=1
+        print(total)
+    else:
+        n=num
+        nuevo=0
+        nuev=0
+        pasos=0
+        compu=0
+        total=0
+        p=0
+        k=digi
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==k:
+                compu=math.floor(nuevo/10)
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                g=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    g+=dig
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                while g>9:
+                    ng=g
+                    t=int(math.log10(ng))+1
+                    g=0
+                    while t>0:
+                        dig=ng//(10**(t-1))
+                        ng=ng%(10**(t-1))
+                        t=t-1
+                        g=g+dig
+                suma=g
+                total=total+g*10**p
+                p+=1
+                nuevo=compu
+                pasos=k-2
+            n=n//10
+            pasos+=1
+        print(total)
+------------------------------------------------------
+lsalgado1:Problem2199:Wrong Answer
+n = int(input())
+
+if n >= 1 and n <= 100:
+    for i in range(0, n):
+        a = " "U" "U" "U" "U"*"U" "U" "U" "
+        #print(a, end=("\n"))
+        b = " "U" "U" "U" "U" "U" "U" "
+        #print(b,end=("\n"))
+        c = " "U" "U"/"U"#"U"\ "U" "U" "
+        #print(c,end=("\n"))
+        d = " "U"/"U"#"U"#"U"#"U"\ "U" "
+        e = "_"U"_"U"_"U"#"U"_"U"_"U"_"
+        #f = (a,("\n"),b,("\n"),c,("\n"),d,("\n"),e,("\n"))
+        #print(b)
+        #print(c)
+        #print(" "U" "U" "U"*"U" "U" "U" ")
+        #print(" "U" "U" "U" "U" "U" "U" ")
+        #print(" "U" "U"/"U"#"U"\ "U" "U" ")
+        #print(" "U"/"U"#"U"#"U"#"U"\ "U" ")
+        #print("_"U"_"U"_"U"#"U"_"U"_"U"_")
+        
+        print(a,("\n"),b,("\n"),c,("\n"),d,("\n"),e,("\n"),end=("\n"))
+        #print(f,end=(""))
+        #print(e, end=(""))
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+lkchavez:Problem2177:Accepted
+
+import math
+numero_casos=int(input())
+for i in range(numero_casos):
+    num, digi=map( int, input(). split())
+    n=num
+    contador = len(str(num))
+    pasos=0
+    nuevo=0
+    p=0
+    total=0
+    if contador<digi:
+        print("")
+    elif n%10000==0:
+        print(n//10**(digi-1))
+    elif digi==2:
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==digi:
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                k=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                    k=k+dig
+                    while k>9:
+                        ng=k
+                        t=int(math.log10(ng))+1
+                        k=0
+                        while t>0:
+                            dig=ng//(10**(t-1))
+                            ng=ng%(10**(t-1))
+                            t=t-1
+                            k=k+dig
+                suma=k
+                total+=k*10**p
+                p+=1
+                pasos=0
+                nuevo=x
+            n=n//10
+            pasos+=1
+        print(total)
+    else:
+        n=num
+        nuevo=0
+        nuev=0
+        pasos=0
+        compu=0
+        total=0
+        p=0
+        k=digi
+        while n>0:
+            x=n%10
+            nuevo+=x*10**pasos
+            contador = len(str(nuevo))
+            if contador==k:
+                compu=math.floor(nuevo/10)
+                num=nuevo
+                final=num
+                ng=num
+                t=int(math.log10(ng))+1
+                g=0
+                while t>0:
+                    dig=ng//(10**(t-1))
+                    g+=dig
+                    ng=ng%(10**(t-1))
+                    t=t-1
+                while g>9:
+                    ng=g
+                    t=int(math.log10(ng))+1
+                    g=0
+                    while t>0:
+                        dig=ng//(10**(t-1))
+                        ng=ng%(10**(t-1))
+                        t=t-1
+                        g=g+dig
+                suma=g
+                total=total+g*10**p
+                p+=1
+                nuevo=compu
+                pasos=k-2
+            n=n//10
+            pasos+=1
+        print(total)
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+lsalgado1:Problem2199:Wrong Answer
+n = int(input())
+
+if n >= 1 and n <= 100:
+    for i in range(0, n):
+        a = " "U" "U" "U" "U"*"U" "U" "U" "
+        #print(a, end=("\n"))
+        #print(b,end=("\n"))
+        c = " "U" "U"/"U"#"U"\ "U" "U" "
+        #print(c,end=("\n"))
+        d = " "U"/"U"#"U"#"U"#"U"\ "U" "
+        e = "_"U"_"U"_"U"#"U"_"U"_"U"_"
+        #f = (a,("\n"),b,("\n"),c,("\n"),d,("\n"),e,("\n"))
+        #print(b)
+        #print(c)
+        #print(" "U" "U" "U"*"U" "U" "U" ")
+        #print(" "U" "U" "U" "U" "U" "U" ")
+        #print(" "U" "U"/"U"#"U"\ "U" "U" ")
+        #print(" "U"/"U"#"U"#"U"#"U"\ "U" ")
+        #print("_"U"_"U"_"U"#"U"_"U"_"U"_")
+        
+        print(a,("\n"),c,("\n"),d,("\n"),e,("\n"),end=("\n"))
+        #print(f,end=(""))
+        #print(e, end=(""))
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+14702324:Problem2175:Wrong Answer
+x=0
+y=1
+z=0
+while True :
+    n = int(input(" ingrese el numero "))
+    if n<7778742049.:
+        break 
+print("1",end=" ")        
+for i in range (0,n):
+    z=x+y
+    print(f"{z}",end=" ")
+    x=y
+    y=z
+print("")    
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p)==0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+easviracka:Problem2199:Compile Error
+n=int(input())
+    for i in range (n):
+        print("   *   ")
+        print("  /#\  ")
+        print(" /###\  ")
+        print("___#___")
+------------------------------------------------------
+13373050:Problem2177:Runtime Error
+def invertir(x):
+    num = int((str(x)[::-1]))
+    return num
+def unidad(x):
+    su=0
+    while x>0:
+        mod=x%10
+        x=x//10
+        su+=mod
+    return su
+num=int(input())
+for i in range(num):
+    n,k=map(int,input().split())
+    nn=""
+    while n>10**(k-1):
+        mod=n%(10**k)
+        num=mod//10 
+        n=n//10**k
+        n= n*10**(k-1)+num
+        #print(mod,end=" ")
+        x=invertir(mod)
+        #print(x,end=" ")
+        while x>9:
+            x=unidad(x)
+        #print(x)
+        nn=str(x)+nn
+    print(int(nn))
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s=0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n=int(linea)
+    p=[]
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e)==n:
+            p.append(e)
+    if len(p)==0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+JBTicona:Problem2177:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+esromero:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+elif n > 0:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+------------------------------------------------------
+JBTicona:Problem2177:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+JBTicona:Problem2177:Compile Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int(join(res)))
+
+------------------------------------------------------
+JBTicona:Problem1593:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+Carolina3114:Problem2177:Accepted
+def generador(numero,contador):
+    dig = 0
+    nuevodig = contador
+    
+    while contador>0:
+        dig = dig+(numero%10)
+        numero = numero//10
+        contador = contador-1
+    if dig > 9:
+            dig = generador(dig,nuevodig)
+    return dig
+
+for i in range(int(input())):
+    numero,digitos = map(int,input().split())
+    resultado = 0
+    contador = 0
+    if(numero < pow(10,digitos)):
+        print('')
+        continue
+    while numero >= pow(10,digitos-1):
+        auxiliar = generador(numero,digitos)
+        resultado = (auxiliar * pow(10,contador))+ resultado
+        contador = contador + 1
+        numero = numero // 10
+    print(resultado)
+------------------------------------------------------
+fernanda081:Problem2199:Accepted
+n = int(input())
+f = '   *   ' * n
+c = '  /#\\  ' * n
+i = ' /###\\ ' * n
+j = '___#___' * n
+print(f, end="\n")
+print(c, end="\n")
+print(i, end="\n")
+print(j, end="\n")
+
+------------------------------------------------------
+13373050:Problem2177:Wrong Answer
+def invertir(x):
+    num = int((str(x)[::-1]))
+    return num
+def unidad(x):
+    su=0
+    while x>0:
+        mod=x%10
+        x=x//10
+        su+=mod
+    return su
+num=int(input())
+for i in range(num):
+    n,k=map(int,input().split())
+    nn=""
+    while n>10**(k-1):
+        mod=n%(10**k)
+        num=mod//10 
+        n=n//10**k
+        n= n*10**(k-1)+num
+        #print(mod,end=" ")
+        x=invertir(mod)
+        #print(x,end=" ")
+        while x>9:
+            x=unidad(x)
+        #print(x)
+        nn=str(x)+nn
+    print(nn)
+------------------------------------------------------
+jlmachicado5:Problem2199:Accepted
+n = int(input())
+w = '   *   ' * n
+s= '  /#\\  ' * n
+d = ' /###\\ ' * n
+a = '___#___' * n
+print(w, end="\n")
+print(s, end="\n")
+print(d, end="\n")
+print(a, end="\n")
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(p)
+
+------------------------------------------------------
+vmachaca1:Problem2175:Wrong Answer
+import sys
+f = []
+for i in range(0, 100):
+    f.append(0)
+
+
+def fibo(n):
+    if f[n] != 0:
+        return f[n]
+    if n < 2:
+        return n
+    else:
+        f[n] = fibo(n - 1) + fibo(n - 2)
+        return f[n]
+
+
+if __name__ == '__main__':
+    for n in sys.stdin:
+        print(fibo(int(n)))
+------------------------------------------------------
+Ale412:Problem2177:Wrong Answer
+t=int(input())
+for k in range(t):
+    x,y=map(int,input().split())
+    #x,y=3728954, 2
+    #x,y=3728954, 3
+    a=x
+    cont=0
+    dig=0
+    b=0
+    nuevo_x=0
+    d=1
+    while a>0:
+        cont1=1
+        a=x//10**cont
+        c=a%10
+        #print(a,c)
+        while cont1<y:
+            a=a//10
+            b=a%10
+            dig=c+b
+            #print(a,b,c,dig)
+            c=dig
+            cont1=cont1+1
+        if dig>9:
+            while dig>9:
+                e=dig%10
+                d=dig//10
+                dig=e+d
+                #print(e, d, dig)
+        nuevo_x=nuevo_x+dig*10**cont
+        #print (dig, cont, nuevo_x)
+        cont=cont+1
+    nx=nuevo_x%(10**(cont-1))
+    print(nx)
+
+------------------------------------------------------
+Cdrivas:Problem2199:Wrong Answer
+
+n=int(input())
+a="   *   "
+b="  /#\  "
+c=" /###\ " 
+d="___#___"
+
+for i in range(n):
+   
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+------------------------------------------------------
+Ale412:Problem2177:Accepted
+t=int(input())
+for k in range(t):
+    x,y=map(int,input().split())
+    #x,y=3728954, 2
+    #x,y=3728954, 3
+    a=x
+    cont=0
+    dig=0
+    b=0
+    nuevo_x=0
+    d=1
+    while a>0:
+        cont1=1
+        a=x//10**cont
+        c=a%10
+        #print(a,c)
+        while cont1<y:
+            a=a//10
+            b=a%10
+            dig=c+b
+            #print(a,b,c,dig)
+            c=dig
+            cont1=cont1+1
+        if dig>9:
+            while dig>9:
+                e=dig%10
+                d=dig//10
+                dig=e+d
+                #print(e, d, dig)
+        nuevo_x=nuevo_x+dig*10**cont
+        #print (dig, cont, nuevo_x)
+        cont=cont+1
+    nx=nuevo_x%(10**(cont-1))
+    if nx>0: print(nx)
+    else: print('')
+------------------------------------------------------
+vmachaca1:Problem2175:Wrong Answer
+import sys
+f = []
+for i in range(0, 100):
+    f.append(0)
+
+
+def fibo(n):
+    if f[n] != 0:
+        return f[n]
+    if n < 2:
+        return n
+    else:
+        f[n] = fibo(n - 2) + fibo(n - 2)
+        return f[n]
+
+
+if __name__ == '__main__':
+    for n in sys.stdin:
+        print(fibo(int(n)))
+------------------------------------------------------
+Alemax:Problem2177:Wrong Answer
+for _ in range (int(input())):
+    n,k=map(int,input().split())
+    while n>0:
+        s = 0
+        x=n%(10**k)
+        n=n//(10)
+        while x>0:
+            x1=x%10
+            x=x//10
+            s=s+x1
+        if s>=10:
+            s2=0
+            while s>0:
+                x2=s%10
+                s=s//10
+                s2=s2+x2
+            print(s2,end="")
+        else:
+            print(s,end="")
+------------------------------------------------------
+andy147:Problem2199:Accepted
+n = int(input())
+for i in range(0, n, 1):
+    p = '*'
+    if i == n-1:
+        print('{:^7}'.format(p))
+    else:
+        print('{:^7}'.format(p), end='')
+for i in range(0, n, 1):
+    s = ' /#\ '
+    if i == n-1:
+        print('{:^7}'.format(s))
+    else:
+        print('{:^7}'.format(s), end='')
+for i in range(0, n, 1):
+    t = ' /###\ '
+    if i == n-1:
+        print('{:^7}'.format(t))
+    else:
+        print('{:^7}'.format(t), end='')
+for i in range(0, n, 1):
+    c = '___#___'
+    print(c, end='')
+------------------------------------------------------
+13373050:Problem2177:Accepted
+def invertir(x):
+    num = int((str(x)[::-1]))
+    return num
+def unidad(x):
+    su=0
+    while x>0:
+        mod=x%10
+        x=x//10
+        su+=mod
+    return su
+num=int(input())
+for i in range(num):
+    n,k=map(int,input().split())
+    nn=""
+    while n>10**(k-1)or n==10**(k-1):
+        mod=n%(10**k)
+        num=mod//10 
+        n=n//10**k
+        n= n*10**(k-1)+num
+        #print(mod,end=" ")
+        x=invertir(mod)
+        #print(x,end=" ")
+        while x>9:
+            x=unidad(x)
+        #print(x)
+        nn=str(x)+nn
+    print(nn)
+------------------------------------------------------
+Cdrivas:Problem2199:Accepted
+n=int(input())
+a="   *   "
+b="  /#\  "
+c=" /###\ " 
+d="___#___"
+
+print(a*n)
+print(b*n)
+print(c*n)
+print(d*n)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+afloress:Problem1593:Output Limit Exceed
+#1593 Problem A Remicle y los ceros
+import sys
+for linea in sys.stdin:
+    m=int(linea)
+    b=1
+    x=1
+    a=1
+    cont=0
+    if m==0:
+        print(0)
+    else:
+        
+        while x<(10**(m)):
+            b=b*a
+            
+            
+            a=a+1
+            cont=cont+1
+            x=x+1
+            if (b%(10**(m)))==0:
+                print(cont,end=" ")
+
+
+------------------------------------------------------
+JBTicona:Problem2177:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(p)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(p)
+
+------------------------------------------------------
+JBTicona:Problem1593:Compile Error
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+
+------------------------------------------------------
+Alemax:Problem2177:Accepted
+def sumard(n):
+    if len(str(n)) == 1:
+        return str(n)
+    else:
+        return sumard(
+            str(n).count("1") + str(n).count("2") * 2 + str(n).count("3") * 3 + str(n).count("4") * 4 + str(n).count(
+                "5") * 5 + str(n).count("6") * 6 + str(n).count("7") * 7 + str(n).count("8") * 8 + str(n).count(
+                "9") * 9)
+for i in range(int(input())):
+    a, b = map(int, input().split())
+    a = str(a)[::-1]
+    sum = ""
+    for i in range(len(a) + 1 - b):
+        sum = sum + sumard(int(a[i:i + b]))
+    print(sum[::-1])
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+1802155:Problem2199:Presentation Error
+n=int(input())
+h=0
+for k in range(0,n):
+	h="   *   "
+	print(h,end=""),
+print(" ")
+for i in range(0,n):
+	e="  /#\  "
+	print(e,end=""),
+print("")
+for i in range(0,n):
+	c=" /###\ "
+	print(c,end=""),
+print("")
+for i in range(0,n):
+	d="___#___"
+	print(d,end=""),
+------------------------------------------------------
+jrmarca6:Problem2177:Compile Error
+for i in range(n):
+    n,k= map(int,sys.stdin.readline().split())
+    aux=''
+    sum2=0
+    while n>0:
+        m=n//10
+        sum,sum2=0,0
+        for j in range(k):
+            x = n % 10
+            n=n//10
+            sum = sum + x
+            
+        while sum!=0 or sum2>=10:
+            auxsum=sum%10
+            sum=sum//10
+            sum2=sum2+auxsum
+            if sum==0 and sum2>=10:
+                sum=sum2
+                sum2=0
+
+        aux =str(sum2)+ aux
+        if n!=0:
+            n=m
+    print(aux)
+------------------------------------------------------
+jrmarca6:Problem2177:Wrong Answer
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    n,k= map(int,sys.stdin.readline().split())
+    aux=''
+    sum2=0
+    while n>0:
+        m=n//10
+        sum,sum2=0,0
+        for j in range(k):
+            x = n % 10
+            n=n//10
+            sum = sum + x
+
+        while sum!=0 or sum2>=10:
+            auxsum=sum%10
+            sum=sum//10
+            sum2=sum2+auxsum
+            if sum==0 and sum2>=10:
+                sum=sum2
+                sum2=0
+
+        aux =str(sum2)+ aux
+        if n!=0:
+            n=m
+    print(aux)
+------------------------------------------------------
+afloress:Problem1593:Time Limit Exceed
+#1593 Problem A Remicle y los ceros
+import sys
+for linea in sys.stdin:
+    m=int(linea)
+    b=1
+    x=1
+    a=1
+    cont=0
+    aprobado=0
+    if m==0:
+        print(0)
+    else:
+        
+        while x<(10**(m)) and aprobado<5:
+            b=b*a
+            
+            a=a+1
+            cont=cont+1
+            x=x+1
+            if (b%(10**(m)))==0:
+                print(cont,end=" ")
+                aprobado=aprobado+1
+
+------------------------------------------------------
+Brherrera3114:Problem2175:Time Limit Exceed
+for x in range(int(input())):
+    num = int(input())
+    n1,n2,aux = 1,2,0
+    cont = 3
+    if num < 2:
+        print(num)
+        continue
+    while True:
+        cont = cont+1
+        aux = n1
+        n1 = n2
+        n2 = aux + n1
+        if(num == n2):
+            print(cont)
+            break
+------------------------------------------------------
+maquiroz4:Problem2177:Wrong Answer
+import math
+
+for _ in range(int(input())):
+    n_original,k =map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+
+        #sum=sum+dig
+    print(sum_dig)
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+JOSECUETO:Problem2199:Accepted
+n=int(input())
+w="   *   "
+print(n*w)
+x="  /#\  "
+print(n*x)
+y=" /###\ "
+print(n*y)
+z="___#___"
+print(n*z)
+------------------------------------------------------
+mecapriles:Problem2199:Wrong Answer
+n=int(input())
+
+for i in range(n):
+    print(('*').center(8))
+    print((' /#\ ').center(8))
+    print((' /###\ ').center(8))
+    print(('___#___').center(8))
+
+
+------------------------------------------------------
+Brherrera3114:Problem2175:Presentation Error
+for x in range(int(input())):
+    num = int(input())
+    n1,n2,aux = 1,2,0
+    cont = 3
+    if num < 2:
+        print(num)
+        continue
+    while n2 <= 7778742049:
+        cont = cont+1
+        aux = n1
+        n1 = n2
+        n2 = aux + n1
+        if(num == n2):
+            print(cont)
+            break
+    print('')
+------------------------------------------------------
+mecapriles:Problem2199:Wrong Answer
+n=int(input())
+for i in range(n):
+    print(('*').center(8))
+    print((' /#\ ').center(8))
+    print((' /###\ ').center(8))
+    print(('___#___').center(8))
+
+
+------------------------------------------------------
+lkchavez:Problem1593:Wrong Answer
+from math import factorial
+m=5
+fac=1
+numero=10**(m-1)
+ans=0
+for i in range(1000000000000):
+    facto=factorial(fac)
+    n=facto
+    cero=0
+    while n>0:
+        x=n%10
+        if x==0:
+            cero+=1
+        else:
+            n=0
+        n=n//10
+    if cero==m:
+        print(fac, end=" ")
+        ans=1
+    if cero>m:
+        break
+    fac+=1
+if ans==0:
+    print(0)
+------------------------------------------------------
+jrmarca6:Problem2177:Accepted
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    n,k= map(int,sys.stdin.readline().split())
+    aux=''
+    sum2=0
+    numb=0
+    for letra in str(n):
+        numb=numb+1
+    while n>0:
+        m=n//10
+        sum,sum2=0,0
+        for j in range(k):
+            x = n % 10
+            n=n//10
+            sum = sum + x
+
+        while sum!=0 or sum2>=10:
+            auxsum=sum%10
+            sum=sum//10
+            sum2=sum2+auxsum
+            if sum==0 and sum2>=10:
+                sum=sum2
+                sum2=0
+
+        aux =str(sum2)+ aux
+        if n!=0:
+            n=m
+    if (k>numb):
+        aux=''
+    print(aux)
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+SerTitirico:Problem2199:Wrong Answer
+import sys
+a = int(input())
+b = """
+   *   
+  /#\  
+ /###\ 
+___#___
+"""
+if a >= 0 and a <= 100:
+    for i in range(a):
+        sys.stdout.write(b)
+------------------------------------------------------
+maquiroz4:Problem2177:Wrong Answer
+import math
+ncasos=int(input())
+for l in range(0, ncasos):
+    n_original,k =map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+    print(sum_dig)
+------------------------------------------------------
+David973:Problem1593:Wrong Answer
+while True:
+    try:
+        m=int(input())
+        n=0    
+        f=1
+        sw=0       
+        for i in range(1,15):
+            f=f*i
+            if((f % (10**m)) == 0):
+                print(i,end=" ")
+                sw=1
+        if(sw==0):
+            print(0)
+    except:
+        break
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+
+------------------------------------------------------
+jaimico313:Problem2177:Runtime Error
+import sys
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(sys.stdin.readline().strip())):
+    a,b=map(int,sys.stdin.readline().strip().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    nuevin=list()
+    while a2 > 0 and len(a1)>=b:
+        nuevin.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in nuevin:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+------------------------------------------------------
+David973:Problem1593:Wrong Answer
+while True:
+    try:
+        m=int(input())
+        n=0    
+        f=1
+        sw=0       
+        for i in range(1,99):
+            f=f*i
+            if((f % (10**m)) == 0):
+                print(i,end=" ")
+                sw=1
+        if(sw==0):
+            print(0)
+    except:
+        break
+------------------------------------------------------
+maquiroz4:Problem2177:Wrong Answer
+import math
+ncasos=int(input())
+for l in range(1, ncasos):
+    n_original,k =map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+    print(sum_dig)
+------------------------------------------------------
+JBTicona:Problem1593:Accepted
+def cinc(n):
+    s =0
+    while n>=5:
+        s+=n//5
+        n=n//5
+    return s
+import sys
+for linea in sys.stdin:
+    n = int(linea)
+    p = []
+    for e in range(4,500001):
+        if cinc(e)>n:
+            break
+        elif cinc(e) == n:
+            p.append(e)
+    if len(p) == 0:
+        print(0)
+    else:
+        print(*p)
+------------------------------------------------------
+1802155:Problem2199:Wrong Answer
+n=int(input())
+h=0
+if n<101 and n>1:
+	for k in range(0, n):
+		h = "   *   "
+		print(h, end=""),
+	print(" ")
+	for i in range(0, n):
+		e = "  /#\  "
+		print(e, end=""),
+	print("")
+	for i in range(0, n):
+		c = " /###\ "
+		print(c, end=""),
+	print("")
+	for i in range(0, n):
+		d = "___#___"
+	print(d,end=""),
+------------------------------------------------------
+fernanda081:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+elif n > 0:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+
+
+------------------------------------------------------
+maquiroz4:Problem2177:Wrong Answer
+import math
+
+nrocasos=int(input())
+for l in range(0, nrocasos):
+    n_original,k =map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+    print(sum_dig)
+------------------------------------------------------
+Anthony784:Problem2175:Accepted
+k = int(input())
+for i in range(k):
+    n = int(input())
+    if n == 0:
+        print(0)
+    elif n == 1:
+        print(1)
+    else:
+        c = 2
+        a=1
+        b=1
+        while True:
+            s = a+b
+            if s==n:
+                c = c+1
+                print(c)
+                break
+            else:
+                a=b
+                b=s
+                c = c+1
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    n=list()
+    while a2 > 0 and len(a1)>=b:
+        n.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in n:
+        res.append(str(s(e)))
+    res.reverse()
+    print(int("".join(res)))
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    numero=10**(m-1)
+    ans=0
+    for i in range(numero):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+jaimico313:Problem1593:Accepted
+import sys
+def descomposicion(valor):
+    sumatoria=0
+    while valor>=5:
+        sumatoria+=valor//5
+        valor=valor//5
+    return sumatoria
+numero=500001
+suma=0
+for i in sys.stdin:
+    casos=int(i)
+    auxiliar=[]
+    for l in range(4,numero):
+        if descomposicion(l)>casos:
+            break
+        elif descomposicion(l) == casos:
+            auxiliar.append(l)
+    if len(auxiliar) == suma:
+        print(suma)
+    else:
+        print(*auxiliar)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    numero=10**m
+    ans=0
+    for i in range(numero):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+andy147:Problem2175:Accepted
+nroCasos = int(input())
+for k in range(0, nroCasos, 1):
+    nf = int(input())
+    a = -1
+    b = 1
+    c = 0
+    i = -1
+    d = 0
+    while nf != d:
+        c = a + b
+        d = c
+        a = b
+        b = c
+        i = i +1
+    if nf == 0:
+        print(0)
+    else:
+        print(i)
+------------------------------------------------------
+jlmachicado5:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+elif n > 0:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+
+------------------------------------------------------
+vmamani92:Problem1593:Wrong Answer
+a = 2
+space = a - 1   
+at =1   
+space_bottom=a -1  
+for i in range(space_bottom): 
+    print(' ',end='')
+print('*')
+
+while a !=0:
+    for i in range(space):
+        print(' ',end='')   
+    for i in range(at):
+        print('#',end='')
+    print()   
+    space -=1
+    at +=2
+    a -=1
+for i in range(space_bottom): 
+    print(' ',end='')
+print('#')
+------------------------------------------------------
+JBTicona:Problem2177:Runtime Error
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    n=list()
+    while a2 > 0 and len(a1)>=b:
+        n.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in n:
+        res.append(str(s(e)))
+    res.reverse()
+    r = ""
+    for e1 in res:
+        r+= e1
+    print(int(r))
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    numero=int(10**m)
+    ans=0
+    for i in range(numero):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+DANILOMAGNE:Problem1593:Presentation Error
+def busqueda(n):
+  minimo = 0
+  maximo = 1e6
+  while minimo < maximo:
+    mid = int((minimo + maximo) / 2)
+    count = Ceros(mid)
+    if count < n:
+      minimo = mid + 1
+    else:
+      maximo = mid
+  result = list()
+  while Ceros(minimo) == n:
+    result.append(minimo)
+    minimo+=1
+  if len(result) == 0:
+    print(0)
+  else:
+    for i in range(len(result)):
+      print(result[i],end=" ")
+def Ceros(n):
+  count = 0
+  while n > 0:
+    n =int(n/5)
+    count += n
+  return count
+iteraciones=int(input())
+busqueda(iteraciones)
+print()
+for i in range(iteraciones):
+  n = int(input())
+  busqueda(n)
+  print()
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    nume=m*100000000000
+    ans=0
+    for i in range(nume):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+JBTicona:Problem2177:Compile Error
+dcac
+------------------------------------------------------
+jlmachicado5:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+elif n > 0:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+
+------------------------------------------------------
+JBTicona:Problem2177:Wrong Answer
+print("kjnda;cs")
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    ans=0
+    for i in range(10000000000):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+vmamani92:Problem2199:Wrong Answer
+a = 2
+space = a - 1   
+at =1   
+space_bottom=a -1  
+for i in range(space_bottom): 
+    print(' ',end='')
+print('*')
+
+while a !=0:
+    for i in range(space):
+        print(' ',end='')   
+    for i in range(at):
+        print('#',end='')
+    print()   
+    space -=1
+    at +=2
+    a -=1
+for i in range(space_bottom): 
+    print(' ',end='')
+print('#')
+------------------------------------------------------
+Brherrera3114:Problem2175:Accepted
+for x in range(int(input())):
+    num = int(input())
+    fibonacci = [0]
+    n1,n2=1,0
+    for i in range (100):
+        if num in fibonacci:
+            print(len(fibonacci)-1)
+            break
+        aux = n1 + n2
+        fibonacci.append(aux)
+        n1 = n2
+        n2 = aux 
+------------------------------------------------------
+vmamani92:Problem2175:Wrong Answer
+n=7
+a,b=0,1
+print(0,1, end=" ")
+for i in range (n):
+   a,b=b,a+b
+   print(b, end =" ")
+------------------------------------------------------
+DANILOMAGNE:Problem2199:Accepted
+n=int(input())
+print("   *   "*n)
+print("  /#\  "*n)
+print(" /###\ "*n)
+print("___#___"*n)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    ans=0
+    for i in range(10000000000):
+        f=factorial(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        f+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+Carolina3114:Problem2175:Accepted
+for _ in range(int(input())):
+    x=int(input())
+    f = [0]
+    m,n=1,0
+    for i in range (100):
+        if x in f:
+            print(len(f)-1)
+            break
+        y = m + n
+        f.append(y)
+        m=n
+        n=y
+
+------------------------------------------------------
+SerTitirico:Problem2199:Presentation Error
+a = int(input())
+b ="   *   "
+c ="  /#\  "
+d =" /###\ "
+e ="___#___"
+if a >= 0 and a <= 100:
+    for i in range(a):
+        print(b, end="")
+    print("\n")
+    for i in range(a):
+        print(c, end="")
+    print("\n")
+    for i in range(a):
+        print(d, end="")
+    print("\n")
+    for i in range(a):
+        print(e, end="")
+    print("\n")
+------------------------------------------------------
+JBTicona:Problem2177:Wrong Answer
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    n=list()
+    while a2 > 0 and len(a1)>=b:
+        n.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in n:
+        res.append(str(s(e)))
+    res.reverse()
+    r = ""
+    if len(res)==0:
+        r+="0"
+    else:
+        for e1 in res:
+            r+= e1
+    print(int(r))
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m
+    ans=0
+    for i in range(10000000000):
+        f=factorial(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        f+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+JLenin:Problem1593:Compile Error
+for _ in sys.stdin:
+    k=int(_)
+    f,s= 1,''
+    for i in range(1,26):
+        f*=i
+        if i<18:a=f/10**k%10
+        else:a=f//10**k%10
+        if f/10**k%1==0 and f%10**k==0 and a!=0:
+            s=s+','+str(i)
+            aux=str(i)
+    for j in s.split(','):
+        if s=='':print(0);
+        elif j!=aux:print(j,end=' ')
+        else: print(j)
+------------------------------------------------------
+SerTitirico:Problem2199:Presentation Error
+a = int(input())
+b ="   *   "
+c ="  /#\  "
+d =" /###\ "
+e ="___#___"
+if a >= 0 and a <= 100:
+    for i in range(a):
+        print(b, end="")
+    print("\n")
+    for i in range(a):
+        print(c, end="")
+    print("\n")
+    for i in range(a):
+        print(d, end="")
+    print("\n")
+    for i in range(a):
+        print(e, end="")
+    print("\n")
+------------------------------------------------------
+DANILOMAGNE:Problem2175:Accepted
+for _ in range(int(input())):
+    n=int(input())
+    fib = [0]
+    a,b=1,0
+    for i in range (100):
+        if n in fib:
+            print(len(fib)-1)
+            break
+        f = a + b
+        fib.append(f)
+        a=b
+        b=f
+------------------------------------------------------
+David973:Problem1593:Wrong Answer
+while True:
+    try:
+        m=int(input())
+        n=0    
+        f=1
+        sw=0
+        cont=0
+        for i in range(1,15):
+            f=f*i
+            if((f % (10**m)) == 0):   
+                print(i,end=" ")
+                cont=cont+1
+                sw=1
+            if (cont==5):
+                break
+        if(sw==0):
+            print(0)
+            
+    except:
+        break
+------------------------------------------------------
+JBTicona:Problem2177:Accepted
+def s(n):
+    while n>9:
+        n1=str(n)
+        c=0
+        for i in n1:
+           c+=int(i)
+        n=c
+    return n
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    a1 =list(str(a))
+    a2=len(a1)
+    n=list()
+    while a2 > 0 and len(a1)>=b:
+        n.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    res=list()
+    for e in n:
+        res.append(str(s(e)))
+    res.reverse()
+    r = ""
+    if len(res)==0:
+        r+=""
+    else:
+        for e1 in res:
+            r+= e1
+    print(r)
+------------------------------------------------------
+SerTitirico:Problem2199:Presentation Error
+a = int(input())
+if a >= 0 and a <= 100:
+    for i in range(a):
+        print("   *   ", end="")
+    print("\n")
+    for i in range(a):
+        print("  /#\  ", end="")
+    print("\n")
+    for i in range(a):
+        print(" /###\ ", end="")
+    print("\n")
+    for i in range(a):
+        print("___#___", end="")
+    print("\n")
+------------------------------------------------------
+maquiroz4:Problem2177:Wrong Answer
+import math
+
+ncasos=int(input())
+for _ in range(ncasos):
+    n_original, k= map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+    print(sum_dig)
+------------------------------------------------------
+JLenin:Problem1593:Wrong Answer
+import sys
+for _ in sys.stdin:
+    k=int(_)
+    f,s= 1,''
+    for i in range(1,26):
+        f*=i
+        if i<18:a=f/10**k%10
+        else:a=f//10**k%10
+        if f/10**k%1==0 and f%10**k==0 and a!=0:
+            s=s+','+str(i)
+            aux=str(i)
+    for j in s.split(','):
+        if s=='':print(0);
+        elif j!=aux:print(j,end=' ')
+        else: print(j)
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=c=0
+    b=1
+    if numero_busca==0:
+           print(a)    
+    for i in range(40):
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+Cdrivas:Problem2175:Wrong Answer
+for i in range(int(input())):
+    numero_busca=int(input())
+    a=c=0
+    b=1
+    if numero_busca==0:
+           print(a)    
+    for i in range(30):
+        a,b=b,a+b
+        c=1+c
+        if numero_busca==a:
+            print(c)
+------------------------------------------------------
+CastellonS:Problem2177:Wrong Answer
+import math
+t=int(input())
+for i in range(1,t+1):
+    n,k=map(int, input().split())
+    n1=n
+    cd=int(math.log10(n))+1
+    print(cd)
+    cdn=0
+    s1=0
+    s=0
+    for i in range(1,cd+1):
+        while(cdn<k):
+            a=n1%10
+            n1=n1//10
+            print(a,n1)
+            s1=s1+a
+            cdn=cdn+1
+        a1=s1%10
+        b1=s1//10
+        s1=a1+b1
+        s=s*10+s1
+        n1=n//10
+        n=n//10
+        cd1=int(math.log10(n))+1
+        if(cd1<cdn):
+            break
+        print(n)
+        s1=0
+        cdn=0
+    a=str(s)
+    s=a[::-1]
+    print(s)
+
+
+------------------------------------------------------
+lkchavez:Problem1593:Compile Error
+
+from math import factorial
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+CastellonS:Problem2177:Wrong Answer
+import math
+t=int(input())
+for i in range(1,t+1):
+    n,k=map(int, input().split())
+    n1=n
+    cd=int(math.log10(n))+1
+    cdn=0
+    s1=0
+    s=0
+    for i in range(1,cd+1):
+        while(cdn<k):
+            a=n1%10
+            n1=n1//10
+            s1=s1+a
+            cdn=cdn+1
+        a1=s1%10
+        b1=s1//10
+        s1=a1+b1
+        s=s*10+s1
+        n1=n//10
+        n=n//10
+        cd1=int(math.log10(n))+1
+        if(cd1<cdn):
+            break
+        s1=0
+        cdn=0
+    a=str(s)
+    s=a[::-1]
+    print(s)
+
+
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+CastellonS:Problem2177:Wrong Answer
+import math
+t=int(input())
+for i in range(1,t+1):
+    n,k=map(int, input().split())
+    n1=n
+    cd=int(math.log10(n))+1
+    cdn=0
+    s1=0
+    s=0
+    for i in range(1,cd+1):
+        while(cdn<k):
+            a=n1%10
+            n1=n1//10
+            s1=s1+a
+            cdn=cdn+1
+        a1=s1%10
+        b1=s1//10
+        s1=a1+b1
+        s=s*10+s1
+        n1=n//10
+        n=n//10
+        cd1=int(math.log10(n))+1
+        if(cd1<k):
+            break
+        s1=0
+        cdn=0
+    a=str(s)
+    s=a[::-1]
+    print(s)
+
+
+------------------------------------------------------
+DANILOMAGNE:Problem2177:Accepted
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    n,k= map(int,sys.stdin.readline().split())
+    aux=''
+    sum2=0
+    numb=0
+    for letra in str(n):
+        numb=numb+1
+    while n>0:
+        m=n//10
+        sum,sum2=0,0
+        for j in range(k):
+            x = n % 10
+            n=n//10
+            sum = sum + x
+
+        while sum!=0 or sum2>=10:
+            auxsum=sum%10
+            sum=sum//10
+            sum2=sum2+auxsum
+            if sum==0 and sum2>=10:
+                sum=sum2
+                sum2=0
+
+        aux =str(sum2)+ aux
+        if n!=0:
+            n=m
+    if (k>numb):
+        aux=''
+    print(aux)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        elif cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+
+------------------------------------------------------
+maquiroz4:Problem2177:Accepted
+import math
+
+ncasos=int(input())
+for _ in range(ncasos):
+    n_original, k= map(int, input().split())
+    n=n_original
+    c=0
+    sum=0
+    t=int(math.log10(n))+1
+    p=0
+    sum_dig=0
+    while t>=k:
+        c=c+1
+        #Desconpone digito de la derecha del numero
+        dig=n%(10**k)
+
+        # suma digito
+        num = dig
+        while num > 9:
+            suma = 0
+            while num:
+                suma, num = suma + num % 10, num // 10
+            num = suma
+
+        sum_dig=num*(10**p)+sum_dig
+        #print(t, n, dig, num, sum_dig)
+        p=p+1
+
+        n=n//(10**2)
+        n=int(n_original//(10**c))
+        t=t-1
+    if sum_dig!=0:
+        print(sum_dig)
+------------------------------------------------------
+DANILOMAGNE:Problem2177:Accepted
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    n,k= map(int,sys.stdin.readline().split())
+    aux=''
+    sum2=0
+    numb=0
+    for letra in str(n):
+        numb=numb+1
+    while n>0:
+        m=n//10
+        sum,sum2=0,0
+        for j in range(k):
+            x = n % 10
+            n=n//10
+            sum = sum + x
+        while sum!=0 or sum2>=10:
+            auxsum=sum%10
+            sum=sum//10
+            sum2=sum2+auxsum
+            if sum==0 and sum2>=10:
+                sum=sum2
+                sum2=0
+        aux =str(sum2)+ aux
+        if n!=0:
+            n=m
+    if (k>numb):
+        aux=''
+    print(aux)
+------------------------------------------------------
+mecapriles:Problem2199:Wrong Answer
+n=int(input())
+for i in range(n):
+    print("   *   ",end="")
+print()
+for i in range(n):
+    print("  /#\  ",end="")
+print()
+for i in range(n):
+    print(" /###\ ",end="")
+print()
+for i in range(n):
+    print("_#_",end="")
+print()
+------------------------------------------------------
+CastellonS:Problem2177:Wrong Answer
+import math
+t=int(input())
+for i in range(1,t+1):
+    n,k=map(int, input().split())
+    n1=n
+    cd=int(math.log10(n))+1
+    cdn=0
+    s1=0
+    s=0
+    for i in range(1,cd+1):
+        while(cdn<k):
+            a=n1%10
+            n1=n1//10
+            s1=s1+a
+            cdn=cdn+1
+        a1=s1%10
+        b1=s1//10
+        s1=a1+b1
+        a1=s1%10
+        b1=s1//10
+        s1=a1+b1
+        s=s*10+s1
+        n1=n//10
+        n=n//10
+        cd1=int(math.log10(n))+1
+        if(cd1<k):
+            break
+        s1=0
+        cdn=0
+    a=str(s)
+    s=a[::-1]
+    print(s)
+
+------------------------------------------------------
+mecapriles:Problem2199:Wrong Answer
+n=int(input())
+for i in range(n):
+    print("   *   ",end="")
+print()
+for i in range(n):
+    print("  /#\  ",end="")
+print()
+for i in range(n):
+    print(" /###\ ",end="")
+print()
+for i in range(n):
+    print("_#_",end="")
+print()
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+            c=int(cero)
+        elif c>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    c=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+            c=int(cero)
+        elif c>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+
+------------------------------------------------------
+Alemax:Problem1593:Compile Error
+def c(x):
+    s =0
+    while x>=5:
+        s=s+x//5
+        x=x//5
+    return s
+import sys, math
+for linea in sys.stdin:
+    x = int(linea)
+    f = []
+    for i in range(4,500001):
+        if c(i)>x:
+            break
+        elif c(i) == x:
+            f.append(i)
+    if len(f) == 0:
+        print(0)
+    else:
+        print(*f)
+------------------------------------------------------
+Alemax:Problem1593:Accepted
+def c(x):
+    s =0
+    while x>=5:
+        s=s+x//5
+        x=x//5
+    return s
+import sys
+for linea in sys.stdin:
+    x = int(linea)
+    f = []
+    for i in range(4,500001):
+        if c(i)>x:
+            break
+        elif c(i) == x:
+            f.append(i)
+    if len(f) == 0:
+        print(0)
+    else:
+        print(*f)
+------------------------------------------------------
+lkchavez:Problem1593:Time Limit Exceed
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    c=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+lkchavez:Problem1593:Time Limit Exceed
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    c=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans+=1
+        fac+=1
+        if ans==5:
+            break
+    if ans==0:
+        print(0)
+------------------------------------------------------
+jrmarca6:Problem1593:Wrong Answer
+import sys
+for x in sys.stdin:
+ x=int(x)
+ if x%5==0:
+  print(0)
+ else:
+  x*=5
+  for i in range(x,x+5):
+   if i==x+4:
+    print(i)
+   else:
+    print(i, end=" ")
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=0
+    ans=0
+    c=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans+=1
+        elif cero==m+1:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+
+------------------------------------------------------
+9075500:Problem2175:Accepted
+casos = (int(input()))
+for i in range(0, casos, 1):
+    n= int(input())
+    a,b = 0,1
+    contador = 0
+    if (n == a) or (n == b):
+        print(n)
+    else:
+        while (a != n):
+            # print(a, end= ' ')
+            a,b = b, a+b
+            contador += 1
+        print(contador)
+
+------------------------------------------------------
+mecapriles:Problem2175:Accepted
+t1=[]
+c=-1
+v=1
+e=0
+for i in range(int(50)):
+    e=c+v
+    c=v
+    v=e
+    t1.append(e)
+for e in range(int(input())):
+    n = int(input())
+    print(t1.index(n))
+------------------------------------------------------
+1802155:Problem2199:Presentation Error
+N=int(input())
+if N>=0 and N<=100:
+	N=N
+else:
+	print("")
+for k in range(0,N):
+	h="   *   "
+	print(h,end=""),
+print(" ")
+for i in range(0,N):
+	e="  /#\  "
+	print(e,end=""),
+print("")
+for i in range(0,N):
+	c=" /###\ "
+	print(c,end=""),
+print("")
+for i in range(0,N):
+	d="___#___"
+	print(d,end=""),
+------------------------------------------------------
+mecapriles:Problem2199:Compile Error
+arboles=int(input())
+for i in range(arboles):
+    print("   *   ",end="")
+print()
+for i in range(n):
+    print("  /#\  ",end="")
+print()
+for i in range(n):
+    print(" /###\ ",end="")
+print()
+for i in range(n):
+    print("___#___",end="")
+print()
+------------------------------------------------------
+lkchavez:Problem1593:Compile Error
+from math import factorial
+import sys
+    for linea in sys.stdin:
+    fac=1+m
+    numero=10**(m-1)
+    ans=0
+    for i in range(1000000000000):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+mecapriles:Problem2199:Accepted
+arboles=int(input())
+for i in range(arboles):
+    print("   *   ",end="")
+print()
+for i in range(arboles):
+    print("  /#\  ",end="")
+print()
+for i in range(arboles):
+    print(" /###\ ",end="")
+print()
+for i in range(arboles):
+    print("___#___",end="")
+print()
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+
+from math import factorial
+import sys
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=1+m
+    numero=10**(m-1)
+    ans=0
+    for i in range(1000000000000):
+        facto=factorial(fac)
+        n=facto
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            ans=1
+        if cero>m:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+1802155:Problem2199:Presentation Error
+N=int(input())
+if N>=0 and N<=100:
+	N=N
+	for k in range(0,N):
+		h="   *   "
+		print(h,end=""),
+	print(" ")
+	for i in range(0,N):
+		e="  /#\  "
+		print(e,end=""),
+	print("")
+	for i in range(0,N):
+		c=" /###\ "
+		print(c,end=""),
+	print("")
+	for i in range(0,N):
+		d="___#___"
+		print(d,end=""),
+------------------------------------------------------
+acpezas:Problem2175:Wrong Answer
+n=int(input())
+for i in range(0,n,1):
+    m=int(input())
+    a=-1
+    b=1
+    c=0
+    for j in range (0,49,1):
+        c=a+b
+        if(c==m):
+            print(j)
+            a=b
+            b=c
+        else:
+            a = b
+            b = c
+------------------------------------------------------
+jlmachicado5:Problem2175:Time Limit Exceed
+n=int(input())
+if n<=0:
+    print("0")
+elif n > 0:
+    for i in range(n):
+        n1=int(input())
+        if n1==1:
+            print("1")
+        if n1==0:
+            print("0")
+        if n1==2:
+            print("3")
+        if n1==3:
+            print("4")
+        anterior=0
+        actual=1
+        for i in range(2, n1+1):
+            copia_actual=actual
+            actual=actual+anterior
+            anterior=copia_actual
+            if n1 == actual:
+                print(i, end="\n")
+
+------------------------------------------------------
+esromero:Problem2175:Wrong Answer
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    m=int(sys.stdin.readline().strip())
+    a = 1
+    b = 0
+    c = 0
+    for q in range(50):
+        auxf = b
+        b = a + b
+        a = c
+        if m==c:
+            print(q)
+            break
+------------------------------------------------------
+lkchavez:Problem1593:Compile Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=1
+    c=0
+    pasos=0
+    impresiones=5
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+esromero:Problem2175:Accepted
+import sys
+n=int(sys.stdin.readline())
+for i in range(n):
+    m=int(sys.stdin.readline().strip())
+    a = 1
+    b = 0
+    c = 0
+    for q in range(50):
+        c = b
+        b = a + b
+        a = c
+        if m==c:
+            print(q)
+            break
+------------------------------------------------------
+lkchavez:Problem1593:Time Limit Exceed
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=1
+    c=0
+    pasos=0
+    impresiones=5
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+jrmarca6:Problem1593:Wrong Answer
+import sys
+import math
+for linea in sys.stdin:
+    m = int(linea)
+    cont,cero=0,0
+    aux=''
+    for i in range (1,100):
+        x=int(math.factorial(i))
+        cero = 0
+        while x%10==0:
+            cero=cero+1
+            x=x//10
+        if m==cero and cont== 0:
+            cont=cont+1
+            aux=aux+'{}'.format(i)
+        elif m==cero:
+            cont = cont + 1
+            aux = aux + ' {}'.format(i)
+    if cont==0:
+        aux='0'
+    print (aux)
+------------------------------------------------------
+dcondoric2:Problem2177:Runtime Error
+n=int(input())
+k=int(input())
+contador=0
+aux=0
+p=0
+nuevoNum=0
+aux1=0
+aux2=0
+h=0
+cont=0
+aux3=n
+while(aux3 > 0):
+    aux3 = aux3//10
+    cont = cont+1
+while(cont > 0):
+    contador = contador+1
+    dig = n%10
+    n = n//10
+    aux = dig
+    aux1 = aux1 + aux
+    if(contador==k):
+        if(aux1>=10):
+            aux2=0
+            dig = aux1 % 10
+            aux1 = aux1 // 10
+            aux1 = aux1 + dig
+    print(aux1)
+    cont = cont - 1
+    contador=0
+------------------------------------------------------
+lkchavez:Problem1593:Compile Error
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    c=0
+    pasos=0
+    impresiones=5
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+jrmarca6:Problem1593:Time Limit Exceed
+import sys
+import math
+for linea in sys.stdin:
+    m = int(linea)
+    cont,cero=0,0
+    aux=''
+    for i in range (1,100000):
+        x=int(math.factorial(i))
+        cero = 0
+        while x%10==0:
+            cero=cero+1
+            x=x//10
+        if m==cero and cont== 0:
+            cont=cont+1
+            aux=aux+'{}'.format(i)
+        elif m==cero:
+            cont = cont + 1
+            aux = aux + ' {}'.format(i)
+    if cont==0:
+        aux='0'
+    print (aux)
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m*4
+    c=0
+    pasos=0
+    impresiones=5
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+vmamani92:Problem2175:Wrong Answer
+import sys
+f = []
+for i in range(0, 100):
+    f.append(0)
+
+
+def fibo(n):
+    if f[n] != 0:
+        return f[n]
+    if n < 2:
+        return n
+    else:
+        f[n] = fibo(n - 1) + fibo(n - 2)
+        return f[n]
+
+
+if __name__ == '__main__':
+    for n in sys.stdin:
+        print(fibo(int(n)))
+------------------------------------------------------
+jaimico313:Problem2177:Accepted
+def inter(variable):
+    while variable>9:
+        caso=str(variable);aux=0
+        for i in caso:
+           aux+=int(i)
+        variable=aux
+    return variable
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    a1 =list(str(a));a2=len(a1);n=list()
+    while a2>0 and len(a1)>=b:
+        n.append(int("".join(list(reversed(a1[a2-b:])))))
+        del a1[len(a1)-1]
+        a2-=1
+    palabra=list()
+    for e in n:
+        palabra.append(str(inter(e)))
+    palabra.reverse()
+    respuesta = ""
+    if len(palabra)==0:
+        respuesta+=""
+    else:
+        for e1 in palabra:
+            respuesta+= e1
+    print(respuesta)
+------------------------------------------------------
+1802155:Problem2199:Presentation Error
+N=int(input())
+if N>=0 and N<=100:
+	N=N
+	for k in range(0,N):
+		h="   *   "
+		print(h,end=""),
+	print(" ")
+	for i in range(0,N):
+		e="  /#\  "
+		print(e,end=""),
+	print("")
+	for i in range(0,N):
+		c=" /###\ "
+		print(c,end=""),
+	print("")
+	for i in range(0,N):
+		d="___#___"
+		print(d,end="")
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m * 4
+    c=0
+    pasos=0
+    impresiones=5
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------
+maquiroz4:Problem1593:Wrong Answer
+import sys
+for numero in sys.stdin:
+    n=int(numero)
+    if n>=5:
+        print('\n 0')
+    else:
+        for i in range (1,50+1):
+            div=i
+            ceros=0
+            while div>=5:
+                div=div//5
+                ceros=ceros+div
+                #print(i, ceros)
+                if ceros==n:
+                    print(i,end=' ')
+------------------------------------------------------
+Brherrera3114:Problem1593:Time Limit Exceed
+import sys
+def fact(x):
+    if(x == 0):
+        return 0
+    res = 1
+    while x > 1:
+        res = res * x
+        x = x - 1
+    return res
+
+def ceros(valor):
+    b = True
+    cer = 0
+    while b:
+        if(valor % 10 == 0):
+            cer = cer + 1
+            valor = valor // 10
+        else:
+            b = False
+    return cer
+    
+for linea in sys.stdin:
+    m = int(linea)
+    aux = ""
+    cont = 1
+    c = ceros( fact(cont) )
+    while c < 100000:
+        cont = cont + 1
+        c = ceros( fact(cont) )
+        if c == m:
+            aux = aux + str(cont) + " "
+        elif c > m:
+            print(aux)
+            break
+            
+------------------------------------------------------
+maquiroz4:Problem1593:Wrong Answer
+import sys
+for numero in sys.stdin:
+    n=int(numero)
+    if n>=5:
+        print('0')
+    else:
+        for i in range (1,50+1):
+            div=i
+            ceros=0
+            while div>=5:
+                div=div//5
+                ceros=ceros+div
+                #print(i, ceros)
+                if ceros==n:
+                    print(i,end=' ')
+------------------------------------------------------
+acpezas:Problem2199:Wrong Answer
+n = int(input())
+for i in range(0,n,1):
+     print("   *   \n"
+           "  /#\  \n"
+           " /###\ \n"
+           "___#___\n")
+------------------------------------------------------
+Ale412:Problem1593:Wrong Answer
+m=int(input())
+fact=1
+cont=2
+c=0
+i=1
+while i<cont:
+    fact=fact*i
+    c=c+1
+    cont=cont+1
+    if (fact%10**m==0): 
+        if ((fact%10**(m+1)!=0)):
+            d=c
+            print(d,end=" ")
+        else:
+            if d>=0: break
+            else: print(0)
+    i=i+1
+------------------------------------------------------
+lkchavez:Problem1593:Runtime Error
+import sys
+def fact_1(n):
+    factorial_total = 1
+    while n > 1:
+        factorial_total *= n
+        n -= 1
+    return factorial_total
+for linea in sys.stdin:
+    m= int, linea.split()
+    fac=m
+    c=0
+    pasos=0
+    impresiones=5
+    ans=0
+    for i in range(10000000000):
+        f=fact_1(fac)
+        n=f
+        cero=0
+        while n>0:
+            x=n%10
+            if x==0:
+                cero+=1
+            else:
+                n=0
+            n=n//10
+        if cero==m:
+            print(fac, end=" ")
+            pasos+=1
+        if pasos==impresiones:
+            break
+        fac+=1
+    if ans==0:
+        print(0)
+------------------------------------------------------

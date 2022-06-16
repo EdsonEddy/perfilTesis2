@@ -1,0 +1,7 @@
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Alemax_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Brherrera3114_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Alemax_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Carolina3114_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Alemax_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\CastellonS_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Alemax_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\DANILOMAGNE_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\9075500_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\efromero_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\Alemax_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\JBTicona_Problem2175_Accepted.py
+vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\esromero_Problem2175_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\2175\jrmarca6_Problem2175_Accepted.py

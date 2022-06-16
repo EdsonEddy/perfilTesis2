@@ -63,7 +63,7 @@ En la tabla \ref{pruebaTiempoI} se presentan los resultados obtenidos, respecto 
 \input{tables/pruebaTiempoI}
 
 \subsection{Prueba de medicion IV}
-En la prueba II, se midió la precision y el tiempo de ejecucion de los algoritmos con los siguientes parametros:
+En la prueba IV, se midió la precision y el tiempo de ejecucion de los algoritmos con los siguientes parametros:
 \begin{itemize}
   \item SCED, $\id{D} = 100$
   \item RKRGST, $\id{threshold} = 20$
@@ -96,8 +96,36 @@ En la tabla \ref{pruebaTiempoIV} se presentan los resultados obtenidos, respecto
 
 \input{tables/pruebaTiempoIV}
 
+\subsection{Prueba de medicion V}
+En la prueba V, se midió la precision y el tiempo de ejecucion del algoritmos de programacion dinamica convencional para el calculo de la distancia de edicion (LEVED) y el algoritmo SCED.
+
+\subsubsection{Conjunto A}
+En la figura \ref{set_A_v} se muestra la matriz que se obtuvo para el conjunto A.
+\input{figures/set_A_v}
+
+\subsubsection{Conjunto B}
+En la figura \ref{set_B_v} se muestra la matriz que se obtuvo para el conjunto B.
+\input{figures/set_B_v}
+
+\subsubsection{Conjunto C}
+En la figura \ref{set_C_v} se muestra la matriz que se obtuvo para el conjunto C.
+\input{figures/set_C_v}
+
+\subsubsection{Conjunto D}
+En la figura \ref{set_D_v} se muestra la matriz que se obtuvo para el conjunto D.
+\input{figures/set_D_v}
+
+\subsubsection{Conjunto E}
+En la figura \ref{set_E_v} se muestra la matriz que se obtuvo para el conjunto E.
+\input{figures/set_E_v}
+
+\subsection{Tiempo de ejecución de la prueba de medicion V}
+En la tabla \ref{pruebaTiempoV} se presentan los resultados obtenidos, respecto al tiempo de ejecucion de cada algoritmo al calcular la similitud de cada conjunto de prueba. Los resultados obtenidos se encuentran en segundos.
+
+\input{tables/pruebaTiempoV}
+
 \section{Prueba de hipotesis}
-Para la prueba de hipotesis se utilizó como muestra, las mediciones obtenidas por los algoritmos LEVED y SCED de los conjuntos A, B, C, D, E durante la prueba de medicion IV. Se escogio la prueba IV porque tiene la mejor configuracion de parametros para los algoritmos. En la tabla \ref{DescTable} se muestra los estadisticos descriptivos de la muestra.
+Para la prueba de hipotesis se utilizó como muestra, las mediciones obtenidas en la prueba V por los algoritmos LEVED y SCED en el calculo de similitud sobre los conjuntos A, B, C, D y E. En la tabla \ref{DescTable} se muestra los estadisticos descriptivos de la muestra.
 
 \input{tables/DescTable}
 
@@ -183,7 +211,7 @@ El procedimento para contrastar la hipotesis de investigacion es el siguiente:
   \begin{equation*}
   \begin{split}
   H_0 & = \mu_d = 0 \\
-  H_1 & = \mu_d > 0
+  H_1 & = \mu_d < 0
   \end{split}
   \end{equation*}
   \item[] \textbf{Paso 2.} Nivel de significancia:
