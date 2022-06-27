@@ -1,1 +1,0 @@
-vimdiff -R C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\1593\Alemax_Problem1593_Accepted.py C:\Users\ACCESO\Desktop\NuevoControlDeCopias\solutions\1593\JBTicona_Problem1593_Accepted.py
