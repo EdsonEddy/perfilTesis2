@@ -132,7 +132,6 @@ class JaccardSimilarity(Similarity):
         n_fp2 = self._count_active_fingerprints(invert_index, software_2)
 
         return float(len(shareprints)) / (n_fp1 + n_fp2 - len(shareprints))
-        #return float(len(shareprints)) / (n_fp1 + n_fp2)
 
 
 class TfIdfSimilarity(Similarity):

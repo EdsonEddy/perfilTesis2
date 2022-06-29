@@ -112,8 +112,7 @@ class TerminalRenderer(Renderer):
         self.anchor_max_length = anchor_max_length
 
     def display(self, s, **kwargs):
-        pass
-        #print(s, **kwargs)
+        print(s, **kwargs)
 
     def _justify(self, left, to_justify, boundaries=0):
         pad = self.width - len(left) - len(to_justify) - boundaries

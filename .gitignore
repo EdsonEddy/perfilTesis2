@@ -9,3 +9,5 @@
 *.lol
 main.synctex.gz
 workspace_thesis
+.ipynb_checkpoints
+__pycache__
